@@ -26,14 +26,19 @@ void setup() {
 }
 
 void loop() {
-  for (int ch = 0; ch < ledd.n_channel; ch++){
-    for ( int i = 0; i < 256; i++ ) {
-      ledd.pwm(ch, i / 255.0);
-      delay(1);
+  int cycle = 240;
+  int n_color = 3;
+  float pwm;
+
+  for (int i = 0; i < cycle; i++) {
+    for (int color = 0; color < n_color; color++) {
+      pwm = sin(2 * PI * ((i + cycle * (color / (float)n_color)) / (float)cycle));
+      ledd.pwm(color, pwm * pwm);
+
+      for (int ch = 0; ch < ledd.n_channel; ch += n_color) {
+        ledd.pwm(ch + color, pwm * pwm);
+      }
     }
-    for ( int i = 255; 0 <= i; i-- ) {
-      ledd.pwm(ch, i / 255.0);
-      delay(1);
-    }
+    delay(20);
   }
 }
