@@ -5,6 +5,7 @@ LED driver device operation sample code for [Arduino](https://www.arduino.cc)
 This library works with [`I2C_device`](https://github.com/teddokano/I2C_device_Arduino) library together. Please be sure the `I2C_device` library is imported in your environment before trying to build. 
 
 ![Boards](https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/TempSensors.jpg)  
+**THIS PICTURE WILL BE REPLACED**
 _PCA9955BTW-ARD : Arduino® Shield Evaluation Board for PCA9955B LED driver_
 
 # What is this?
@@ -38,7 +39,8 @@ void loop() {
 # Supported devices
 Type#|Features|# of channels|additional feature|Interface|Evaluation board
 ---|---|---|---|---|---
-[PCA9955B](https://www.nxp.com/products/power-management/lighting-driver-and-controller-ics/led-drivers/16-channel-fm-plus-ic-bus-57-ma-20-v-constant-current-led-driver:PCA9955BTW)	|Constant current LED driver	|16ch		|with gradation control	|I²C Fast-mode plus (1MHz)			|---
+[PCA9955B](https://www.nxp.com/products/power-management/lighting-driver-and-controller-ics/led-drivers/16-channel-fm-plus-ic-bus-57-ma-20-v-constant-current-led-driver:PCA9955BTW)	|Constant current LED driver	|16ch		|with gradation control	|I²C Fast-mode plus (1MHz)			|[PCA9955BTW-ARD LED Driver Arduino® Shield Evaluation Board](https://www.nxp.com/design/development-boards/analog-toolbox/arduino-shields-solutions/pca9955btw-ard-led-driver-arduino-shield-evaluation-board:PCA9955BTW-ARD?tid=vanPCA9955BTW-ARD)
+[PCA9956B](https://www.nxp.jp/products/power-management/lighting-driver-and-controller-ics/led-drivers/24-channel-fm-plus-ic-bus-57-ma-20-v-constant-current-led-driver:PCA9956BTW)		|Constant current LED driver	|24ch		|---					|I²C Fast-mode plus (1MHz)			|[OM13321](https://www.nxp.com/docs/en/user-guide/UM10709.pdf)
 
 # Getting started
 For importing library and run the sample code, please find **Getting started** page (README.md) of [TempSensor_NXP_Arduino](https://github.com/teddokano/TempSensor_NXP_Arduino/blob/main/README.md). 
@@ -57,7 +59,7 @@ Use **Library manager** in Arduino IDE for easy install
 ![Choosing a sample code](https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/LM_install3s.png)
 -->
 # What's inside?
-## Temperature sensor library
+## **THIS SECTION WILL BE UPDATED** Temperature sensor library
 `LM75B`, `PCT2075` and `P3T1085` class libraries are included. Those libraries can be used by just making an instance from those class.  
 Those libraries have common methods to get/set device information.
 
@@ -74,6 +76,7 @@ For a quick access to those sketch, **refer to last step** of **"Getting started
 Sketch|Feature
 ---|---
 PCA9955B_simple							|Simple sample for just blinking channel 0
+PCA9956B_simple							|Simple sample for just blinking all channels
 
 # Document
 For details of the library, please find descriptions in [this document](https://teddokano.github.io/LEDDriver_NXP_Arduino/annotated.html).
