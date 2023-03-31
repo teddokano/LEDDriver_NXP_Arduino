@@ -185,4 +185,54 @@ public:
 	void init( float current );
 };
 
+class PCA9957	// : public PCA995x_SPI
+{
+public:
+	/** Number of channels */
+	const static uint8_t n_channel	= 24;
+	
+	/** Name of the PCA9957 registers */
+	enum reg_num {
+		MODE1, MODE2,
+		EFLAG0,  EFLAG1,  EFLAG2,  EFLAG3,  EFLAG4,  EFLAG5,
+		LEDOUT0, LEDOUT1, LEDOUT2, LEDOUT3, LEDOUT4, LEDOUT5,
+		GRPPWM, GRPFREQ,
+		PWM0,  PWM1,  PWM2,  PWM3,  PWM4,  PWM5,
+		PWM6,  PWM7,  PWM8,  PWM9,  PWM10, PWM11,
+		PWM12, PWM13, PWM14, PWM15, PWM16, PWM17,
+		PWM18, PWM19, PWM20, PWM21, PWM22, PWM23,
+		IREF0,  IREF1,  IREF2,  IREF3,  IREF4,  IREF5,
+		IREF6,  IREF7,  IREF8,  IREF9,  IREF10, IREF11,
+		IREF12, IREF13, IREF14, IREF15, IREF16, IREF17,
+		IREF18, IREF19, IREF20, IREF21, IREF22, IREF23,
+		RAMP_RATE_GRP0, STEP_TIME_GRP0, HOLD_CNTL_GRP0, IREF_GRP0,
+		RAMP_RATE_GRP1, STEP_TIME_GRP1, HOLD_CNTL_GRP1, IREF_GRP1,
+		RAMP_RATE_GRP2, STEP_TIME_GRP2, HOLD_CNTL_GRP2, IREF_GRP2,
+		RAMP_RATE_GRP3, STEP_TIME_GRP3, HOLD_CNTL_GRP3, IREF_GRP3,
+		RAMP_RATE_GRP4, STEP_TIME_GRP4, HOLD_CNTL_GRP4, IREF_GRP4,
+		RAMP_RATE_GRP5, STEP_TIME_GRP5, HOLD_CNTL_GRP5, IREF_GRP5,
+		GRAD_MODE_SEL0, GRAD_MODE_SEL1, GRAD_MODE_SEL2,
+		GRAD_GRP_SEL0,  GRAD_GRP_SEL1,  GRAD_GRP_SEL2,
+		GRAD_GRP_SEL3,  GRAD_GRP_SEL4,  GRAD_GRP_SEL5,
+		GRAD_GRP_SEL6,  GRAD_GRP_SEL7,  GRAD_GRP_SEL8,
+		GRAD_GRP_SEL9,  GRAD_GRP_SEL10, GRAD_GRP_SEL11,
+		GRAD_CNTL0, GRAD_CNTL1,
+		OFFSET,
+		PWMALL, IREFALL
+	};
+	
+	/** Create a PCA9957 instance connected to specified I2C pins with specified address
+	 *
+	 * @param i2c_address I2C-bus address (default: (0x02>>1))
+	 */
+	PCA9957( uint8_t i2c_address = (0x02 >> 1) );
+	virtual ~PCA9957();
+
+	/** Initializing device
+	 *
+	 * @param value current value in float (0.0 ~ 1.0)
+	 */
+	void init( float current );
+};
+
 #endif //	ARDUINO_LED_DRIVER_NXP_ARD_H
