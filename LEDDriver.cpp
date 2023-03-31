@@ -12,6 +12,20 @@ LEDDriver::~LEDDriver()
 {
 }
 
+void LEDDriver::pwm( uint8_t ch, float value )
+{
+	reg_access( reg_PWM + ch, (uint8_t)(value * 255.0) );
+}
+
+void LEDDriver::pwm( float* values )
+{
+	uint8_t	v[ n_channel ];
+	for ( int i = 0; i < n_channel; i++ )
+		v[ i ]	= (uint8_t)(values[ i ] * 255.0);
+
+	reg_access( 0x80 | reg_PWM, v, n_channel );
+}
+
 
 
 /* PCA995x class ******************************************/
@@ -37,6 +51,12 @@ void PCA995x::begin( float current, board env )
 	}
 }
 
+void PCA995x::irefall( uint8_t iref )
+{
+	reg_access( reg_IREFALL, iref );
+}
+
+
 
 /* PCA995x_I2C class ******************************************/
 
@@ -52,23 +72,13 @@ PCA995x_I2C::~PCA995x_I2C()
 {
 }
 
-void PCA995x_I2C::pwm( uint8_t ch, float value )
+void PCA995x_I2C::reg_access( uint8_t reg, uint8_t val  )
 {
-	write_r8( reg_PWM + ch, (uint8_t)(value * 255.0) );
+	write_r8( reg, val );
 }
-
-void PCA995x_I2C::pwm( float* values )
+void PCA995x_I2C::reg_access( uint8_t reg, uint8_t *vp, uint8_t len )
 {
-	uint8_t	v[ this->n_channel ];
-	for ( int i = 0; i < n_channel; i++ )
-		v[ i ]	= (uint8_t)(values[ i ] * 255.0);
-
-	reg_w( 0x80 | reg_PWM, v, n_channel );
-}
-
-void PCA995x_I2C::irefall( uint8_t iref )
-{
-	write_r8( reg_IREFALL, iref );
+	reg_w( 0x80 | reg, vp, len );
 }
 
 

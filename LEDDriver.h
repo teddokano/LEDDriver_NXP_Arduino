@@ -32,8 +32,22 @@ public:
 	
 	LEDDriver( uint8_t n_ch, uint8_t PWM_r );
 	virtual ~LEDDriver();
-	virtual void pwm( uint8_t ch, float value  )	= 0;
-	virtual void pwm( float* values )	= 0;
+	virtual void reg_access( uint8_t reg, uint8_t val  )	= 0;
+	virtual void reg_access( uint8_t reg, uint8_t *vp, uint8_t len )	= 0;
+
+	/** Set PWM value for a channel
+	 *
+	 * @param reg register number
+	 * @param value	PWM value in float (0.0 ~ 1.0)
+	 */
+	void pwm( uint8_t ch, float value );
+
+	/** Set PWM value for all channels
+	 *
+	 * @param reg register number
+	 * @param *value pointer to PWM value in float (0.0 ~ 1.0)
+	 */
+	void pwm( float* values );
 
 protected:
 	const uint8_t n_channel;
@@ -57,21 +71,12 @@ public:
 	
 	virtual void begin( float current =  0.1, board env = NONE );
 	virtual void init( float current )	= 0;
-	virtual void irefall( uint8_t iref )	= 0;
 
-	/** Set PWM value for a channel
+	/** Set IREFALL value (current setting for all channels)
 	 *
-	 * @param reg register number
-	 * @param value	PWM value in float (0.0 ~ 1.0)
+	 * @param value current value in float (0.0 ~ 1.0)
 	 */
-	void pwm( uint8_t ch, float value );
-
-	/** Set PWM value for all channels
-	 *
-	 * @param reg register number
-	 * @param *value pointer to PWM value in float (0.0 ~ 1.0)
-	 */
-	void pwm( float* values );
+	void irefall( uint8_t iref );
 
 protected:
 	const uint8_t reg_IREF;
@@ -86,25 +91,8 @@ public:
 	PCA995x_I2C( uint8_t i2c_address, uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r );
 	virtual ~PCA995x_I2C();
 
-	/** Set PWM value for a channel
-	 *
-	 * @param reg register number
-	 * @param value	PWM value in float (0.0 ~ 1.0)
-	 */
-	void pwm( uint8_t ch, float value );
-
-	/** Set PWM value for all channels
-	 *
-	 * @param reg register number
-	 * @param *value pointer to PWM value in float (0.0 ~ 1.0)
-	 */
-	void pwm( float* values );
-
-	/** Set IREFALL value (current setting for all channels)
-	 *
-	 * @param value current value in float (0.0 ~ 1.0)
-	 */
-	void irefall( uint8_t iref );
+	void reg_access( uint8_t reg, uint8_t val  );
+	void reg_access( uint8_t reg, uint8_t *vp, uint8_t len );
 };
 
 
