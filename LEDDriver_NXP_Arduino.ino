@@ -21,12 +21,8 @@ void setup() {
   Serial.begin(9600);
   Serial.println("\r***** Hello, PCA9955B! *****");
 
-  Serial.println(ledd.n_channel);
-
   I2C_device::scan();
   ledd.begin(0.1, PCA9955B::ARDUINO_SHIELD);
-
-
 }
 
 void loop() {

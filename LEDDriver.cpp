@@ -76,6 +76,7 @@ void PCA995x_I2C::reg_access( uint8_t reg, uint8_t val  )
 {
 	write_r8( reg, val );
 }
+
 void PCA995x_I2C::reg_access( uint8_t reg, uint8_t *vp, uint8_t len )
 {
 	reg_w( 0x80 | reg, vp, len );
@@ -103,7 +104,7 @@ void PCA9955B::init( float current )
 
 /* PCA9956B class ******************************************/
 PCA9956B::PCA9956B( uint8_t i2c_address ) : 
-	PCA995x_I2C( i2c_address, 24, PCA9956B::PWM0, PCA9956B::IREF0, PCA9955B::IREFALL )
+	PCA995x_I2C( i2c_address, 24, PCA9956B::PWM0, PCA9956B::IREF0, PCA9956B::IREFALL )
 {
 }
 
