@@ -26,19 +26,34 @@ void setup() {
 }
 
 void loop() {
-  int cycle = 240;
-  int n_color = 3;
+  int cycle = 60;
   float pwm;
+
+#if 1
+  int n_ch = ledd.n_channel;
+  int ch;
+  float v[n_ch];
+  for (int i = 0; i < cycle; i++) {
+    for (int offset = 0; offset < n_ch; offset++) {
+      pwm = pow(sin(PI * ((i + cycle * (offset / (float)n_ch)) / (float)cycle)), 4);
+      ch = (offset * 4) % n_ch + (offset * 4) / n_ch;
+      v[ch] = pwm;
+    }
+    ledd.pwm(v);
+    delay(20);
+  }
+#else
+  int n_color = 3;
 
   for (int i = 0; i < cycle; i++) {
     for (int color = 0; color < n_color; color++) {
-      pwm = sin(2 * PI * ((i + cycle * (color / (float)n_color)) / (float)cycle));
-      ledd.pwm(color, pwm * pwm);
+      pwm = pow(sin(PI * ((i + cycle * (color / (float)n_color)) / (float)cycle)), 4);
 
       for (int ch = 0; ch < ledd.n_channel; ch += n_color) {
-        ledd.pwm(ch + color, pwm * pwm);
+        ledd.pwm(ch + color, pwm);
       }
     }
     delay(20);
   }
+#endif
 }
