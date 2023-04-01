@@ -31,7 +31,7 @@ public:
 		ARDUINO_SHIELD,
 	};
 	
-	LEDDriver( uint8_t n_ch, uint8_t PWM_r );
+	LEDDriver( uint8_t n_ch, uint8_t PWM_r, uint8_t oe );
 	virtual ~LEDDriver();
 	virtual void reg_access( uint8_t reg, uint8_t val  )	= 0;
 	virtual void reg_access( uint8_t reg, uint8_t *vp, int len )	= 0;
@@ -53,6 +53,7 @@ public:
 protected:
 	const uint8_t n_channel;
 	const uint8_t reg_PWM;
+	const uint8_t oe_pin;
 };
 
 
@@ -67,7 +68,7 @@ protected:
 class PCA995x : public LEDDriver
 {
 public:
-	PCA995x( uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r );
+	PCA995x( uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r, uint8_t oe = 8 );
 	virtual ~PCA995x();
 	
 	virtual void begin( float current =  0.1, board env = NONE );
@@ -89,7 +90,7 @@ protected:
 class PCA995x_I2C : public PCA995x, public I2C_device
 {
 public:
-	PCA995x_I2C( uint8_t i2c_address, uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r );
+	PCA995x_I2C( uint8_t i2c_address, uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r, uint8_t oe = 8 );
 	virtual ~PCA995x_I2C();
 
 	void reg_access( uint8_t reg, uint8_t val  );
@@ -101,7 +102,7 @@ public:
 class PCA995x_SPI : public PCA995x, public SPI_device
 {
 public:
-	PCA995x_SPI( uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r );
+	PCA995x_SPI( uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r, uint8_t oe = 9 );
 	virtual ~PCA995x_SPI();
 
 	void reg_access( uint8_t reg, uint8_t val );
@@ -110,8 +111,17 @@ public:
 	void reg_w( uint8_t reg, uint8_t *vp, int len );
 	uint8_t reg_r( uint8_t reg );
 	void reg_r( uint8_t reg, uint8_t *vp, int len );
-	void write_8( uint8_t reg, uint8_t val );
-	uint8_t read_8( uint8_t reg );
+	void write_r8( uint8_t reg, uint8_t val );
+	uint8_t read_r8( uint8_t reg );
+
+	/** Set IREFALL value (current setting for all channels)
+	 *
+	 * @param value current value in float (0.0 ~ 1.0)
+	 */
+	void irefall( uint8_t iref );
+
+	void pwm( uint8_t ch, float value );
+	void pwm( float* values );
 };
 
 

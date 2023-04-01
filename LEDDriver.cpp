@@ -2,7 +2,8 @@
 
 /* LEDDriver class ******************************************/
 
-LEDDriver::LEDDriver( uint8_t n_ch, uint8_t PWM_r ) : n_channel( n_ch ), reg_PWM( PWM_r )
+LEDDriver::LEDDriver( uint8_t n_ch, uint8_t PWM_r, uint8_t oe ) :
+	n_channel( n_ch ), reg_PWM( PWM_r ), oe_pin( oe )
 {
 	//  do nothing.
 	//  leave it in default state.
@@ -30,8 +31,8 @@ void LEDDriver::pwm( float* values )
 
 /* PCA995x class ******************************************/
 
-PCA995x::PCA995x( uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r ) : 
-	LEDDriver( n_ch, PWM_r ), reg_IREF( IREF_r ), reg_IREFALL( IREFALL_r )
+PCA995x::PCA995x( uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r, uint8_t oe ) : 
+	LEDDriver( n_ch, PWM_r, oe ), reg_IREF( IREF_r ), reg_IREFALL( IREFALL_r )
 {
 	//  do nothing.
 	//  leave it in default state.
@@ -46,8 +47,8 @@ void PCA995x::begin( float current, board env )
 	init( current );
 	
 	if ( env ) {
-		pinMode( 8, OUTPUT );
-		digitalWrite( 8 , 0 );
+		pinMode( oe_pin, OUTPUT );
+		digitalWrite( oe_pin , 0 );
 	}
 }
 
@@ -60,8 +61,8 @@ void PCA995x::irefall( uint8_t iref )
 
 /* PCA995x_I2C class ******************************************/
 
-PCA995x_I2C::PCA995x_I2C( uint8_t i2c_address, uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r ) : 
-	PCA995x( n_ch, PWM_r, IREF_r, IREFALL_r ), 
+PCA995x_I2C::PCA995x_I2C( uint8_t i2c_address, uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r, uint8_t oe ) : 
+	PCA995x( n_ch, PWM_r, IREF_r, IREFALL_r, oe ), 
 	I2C_device( i2c_address )
 {
 	//  do nothing.
@@ -86,8 +87,8 @@ void PCA995x_I2C::reg_access( uint8_t reg, uint8_t *vp, int len )
 
 /* PCA995x_SPI class ******************************************/
 
-PCA995x_SPI::PCA995x_SPI( uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r ) : 
-	PCA995x( n_ch, PWM_r, IREF_r, IREFALL_r ), 
+PCA995x_SPI::PCA995x_SPI( uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r, uint8_t oe ) : 
+	PCA995x( n_ch, PWM_r, IREF_r, IREFALL_r, oe ), 
 	SPI_device()
 {
 	//  do nothing.
@@ -110,7 +111,7 @@ void PCA995x_SPI::reg_access( uint8_t reg, uint8_t *vp, int len )
 	uint8_t data[ len * 2 ];
 	
 	for ( int i = 0; i < len; i++ ) {
-		data[ i * 2 + 0 ]	= reg++;
+		data[ i * 2 + 0 ]	= reg + (i * 2);
 		data[ i * 2 + 1 ]	= vp[ i ];
 	}
 	
@@ -145,15 +146,39 @@ void PCA995x_SPI::reg_r( uint8_t reg, uint8_t *vp, int len )
 	}
 }
 
-void PCA995x_SPI::write_8( uint8_t reg, uint8_t val )
+void PCA995x_SPI::write_r8( uint8_t reg, uint8_t val )
 {
 	reg_w( reg, val );
 }
 
-uint8_t PCA995x_SPI::read_8( uint8_t reg )
+uint8_t PCA995x_SPI::read_r8( uint8_t reg )
 {
 	return reg_r( reg );
 }
+
+void PCA995x_SPI::irefall( uint8_t iref )
+{
+	write_r8( reg_IREFALL, iref );
+}
+
+void PCA995x_SPI::pwm( uint8_t ch, float value )
+{
+	write_r8( reg_PWM + ch, (uint8_t)(value * 255.0) );
+}
+
+void PCA995x_SPI::pwm( float* values )
+{
+	uint8_t	v[ n_channel ];
+	for ( int i = 0; i < n_channel; i++ )
+		v[ i ]	= (uint8_t)(values[ i ] * 255.0);
+
+	reg_w( reg_PWM, v, n_channel );
+}
+
+
+
+
+
 
 
 
@@ -211,28 +236,27 @@ void PCA9957::init( float current )
 {
 	uint8_t	init[]	= { 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA };
 		
-	reg_access( MODE2, 0x18 );
-	reg_access( LEDOUT0, init, sizeof( init ) );
+	write_r8( MODE2, 0x18 );
+	reg_w( LEDOUT0, init, sizeof( init ) );
 	
 	irefall( (uint8_t)(current * 255.0) );
 	
-	reg_access( PWM0, 0xAA );
-	reg_access( PWM1, 0x55 );
-	reg_access( PWM2, 0x01 );
-	reg_access( PWM3, 0x11 );
-	reg_access( PWM4, 0xFF );
-	reg_access( PWM5, 0xEE );
-	reg_access( PWM6, 0x0F );
-	reg_access( PWM7, 0xF0 );
-	reg_access( PWM0, 0x00, true );
-	reg_access( PWM1, 0x00, true );
-	reg_access( PWM2, 0x00, true );
-	reg_access( PWM3, 0x00, true );
-	reg_access( PWM4, 0x00, true );
-	reg_access( PWM5, 0x00, true );
-	reg_access( PWM6, 0x00, true );
-	reg_access( PWM7, 0x00, true );
-
+	write_r8( PWM0, 0xAA );
+	write_r8( PWM1, 0x55 );
+	write_r8( PWM2, 0x01 );
+	write_r8( PWM3, 0x11 );
+	write_r8( PWM4, 0xFF );
+	write_r8( PWM5, 0xEE );
+	write_r8( PWM6, 0x0F );
+	write_r8( PWM7, 0xF0 );
+	read_r8( PWM0 );
+	read_r8( PWM1 );
+	read_r8( PWM2 );
+	read_r8( PWM3 );
+	read_r8( PWM4 );
+	read_r8( PWM5 );
+	read_r8( PWM6 );
+	read_r8( PWM7 );
 }
 
 
