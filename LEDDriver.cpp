@@ -236,27 +236,11 @@ void PCA9957::init( float current )
 {
 	uint8_t	init[]	= { 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA };
 		
-	write_r8( MODE2, 0x18 );
+	write_r8( MODE2,  0x18 );
+	write_r8( PWMALL, 0x00 );
 	reg_w( LEDOUT0, init, sizeof( init ) );
 	
 	irefall( (uint8_t)(current * 255.0) );
-	
-	write_r8( PWM0, 0xAA );
-	write_r8( PWM1, 0x55 );
-	write_r8( PWM2, 0x01 );
-	write_r8( PWM3, 0x11 );
-	write_r8( PWM4, 0xFF );
-	write_r8( PWM5, 0xEE );
-	write_r8( PWM6, 0x0F );
-	write_r8( PWM7, 0xF0 );
-	read_r8( PWM0 );
-	read_r8( PWM1 );
-	read_r8( PWM2 );
-	read_r8( PWM3 );
-	read_r8( PWM4 );
-	read_r8( PWM5 );
-	read_r8( PWM6 );
-	read_r8( PWM7 );
 }
 
 
