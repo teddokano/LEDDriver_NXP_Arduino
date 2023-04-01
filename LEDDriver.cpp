@@ -72,12 +72,12 @@ PCA995x_I2C::~PCA995x_I2C()
 {
 }
 
-void PCA995x_I2C::reg_access( uint8_t reg, uint8_t val  )
+void PCA995x_I2C::reg_access( uint8_t reg, uint8_t val )
 {
 	write_r8( reg, val );
 }
 
-void PCA995x_I2C::reg_access( uint8_t reg, uint8_t *vp, uint8_t len )
+void PCA995x_I2C::reg_access( uint8_t reg, uint8_t *vp, int len )
 {
 	reg_w( 0x80 | reg, vp, len );
 }
@@ -98,26 +98,24 @@ PCA995x_SPI::~PCA995x_SPI()
 {
 }
 
-void PCA995x_SPI::reg_access( uint8_t reg, uint8_t val  )
+void PCA995x_SPI::reg_access( uint8_t reg, uint8_t val )
 {
-	uint8_t data[]	= { reg, val };
+	uint8_t data[]	= { (uint8_t)(reg << 1), val };
 
 	txrx( data, sizeof( data ) );
 }
 
-void PCA995x_SPI::reg_access( uint8_t reg, uint8_t *vp, uint8_t len )
+void PCA995x_SPI::reg_access( uint8_t reg, uint8_t *vp, int len )
 {
 	uint8_t data[ len * 2 ];
-
+	
 	for ( int i = 0; i < len; i++ ) {
-		data[ i * 2 + 0 ]	= reg++;
+		data[ i * 2 + 0 ]	= reg++ << 1;
 		data[ i * 2 + 1 ]	= vp[ i ];
 	}
 	
-	txrx( data, sizeof( data ) );
-
-	for ( int i = 0; i < len; i++ )
-		vp[ i ]	= data[ i * 2 ];	
+	for ( int i = 0; i < len * 2; i += 2 )
+		txrx( data + i, 2 );
 }
 
 
@@ -176,10 +174,28 @@ void PCA9957::init( float current )
 {
 	uint8_t	init[]	= { 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA };
 		
-	reg_access( MODE2, init, 0x18 );
-	reg_access( LEDOUT0 << 1, init, sizeof( init ) );
+	reg_access( MODE2, 0x18 );
+	reg_access( LEDOUT0, init, sizeof( init ) );
 	
 	irefall( (uint8_t)(current * 255.0) );
+	
+	reg_access( PWM0, 0xAA );
+	reg_access( PWM1, 0x55 );
+	reg_access( PWM2, 0x01 );
+	reg_access( PWM3, 0x11 );
+	reg_access( PWM4, 0xFF );
+	reg_access( PWM5, 0xEE );
+	reg_access( PWM6, 0x0F );
+	reg_access( PWM7, 0xF0 );
+	reg_access( PWM0, 0x00, true );
+	reg_access( PWM1, 0x00, true );
+	reg_access( PWM2, 0x00, true );
+	reg_access( PWM3, 0x00, true );
+	reg_access( PWM4, 0x00, true );
+	reg_access( PWM5, 0x00, true );
+	reg_access( PWM6, 0x00, true );
+	reg_access( PWM7, 0x00, true );
+
 }
 
 

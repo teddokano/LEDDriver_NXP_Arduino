@@ -14,47 +14,21 @@
 
 #include "LEDDriver.h"
 
-PCA9956B ledd;
+PCA9957 ledd;
 
 void setup() {
-  Wire.begin();
+  SPI.begin();
   Serial.begin(9600);
-  Serial.println("\r***** Hello, PCA9955B! *****");
-
-  I2C_device::scan();
-  ledd.begin(0.1, PCA9955B::ARDUINO_SHIELD);
+  Serial.println("\r***** Hello, PCA9957 *****");
+  ledd.begin( 0.1, PCA9957::ARDUINO_SHIELD );
 }
 
 void loop() {
-  int cycle = 60;
-  float pwm;
+  ledd.pwm( 0, 0xFF );
+  Serial.println("\rON");
+  delay(100);
 
-#if 1
-  int n_ch = ledd.n_channel;
-  int ch;
-  float v[n_ch];
-  for (int i = 0; i < cycle; i++) {
-    for (int offset = 0; offset < n_ch; offset++) {
-      pwm = sin(PI * ((i + cycle * (offset / (float)n_ch)) / (float)cycle));
-      pwm = pow(pwm, 4);
-      ch = (offset * 4) % n_ch + (offset * 4) / n_ch;
-      v[ch] = pwm;
-    }
-    ledd.pwm(v);
-    delay(20);
-  }
-#else
-  int n_color = 3;
-
-  for (int i = 0; i < cycle; i++) {
-    for (int color = 0; color < n_color; color++) {
-      pwm = pow(sin(PI * ((i + cycle * (color / (float)n_color)) / (float)cycle)), 4);
-
-      for (int ch = 0; ch < ledd.n_channel; ch += n_color) {
-        ledd.pwm(ch + color, pwm);
-      }
-    }
-    delay(20);
-  }
-#endif
+  ledd.pwm( 0, 0x00 );
+  Serial.println("\rOFF");
+  delay(100);
 }

@@ -32,23 +32,7 @@ public:
 	 * @param size data size
 	 * @return transferred data size
 	 */
-	void txrx( uint8_t *data, uint16_t size );
-
-	/** Multiple register write
-	 * 
-	 * @param reg register index/address/pointer
-	 * @param data pointer to data buffer
-	 * @param size data size
-	 */
-	void reg_access( uint8_t reg_adr, uint8_t *data, uint16_t size );
-
-	/** Single register write
-	 * 
-	 * @param reg register index/address/pointer
-	 * @param data pointer to data buffer
-	 * @param size data size
-	 */
-	uint8_t reg_access( uint8_t reg_adr, uint8_t data );
+	void txrx( uint8_t *data, int size );
 };
 
 #endif //	ARDUINO_SPI_DEVICE_H

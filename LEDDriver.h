@@ -34,7 +34,7 @@ public:
 	LEDDriver( uint8_t n_ch, uint8_t PWM_r );
 	virtual ~LEDDriver();
 	virtual void reg_access( uint8_t reg, uint8_t val  )	= 0;
-	virtual void reg_access( uint8_t reg, uint8_t *vp, uint8_t len )	= 0;
+	virtual void reg_access( uint8_t reg, uint8_t *vp, int len )	= 0;
 
 	/** Set PWM value for a channel
 	 *
@@ -93,7 +93,7 @@ public:
 	virtual ~PCA995x_I2C();
 
 	void reg_access( uint8_t reg, uint8_t val  );
-	void reg_access( uint8_t reg, uint8_t *vp, uint8_t len );
+	void reg_access( uint8_t reg, uint8_t *vp, int len );
 };
 
 
@@ -104,8 +104,8 @@ public:
 	PCA995x_SPI( uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r );
 	virtual ~PCA995x_SPI();
 
-	void reg_access( uint8_t reg, uint8_t val  );
-	void reg_access( uint8_t reg, uint8_t *vp, uint8_t len );
+	void reg_access( uint8_t reg, uint8_t val );
+	void reg_access( uint8_t reg, uint8_t *vp, int len );
 };
 
 
