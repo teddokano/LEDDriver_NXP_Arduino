@@ -106,6 +106,12 @@ public:
 
 	void reg_access( uint8_t reg, uint8_t val );
 	void reg_access( uint8_t reg, uint8_t *vp, int len );
+	void reg_w( uint8_t reg, uint8_t val );
+	void reg_w( uint8_t reg, uint8_t *vp, int len );
+	uint8_t reg_r( uint8_t reg );
+	void reg_r( uint8_t reg, uint8_t *vp, int len );
+	void write_8( uint8_t reg, uint8_t val );
+	uint8_t read_8( uint8_t reg );
 };
 
 

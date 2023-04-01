@@ -100,7 +100,7 @@ PCA995x_SPI::~PCA995x_SPI()
 
 void PCA995x_SPI::reg_access( uint8_t reg, uint8_t val )
 {
-	uint8_t data[]	= { (uint8_t)(reg << 1), val };
+	uint8_t data[]	= { reg, val };
 
 	txrx( data, sizeof( data ) );
 }
@@ -110,12 +110,49 @@ void PCA995x_SPI::reg_access( uint8_t reg, uint8_t *vp, int len )
 	uint8_t data[ len * 2 ];
 	
 	for ( int i = 0; i < len; i++ ) {
-		data[ i * 2 + 0 ]	= reg++ << 1;
+		data[ i * 2 + 0 ]	= reg++;
 		data[ i * 2 + 1 ]	= vp[ i ];
 	}
 	
 	for ( int i = 0; i < len * 2; i += 2 )
 		txrx( data + i, 2 );
+}
+
+void PCA995x_SPI::reg_w( uint8_t reg, uint8_t val )
+{
+	reg_access( reg << 1, val );
+}
+
+void PCA995x_SPI::reg_w( uint8_t reg, uint8_t *vp, int len )
+{
+	reg_access( reg << 1, vp, len );
+}
+
+uint8_t PCA995x_SPI::reg_r( uint8_t reg )
+{
+	uint8_t	data[ 2 ]	= { 0xFF, 0xFF };
+	
+	reg_access( (reg << 1) | 0x01, 0xFF );
+	txrx( data, sizeof( data ) );
+
+	return data[ 1 ];
+}
+
+void PCA995x_SPI::reg_r( uint8_t reg, uint8_t *vp, int len )
+{
+	for ( int i = 0; i < len; i++ ) {
+		*vp++	= reg_r( ((reg + i) << 1) | 0x01 );
+	}
+}
+
+void PCA995x_SPI::write_8( uint8_t reg, uint8_t val )
+{
+	reg_w( reg, val );
+}
+
+uint8_t PCA995x_SPI::read_8( uint8_t reg )
+{
+	return reg_r( reg );
 }
 
 
