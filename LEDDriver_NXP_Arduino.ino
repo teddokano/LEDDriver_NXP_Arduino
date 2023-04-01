@@ -35,7 +35,8 @@ void loop() {
   float v[n_ch];
   for (int i = 0; i < cycle; i++) {
     for (int offset = 0; offset < n_ch; offset++) {
-      pwm = pow(sin(PI * ((i + cycle * (offset / (float)n_ch)) / (float)cycle)), 4);
+      pwm = sin(PI * ((i + cycle * (offset / (float)n_ch)) / (float)cycle));
+      pwm = pow(pwm, 4);
       ch = (offset * 4) % n_ch + (offset * 4) / n_ch;
       v[ch] = pwm;
     }

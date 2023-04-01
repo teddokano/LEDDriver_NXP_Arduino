@@ -13,6 +13,7 @@
 #include <stdint.h>
 
 #include <I2C_device.h>
+#include "SPI_device.h"
 
 /** LEDDriver class
  *	
@@ -90,6 +91,18 @@ class PCA995x_I2C : public PCA995x, public I2C_device
 public:
 	PCA995x_I2C( uint8_t i2c_address, uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r );
 	virtual ~PCA995x_I2C();
+
+	void reg_access( uint8_t reg, uint8_t val  );
+	void reg_access( uint8_t reg, uint8_t *vp, uint8_t len );
+};
+
+
+
+class PCA995x_SPI : public PCA995x, public SPI_device
+{
+public:
+	PCA995x_SPI( uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r );
+	virtual ~PCA995x_SPI();
 
 	void reg_access( uint8_t reg, uint8_t val  );
 	void reg_access( uint8_t reg, uint8_t *vp, uint8_t len );

@@ -84,6 +84,44 @@ void PCA995x_I2C::reg_access( uint8_t reg, uint8_t *vp, uint8_t len )
 
 
 
+/* PCA995x_SPI class ******************************************/
+
+PCA995x_SPI::PCA995x_SPI( uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r ) : 
+	PCA995x( n_ch, PWM_r, IREF_r, IREFALL_r ), 
+	SPI_device()
+{
+	//  do nothing.
+	//  leave it in default state.
+}
+
+PCA995x_SPI::~PCA995x_SPI()
+{
+}
+
+void PCA995x_SPI::reg_access( uint8_t reg, uint8_t val  )
+{
+	uint8_t data[]	= { reg, val };
+
+	txrx( data, sizeof( data ) );
+}
+
+void PCA995x_SPI::reg_access( uint8_t reg, uint8_t *vp, uint8_t len )
+{
+	uint8_t data[ len * 2 ];
+
+	for ( int i = 0; i < len; i++ ) {
+		data[ i * 2 + 0 ]	= reg++;
+		data[ i * 2 + 1 ]	= vp[ i ];
+	}
+	
+	txrx( data, sizeof( data ) );
+
+	for ( int i = 0; i < len; i++ )
+		vp[ i ]	= data[ i * 2 ];	
+}
+
+
+
 /* PCA9955B class ******************************************/
 PCA9955B::PCA9955B( uint8_t i2c_address ) : 
 	PCA995x_I2C( i2c_address, 16, PCA9955B::PWM0, PCA9955B::IREF0, PCA9955B::IREFALL )
