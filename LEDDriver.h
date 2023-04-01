@@ -198,7 +198,7 @@ public:
 	void init( float current );
 };
 
-class PCA9957	// : public PCA995x_SPI
+class PCA9957 : public PCA995x_SPI
 {
 public:
 	/** Number of channels */
@@ -238,7 +238,7 @@ public:
 	 *
 	 * @param i2c_address I2C-bus address (default: (0x02>>1))
 	 */
-	PCA9957( uint8_t i2c_address = (0x02 >> 1) );
+	PCA9957();
 	virtual ~PCA9957();
 
 	/** Initializing device

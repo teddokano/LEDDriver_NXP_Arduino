@@ -140,6 +140,8 @@ void PCA9955B::init( float current )
 	irefall( (uint8_t)(current * 255.0) );
 }
 
+
+
 /* PCA9956B class ******************************************/
 PCA9956B::PCA9956B( uint8_t i2c_address ) : 
 	PCA995x_I2C( i2c_address, 24, PCA9956B::PWM0, PCA9956B::IREF0, PCA9956B::IREFALL )
@@ -157,3 +159,28 @@ void PCA9956B::init( float current )
 	
 	irefall( (uint8_t)(current * 255.0) );
 }
+
+
+
+/* PCA9957 class ******************************************/
+PCA9957::PCA9957() : 
+	PCA995x_SPI( 24, PCA9957::PWM0, PCA9957::IREF0, PCA9957::IREFALL )
+{
+}
+
+PCA9957::~PCA9957()
+{
+}
+
+void PCA9957::init( float current )
+{
+	uint8_t	init[]	= { 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA };
+		
+	reg_access( MODE2, init, 0x18 );
+	reg_access( LEDOUT0 << 1, init, sizeof( init ) );
+	
+	irefall( (uint8_t)(current * 255.0) );
+}
+
+
+
