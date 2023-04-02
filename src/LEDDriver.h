@@ -1,6 +1,6 @@
-/** TempSensor operation library for Arduino
+/** LEDDriver operation library for Arduino
  *
- *  @class  TempSensor
+ *  @class  LEDDriver
  *  @author Tedd OKANO
  *
  *  Released under the MIT license License
