@@ -88,8 +88,7 @@ void PCA995x_I2C::reg_access( uint8_t reg, uint8_t *vp, int len )
 /* PCA995x_SPI class ******************************************/
 
 PCA995x_SPI::PCA995x_SPI( uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r, uint8_t oe ) : 
-	PCA995x( n_ch, PWM_r, IREF_r, IREFALL_r, oe ), 
-	SPI_device()
+	PCA995x( n_ch, PWM_r, IREF_r, IREFALL_r, oe )
 {
 	//  do nothing.
 	//  leave it in default state.
@@ -97,6 +96,13 @@ PCA995x_SPI::PCA995x_SPI( uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t I
 
 PCA995x_SPI::~PCA995x_SPI()
 {
+}
+
+void PCA995x_SPI::txrx( uint8_t *data, int size )
+{
+	digitalWrite( SS, LOW );
+	SPI.transfer( data, size );
+	digitalWrite( SS, HIGH );
 }
 
 void PCA995x_SPI::reg_access( uint8_t reg, uint8_t val )
@@ -235,7 +241,9 @@ PCA9957::~PCA9957()
 void PCA9957::init( float current )
 {
 	uint8_t	init[]	= { 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA };
-		
+
+	digitalWrite( SS, HIGH );
+
 	write_r8( MODE2,  0x18 );
 	write_r8( PWMALL, 0x00 );
 	reg_w( LEDOUT0, init, sizeof( init ) );

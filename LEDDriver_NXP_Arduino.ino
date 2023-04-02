@@ -19,16 +19,16 @@ PCA9957 ledd;
 void setup() {
   SPI.begin();
   Serial.begin(9600);
-  Serial.println("\r***** Hello, PCA9957 *****");
-  ledd.begin( 0.1, PCA9957::ARDUINO_SHIELD );
+  Serial.println("\n***** Hello, PCA9957 *****");
+  ledd.begin(0.1, PCA9957::ARDUINO_SHIELD);
 }
 
 void loop() {
-  ledd.pwm( 0, 0xFF );
-  Serial.println("\rON");
+  ledd.pwm(0, 0xFF);
+  Serial.println("ON ");
   delay(100);
 
-  ledd.pwm( 0, 0x00 );
-  Serial.println("\rOFF");
+  ledd.pwm(0, 0x00);
+  Serial.println("OFF");
   delay(100);
 }
