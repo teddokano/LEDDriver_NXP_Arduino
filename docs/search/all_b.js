@@ -1,0 +1,18 @@
+var searchData=
+[
+  ['ramp_5frate_5fgrp0_0',['RAMP_RATE_GRP0',['../class_p_c_a9955_b.html#a8d7db2740e4e03122c6e54ca6edfd4b0adfe423fa5fa884c3c273e80c63e6828f',1,'PCA9955B::RAMP_RATE_GRP0()'],['../class_p_c_a9957.html#a610d947e7f133df79eca84b296a765cfa59978d0e14f91e51ee3a05b4a8ace945',1,'PCA9957::RAMP_RATE_GRP0()']]],
+  ['ramp_5frate_5fgrp1_1',['RAMP_RATE_GRP1',['../class_p_c_a9955_b.html#a8d7db2740e4e03122c6e54ca6edfd4b0a658df2958ada99134529b848787f1adf',1,'PCA9955B::RAMP_RATE_GRP1()'],['../class_p_c_a9957.html#a610d947e7f133df79eca84b296a765cfa92c90386a471b31df7b67ea978d9ecc0',1,'PCA9957::RAMP_RATE_GRP1()']]],
+  ['ramp_5frate_5fgrp2_2',['RAMP_RATE_GRP2',['../class_p_c_a9955_b.html#a8d7db2740e4e03122c6e54ca6edfd4b0ab978eb974c908f35ae9c37c9c7a1d561',1,'PCA9955B::RAMP_RATE_GRP2()'],['../class_p_c_a9957.html#a610d947e7f133df79eca84b296a765cfa13eb24979423500cac54a2f7d996deff',1,'PCA9957::RAMP_RATE_GRP2()']]],
+  ['ramp_5frate_5fgrp3_3',['RAMP_RATE_GRP3',['../class_p_c_a9955_b.html#a8d7db2740e4e03122c6e54ca6edfd4b0a243d55478aa7e534cf654567751a0740',1,'PCA9955B::RAMP_RATE_GRP3()'],['../class_p_c_a9957.html#a610d947e7f133df79eca84b296a765cfab8b91513823570fa8a0208a6e69a4a39',1,'PCA9957::RAMP_RATE_GRP3()']]],
+  ['ramp_5frate_5fgrp4_4',['RAMP_RATE_GRP4',['../class_p_c_a9957.html#a610d947e7f133df79eca84b296a765cfa4a41425c71fe3713f55074d11d145cde',1,'PCA9957']]],
+  ['ramp_5frate_5fgrp5_5',['RAMP_RATE_GRP5',['../class_p_c_a9957.html#a610d947e7f133df79eca84b296a765cfad8125772c9a3a0680a05a43abb4242ba',1,'PCA9957']]],
+  ['read_5fr8_6',['read_r8',['../class_p_c_a995x___s_p_i.html#a258bcae48f3c4908b11bb6eb99473bfc',1,'PCA995x_SPI']]],
+  ['readme_2emd_7',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['reg_5faccess_8',['reg_access',['../class_l_e_d_driver.html#aab3c888110aadbd9ace0d7727ea991fa',1,'LEDDriver::reg_access(uint8_t reg, uint8_t val)=0'],['../class_l_e_d_driver.html#a47cae3d90d1577dd78db4ea46c7b0db1',1,'LEDDriver::reg_access(uint8_t reg, uint8_t *vp, int len)=0'],['../class_p_c_a995x___i2_c.html#a7a7e65294b4ad5a2e2a088d5406ca311',1,'PCA995x_I2C::reg_access(uint8_t reg, uint8_t val)'],['../class_p_c_a995x___i2_c.html#a195e17d128d86798b0f013cfc67717de',1,'PCA995x_I2C::reg_access(uint8_t reg, uint8_t *vp, int len)'],['../class_p_c_a995x___s_p_i.html#a684eed176d8cff8ff274f8b5f6079a3f',1,'PCA995x_SPI::reg_access(uint8_t reg, uint8_t val)'],['../class_p_c_a995x___s_p_i.html#a685ee5e3f5efb3084f8a96cf564336bf',1,'PCA995x_SPI::reg_access(uint8_t reg, uint8_t *vp, int len)']]],
+  ['reg_5firef_9',['reg_IREF',['../class_p_c_a995x.html#a46c5246d562d6611cded19cd126dbcad',1,'PCA995x']]],
+  ['reg_5firefall_10',['reg_IREFALL',['../class_p_c_a995x.html#a57421882293e187f69c27eaa220cb14c',1,'PCA995x']]],
+  ['reg_5fnum_11',['reg_num',['../class_p_c_a9955_b.html#a8d7db2740e4e03122c6e54ca6edfd4b0',1,'PCA9955B::reg_num()'],['../class_p_c_a9956_b.html#a1c42ab3610e23210f1b16853720746c6',1,'PCA9956B::reg_num()'],['../class_p_c_a9957.html#a610d947e7f133df79eca84b296a765cf',1,'PCA9957::reg_num()']]],
+  ['reg_5fpwm_12',['reg_PWM',['../class_l_e_d_driver.html#a6d32dcec6914f6d7d3b46e182eed52c2',1,'LEDDriver']]],
+  ['reg_5fr_13',['reg_r',['../class_p_c_a995x___s_p_i.html#a18d4204927cab750a7a2863f29e079cf',1,'PCA995x_SPI::reg_r(uint8_t reg)'],['../class_p_c_a995x___s_p_i.html#a97b54d66781cdf1c5be4270d7c0c18db',1,'PCA995x_SPI::reg_r(uint8_t reg, uint8_t *vp, int len)']]],
+  ['reg_5fw_14',['reg_w',['../class_p_c_a995x___s_p_i.html#a9df472ac4e85f022e47c4014c47fcde7',1,'PCA995x_SPI::reg_w(uint8_t reg, uint8_t val)'],['../class_p_c_a995x___s_p_i.html#a1135fb05218aa018839ef65fe47cf0b7',1,'PCA995x_SPI::reg_w(uint8_t reg, uint8_t *vp, int len)']]]
+];

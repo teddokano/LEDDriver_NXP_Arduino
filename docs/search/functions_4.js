@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['read_5fr8_0',['read_r8',['../class_p_c_a995x___s_p_i.html#a258bcae48f3c4908b11bb6eb99473bfc',1,'PCA995x_SPI']]],
+  ['reg_5faccess_1',['reg_access',['../class_l_e_d_driver.html#aab3c888110aadbd9ace0d7727ea991fa',1,'LEDDriver::reg_access(uint8_t reg, uint8_t val)=0'],['../class_l_e_d_driver.html#a47cae3d90d1577dd78db4ea46c7b0db1',1,'LEDDriver::reg_access(uint8_t reg, uint8_t *vp, int len)=0'],['../class_p_c_a995x___i2_c.html#a7a7e65294b4ad5a2e2a088d5406ca311',1,'PCA995x_I2C::reg_access(uint8_t reg, uint8_t val)'],['../class_p_c_a995x___i2_c.html#a195e17d128d86798b0f013cfc67717de',1,'PCA995x_I2C::reg_access(uint8_t reg, uint8_t *vp, int len)'],['../class_p_c_a995x___s_p_i.html#a684eed176d8cff8ff274f8b5f6079a3f',1,'PCA995x_SPI::reg_access(uint8_t reg, uint8_t val)'],['../class_p_c_a995x___s_p_i.html#a685ee5e3f5efb3084f8a96cf564336bf',1,'PCA995x_SPI::reg_access(uint8_t reg, uint8_t *vp, int len)']]],
+  ['reg_5fr_2',['reg_r',['../class_p_c_a995x___s_p_i.html#a18d4204927cab750a7a2863f29e079cf',1,'PCA995x_SPI::reg_r(uint8_t reg)'],['../class_p_c_a995x___s_p_i.html#a97b54d66781cdf1c5be4270d7c0c18db',1,'PCA995x_SPI::reg_r(uint8_t reg, uint8_t *vp, int len)']]],
+  ['reg_5fw_3',['reg_w',['../class_p_c_a995x___s_p_i.html#a9df472ac4e85f022e47c4014c47fcde7',1,'PCA995x_SPI::reg_w(uint8_t reg, uint8_t val)'],['../class_p_c_a995x___s_p_i.html#a1135fb05218aa018839ef65fe47cf0b7',1,'PCA995x_SPI::reg_w(uint8_t reg, uint8_t *vp, int len)']]]
+];
