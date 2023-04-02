@@ -5,8 +5,7 @@ LED driver device operation sample code for [Arduino](https://www.arduino.cc)
 This library works with [`I2C_device`](https://github.com/teddokano/I2C_device_Arduino) library together. Please be sure the `I2C_device` library is imported in your environment before trying to build. 
 
 ![Boards](https://github.com/teddokano/additional_files/blob/main/LEDDriver_NXP_Arduino/LED-ARD.jpeg)  
-**THIS PICTURE WILL BE REPLACED**
-_PCA9955BTW-ARD : Arduino® Shield Evaluation Board for PCA9955B LED driver_
+_PCA9955BTW-ARD (left), PCA9957HN-ARD (right) and OM13321 LED driver evaluation boards_
 
 # What is this?
 An Arduino library for I²C LED drivers with sample code.  
