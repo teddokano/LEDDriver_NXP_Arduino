@@ -20,7 +20,7 @@ void setup() {
   SPI.begin();
   Serial.begin(9600);
   Serial.println("\n***** Hello, PCA9957 *****");
-  ledd.begin(0.1, PCA9957::ARDUINO_SHIELD);
+  ledd.begin(0.1, LEDDriver::ARDUINO_SHIELD);
 }
 
 void loop() {

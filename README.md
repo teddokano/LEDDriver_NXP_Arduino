@@ -4,7 +4,7 @@ LED driver device operation sample code for [Arduino](https://www.arduino.cc)
 > **Note**
 This library works with [`I2C_device`](https://github.com/teddokano/I2C_device_Arduino) library together. Please be sure the `I2C_device` library is imported in your environment before trying to build. 
 
-![Boards](https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/TempSensors.jpg)  
+![Boards](https://github.com/teddokano/additional_files/blob/main/LEDDriver_NXP_Arduino/LED-ARD.jpeg)  
 **THIS PICTURE WILL BE REPLACED**
 _PCA9955BTW-ARD : Arduino® Shield Evaluation Board for PCA9955B LED driver_
 
@@ -18,6 +18,9 @@ Type#|Features|# of channels|additional feature|Interface|Evaluation board
 [PCA9955B](https://www.nxp.com/products/power-management/lighting-driver-and-controller-ics/led-drivers/16-channel-fm-plus-ic-bus-57-ma-20-v-constant-current-led-driver:PCA9955BTW)	|Constant current LED driver	|16ch		|with gradation control	|I²C Fast-mode plus (1MHz)			|[PCA9955BTW-ARD LED Driver Arduino® Shield Evaluation Board](https://www.nxp.com/design/development-boards/analog-toolbox/arduino-shields-solutions/pca9955btw-ard-led-driver-arduino-shield-evaluation-board:PCA9955BTW-ARD?tid=vanPCA9955BTW-ARD)
 [PCA9956B](https://www.nxp.jp/products/power-management/lighting-driver-and-controller-ics/led-drivers/24-channel-fm-plus-ic-bus-57-ma-20-v-constant-current-led-driver:PCA9956BTW)		|Constant current LED driver	|24ch		|---					|I²C Fast-mode plus (1MHz)			|[OM13321](https://www.nxp.com/docs/en/user-guide/UM10709.pdf)
 [PCA9957](https://www.nxp.jp/products/power-management/lighting-driver-and-controller-ics/led-drivers/24-channel-spi-serial-bus-32-ma-5-5-v-constant-current-led-driver:PCA9957)		|Constant current LED driver	|24ch		|with gradation control	|SPI								|[PCA9957HN-ARD LED Driver Arduino® Shield Evaluation Board](https://www.nxp.jp/design/development-boards/analog-toolbox/arduino-shields-solutions/pca9957hn-ard-led-driver-arduino-shield-evaluation-board:PCA9957HN-ARD)
+
+To put PCA9957HN-ARD Arduino-shield evaluation board, use socket-pin extenders to avoid down side connector interfare.  
+![Boards](https://github.com/teddokano/additional_files/blob/main/LEDDriver_NXP_Arduino/PCA9957_pins.jpeg)
 
 # Code sample
 With `LEDDriver_NXP_Arduino` library, the LEDs can be managed simple API.  
@@ -54,7 +57,7 @@ For PCA9957, it uses an SPI as serial interface. To use the SPI, need to have `S
 PCA9957 ledd;
 
 void setup() {
-  SPI.begin();
+  SPI.begin();	//	<-- **** to use SPI ****
   Serial.begin(9600);
   Serial.println("\n***** Hello, PCA9957 *****");
   ledd.begin(1.0, PCA9957::ARDUINO_SHIELD);
@@ -92,14 +95,13 @@ Use **Library manager** in Arduino IDE for easy install
 
 # What's inside?
 ## **THIS SECTION WILL BE UPDATED** Temperature sensor library
-`LM75B`, `PCT2075` and `P3T1085` class libraries are included. Those libraries can be used by just making an instance from those class.  
+`PCA9955B`, `PCA9956B` and `PCA9957` class libraries are included. Those libraries can be used by just making an instance from those class.  
 Those libraries have common methods to get/set device information.
 
 Method|Role
 ---|---
-temp()					|Get temperature in Celsius
-thresholds( v0, v1 )	|Set high and low temperature threshold for OS output. `v0` and `v1` are needed to be given by Celsius value. Order of the arguments doesn't care
-os_mode( mode )			|Set OS pin mode. It can be set comparator or interrupt mode. The argument needs to be given as a class constant like `PCT2075::COMPARATOR` or `PCT2075::INTERRUPT`. The class name can be `LM75B`, `PCT2075`, `P3T1085` or a generic name of `TempSensor`.
+begin( float current = 0.1, board env = NONE )	|Initializing device. 1st argument `current` is ratio of output current. 0.0~1.0. 2nd argument `env` is an option: use `LEDDriver::ARDUINO_SHIELD` if the target board is Arduino-shield board
+pwm( uint8_t ch, float value );					|Set high and low temperature threshold for OS output. `v0` and `v1` are needed to be given by Celsius value. Order of the arguments doesn't care
 
 ## Examples
 Example code is provided as scketch files.  
