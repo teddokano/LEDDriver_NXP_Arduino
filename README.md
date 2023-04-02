@@ -59,7 +59,7 @@ PCA9957 ledd;
 void setup() {
   SPI.begin();	//	<-- **** to use SPI ****
   Serial.begin(9600);
-  Serial.println("\n***** Hello, PCA9957 *****");
+  Serial.println("\n***** Hello, PCA9957! *****");
   ledd.begin(1.0, PCA9957::ARDUINO_SHIELD);
 }
 
@@ -100,8 +100,10 @@ Those libraries have common methods to get/set device information.
 
 Method|Role
 ---|---
-begin( float current = 0.1, board env = NONE )	|Initializing device. 1st argument `current` is ratio of output current. 0.0~1.0. 2nd argument `env` is an option: use `LEDDriver::ARDUINO_SHIELD` if the target board is Arduino-shield board
-pwm( uint8_t ch, float value );					|Set high and low temperature threshold for OS output. `v0` and `v1` are needed to be given by Celsius value. Order of the arguments doesn't care
+`begin( float current = 0.1, board env = NONE )`	|Initializing device. 1st argument `current` is ratio of output current. 0.0~1.0. 2nd argument `env` is an option: use `LEDDriver::ARDUINO_SHIELD` if the target board is Arduino-shield board
+`pwm( uint8_t ch, float value )`					|Set single channel LED brightness. `value` must be in float: 0.0~1.0
+`void pwm( float* values )`							|Set LED brightness for all channels. `values` must be an array of float with length of number of device output channels. Each float values in the array should be 0.0~1.0.
+					|Set high and low temperature threshold for OS output. `v0` and `v1` are needed to be given by Celsius value. Order of the arguments doesn't care
 
 ## Examples
 Example code is provided as scketch files.  
