@@ -31,19 +31,19 @@ For PCA9955B and PCA9956B, those operations are quite similar. When the device i
 PCA9955B ledd;
 
 void setup() {
-  Wire.begin();
   Serial.begin(9600);
-  Serial.println("\r***** Hello, PCA9955B! *****");
-  I2C_device::scan();
+  Serial.println("\n***** Hello, PCA9955B! *****");
+
+  Wire.begin();
   ledd.begin(1.0, PCA9955B::ARDUINO_SHIELD);
 }
 
 void loop() {
-  ledd.pwm(0, 0xFF);
-  Serial.println("ON");
+  ledd.pwm(0, 1.0);
+  Serial.println("ON ");
   delay(100);
 
-  ledd.pwm(0, 0x00);
+  ledd.pwm(0, 0.0);
   Serial.println("OFF");
   delay(100);
 }
@@ -51,23 +51,24 @@ void loop() {
 
 For PCA9957, it uses an SPI as serial interface. To use the SPI, need to have `SPI.begin()` in `setup()` function. 
 ```cpp
-#include "LEDDriver.h"
+#include <LEDDriver.h>
 
 PCA9957 ledd;
 
 void setup() {
-  SPI.begin();	//	<-- **** to use SPI ****
   Serial.begin(9600);
   Serial.println("\n***** Hello, PCA9957! *****");
+
+  SPI.begin();
   ledd.begin(1.0, PCA9957::ARDUINO_SHIELD);
 }
 
 void loop() {
-  ledd.pwm(0, 0xFF);
+  ledd.pwm(0, 1.0);
   Serial.println("ON ");
   delay(100);
 
-  ledd.pwm(0, 0x00);
+  ledd.pwm(0, 0.0);
   Serial.println("OFF");
   delay(100);
 }
@@ -102,19 +103,29 @@ Method|Role
 `begin( float current = 0.1, board env = NONE )`	|Initializing device. 1st argument `current` is ratio of output current. 0.0~1.0. 2nd argument `env` is an option: use `LEDDriver::ARDUINO_SHIELD` if the target board is Arduino-shield board
 `pwm( uint8_t ch, float value )`					|Set single channel LED brightness. `value` must be in float: 0.0~1.0
 `void pwm( float* values )`							|Set LED brightness for all channels. `values` must be an array of float with length of number of device output channels. Each float values in the array should be 0.0~1.0.
-					|Set high and low temperature threshold for OS output. `v0` and `v1` are needed to be given by Celsius value. Order of the arguments doesn't care
 
 ## Examples
+
 Example code is provided as scketch files.  
+### How to use?
 For a quick access to those sketch, **refer to last step** of **"Getting started" section** of [TempSensor_NXP_Arduino](https://github.com/teddokano/TempSensor_NXP_Arduino/blob/main/README.md) page (README.md). 
 
-Sketch|Feature
----|---
-PCA9955B_simple_ch0							|Simple sample for just blinking channel 0
-PCA9956B_simple_ch0							|Simple sample for just blinking channel 0
-PCA9957_simple_ch0							|Simple sample for just blinking channel 0
+### List of sample code
+Sketch|Target|Feature
+---|---|---
+PCA9955B_simple_ch0							|**PCA9955B**	|Simple sample for just blinking channel 0
+PCA9955B_all_channels						|**PCA9955B**	|Simple operation to blink all channels in order
+PCA9955B_direct_register_access				|**PCA9955B**	|Direct register access sample. Write/read a register in every 100 mili-second
+PCA9955B_color_phases						|**PCA9955B**	|Phase independent imming on color LEDs
+PCA9956B_simple_ch0							|PCA9956B		|Simple sample for just blinking channel 0
+PCA9956B_all_channels						|PCA9956B		|Simple operation to blink all channels in order
+PCA9956B_direct_register_access				|PCA9956B		|Direct register access sample. Write/read a register in every 100 mili-second
+PCA9956B_color_phases						|PCA9956B		|Phase independent imming on color LEDs
+PCA9957_simple_ch0							|**PCA9957**	|Simple sample for just blinking channel 0
+PCA9957_all_channels						|**PCA9957**	|Simple operation to blink all channels in order
+PCA9957_direct_register_access				|**PCA9957**	|Direct register access sample. Write/read a register in every 100 mili-second
+PCA9957_color_phases						|**PCA9957**	|Phase independent imming on color LEDs
 
 # Document
 For details of the library, please find descriptions in [this document](https://teddokano.github.io/LEDDriver_NXP_Arduino/annotated.html).
-
 # References
