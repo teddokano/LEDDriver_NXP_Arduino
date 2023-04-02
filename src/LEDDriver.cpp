@@ -202,6 +202,7 @@ void PCA9955B::init( float current )
 {
 	uint8_t	init[]	= { 0xAA, 0xAA, 0xAA, 0xAA };
 	reg_w( 0x80 | LEDOUT0, init, sizeof( init ) );
+	write_r8( PWMALL, 0x00 );
 	
 	irefall( (uint8_t)(current * 255.0) );
 }
@@ -222,6 +223,7 @@ void PCA9956B::init( float current )
 {
 	uint8_t	init[]	= { 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA };
 	reg_w( 0x80 | LEDOUT0, init, sizeof( init ) );
+	write_r8( PWMALL, 0x00 );
 	
 	irefall( (uint8_t)(current * 255.0) );
 }
@@ -249,6 +251,7 @@ void PCA9957::init( float current )
 	reg_w( LEDOUT0, init, sizeof( init ) );
 	
 	irefall( (uint8_t)(current * 255.0) );
+	
 }
 
 

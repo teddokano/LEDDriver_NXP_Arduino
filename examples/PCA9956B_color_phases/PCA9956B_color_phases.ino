@@ -20,20 +20,20 @@ void setup() {
   Serial.println("\r***** Hello, PCA9955B! *****");
 
   Wire.begin();
-  ledd.begin(0.1, PCA9956B::ARDUINO_SHIELD);
+  ledd.begin(1.0, PCA9956B::ARDUINO_SHIELD);
 }
 
 void loop() {
   float v[ledd.n_channel] = { 0.0 };
-  int n_ch = ledd.n_channel;
-  int cycle = 60;
+  int cycle = 200;
   float pwm;
+  int n_ch = ledd.n_channel;
 
   for (int i = 0; i < cycle; i++) {
-    for (int ch = 0, ofst = 0; ch < n_ch; ch++, ofst = (ofst + 5) % n_ch ) {
-      pwm = sin(PI * ((i + cycle * (ofst / (float)n_ch)) / (float)cycle));
+    for (int ch = 0, ofst = 0; ch < n_ch; ch++, ofst = (ch * (n_ch / 3) + (ch / 3)) % n_ch) {
+      pwm = sin(2.0 * PI * ((i + cycle * (ofst / (float)n_ch)) / (float)cycle));
       pwm = pow(pwm, 4);
-
+      //      pwm = (0.5 < pwm) ? 1.0 : 0.0;
       v[ch] = pwm;
     }
     ledd.pwm(v);

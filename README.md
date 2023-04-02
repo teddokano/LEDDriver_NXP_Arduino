@@ -94,7 +94,7 @@ Use **Library manager** in Arduino IDE for easy install
 -->
 
 # What's inside?
-## **THIS SECTION WILL BE UPDATED** Temperature sensor library
+## LED driver library
 `PCA9955B`, `PCA9956B` and `PCA9957` class libraries are included. Those libraries can be used by just making an instance from those class.  
 Those libraries have common methods to get/set device information.
 
