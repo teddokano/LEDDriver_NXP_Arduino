@@ -33,11 +33,14 @@ private:
 };
 
 PCA9955B ledd;
-LED led[] = {
-  LED(&ledd, 0), LED(&ledd, 1), LED(&ledd, 2), LED(&ledd, 3),
-  LED(&ledd, 4), LED(&ledd, 5), LED(&ledd, 6), LED(&ledd, 7),
-  LED(&ledd, 8), LED(&ledd, 9), LED(&ledd, 10), LED(&ledd, 11),
-  LED(&ledd, 12), LED(&ledd, 13), LED(&ledd, 14), LED(&ledd, 15)
+LED rgb[3][3] = {
+  { LED(&ledd, 0), LED(&ledd, 3), LED(&ledd, 6) },
+  { LED(&ledd, 1), LED(&ledd, 4), LED(&ledd, 7) },
+  { LED(&ledd, 2), LED(&ledd, 5), LED(&ledd, 8) }
+};
+LED white[] = {  //  re-ordered to match physical alignment
+  LED(&ledd, 9), LED(&ledd, 11), LED(&ledd, 12), LED(&ledd, 13),
+  LED(&ledd, 10), LED(&ledd, 14), LED(&ledd, 15)
 };
 
 void setup() {
@@ -46,28 +49,28 @@ void setup() {
 
   Wire.begin();
   ledd.begin(0.01, PCA9955B::ARDUINO_SHIELD);
-  ledd.buffer_enable( false );
-
+  ledd.buffer_enable(true);
 }
 
-const int interval  = 16;
+const int interval = 20;
+const int cycle = 150;
+int count = 0;
 
 void loop() {
-  led[0] = led[3] = led[6] = 1.0;
-  led[1] = led[4] = led[7] = 0.0;
-  led[2] = led[5] = led[8] = 0.0;
-  ledd.flush();
-  delay(interval);
+  //  RGB LED control
+  for (int color = 0; color < 3; color++) {
+    rgb[color][0] = rgb[color][1] = rgb[color][2] = 0.5 - 0.5 * cos(2 * PI * ((cycle * color / 3.0) + count) / (float)cycle);
+  }
 
-  led[0] = led[3] = led[6] = 0.0;
-  led[1] = led[4] = led[7] = 1.0;
-  led[2] = led[5] = led[8] = 0.0;
-  ledd.flush();
-  delay(interval);
+  //  WHITE LED control
+  for (int white_index = 0; white_index < 7; white_index++) {
+    white[white_index] = 0.5 - 0.5 * cos(2 * PI * ((cycle * white_index / 7.0) + count) / (float)cycle);
+  }
 
-  led[0] = led[3] = led[6] = 0.0;
-  led[1] = led[4] = led[7] = 0.0;
-  led[2] = led[5] = led[8] = 1.0;
   ledd.flush();
+
+  count++;
+  count %= cycle;
+
   delay(interval);
 }
