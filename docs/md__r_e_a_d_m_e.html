@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">LEDDriver_NXP_Arduino<span id="projectnumber">&#160;0.1.2</span>
+   <div id="projectname">LEDDriver_NXP_Arduino<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">LED driver device operation sample code for Arduino</div>
   </td>
@@ -108,11 +108,11 @@ Code sample</h1>
 <div class="line"><a class="code hl_class" href="class_p_c_a9955_b.html">PCA9955B</a> ledd;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> setup() {</div>
-<div class="line">  Serial.<a class="code hl_function" href="class_p_c_a995x.html#aa2c525b0f4be45449f2aa25c6fb14a73">begin</a>(9600);</div>
+<div class="line">  Serial.<a class="code hl_function" href="class_p_c_a995x.html#adf379ccdda845328d21a9c29c8380ee7">begin</a>(9600);</div>
 <div class="line">  Serial.println(<span class="stringliteral">&quot;\n***** Hello, PCA9955B! *****&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  Wire.begin();</div>
-<div class="line">  ledd.<a class="code hl_function" href="class_p_c_a995x.html#aa2c525b0f4be45449f2aa25c6fb14a73">begin</a>(1.0, <a class="code hl_enumvalue" href="class_l_e_d_driver.html#aea4861b055bfd2ae40263e0c98644537aeb7378d72640aa38bb0d0bd2c044e356">PCA9955B::ARDUINO_SHIELD</a>);</div>
+<div class="line">  ledd.<a class="code hl_function" href="class_p_c_a995x.html#adf379ccdda845328d21a9c29c8380ee7">begin</a>(1.0, <a class="code hl_enumvalue" href="class_l_e_d_driver.html#aea4861b055bfd2ae40263e0c98644537aeb7378d72640aa38bb0d0bd2c044e356">PCA9955B::ARDUINO_SHIELD</a>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> loop() {</div>
@@ -127,18 +127,18 @@ Code sample</h1>
 <div class="ttc" id="a_l_e_d_driver_8h_html"><div class="ttname"><a href="_l_e_d_driver_8h.html">LEDDriver.h</a></div></div>
 <div class="ttc" id="aclass_l_e_d_driver_html_a049eb6f01d731ec4c2b01c6cc2a7decd"><div class="ttname"><a href="class_l_e_d_driver.html#a049eb6f01d731ec4c2b01c6cc2a7decd">LEDDriver::pwm</a></div><div class="ttdeci">void pwm(uint8_t ch, float value)</div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8cpp_source.html#l00016">LEDDriver.cpp:16</a></div></div>
 <div class="ttc" id="aclass_l_e_d_driver_html_aea4861b055bfd2ae40263e0c98644537aeb7378d72640aa38bb0d0bd2c044e356"><div class="ttname"><a href="class_l_e_d_driver.html#aea4861b055bfd2ae40263e0c98644537aeb7378d72640aa38bb0d0bd2c044e356">LEDDriver::ARDUINO_SHIELD</a></div><div class="ttdeci">@ ARDUINO_SHIELD</div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8h_source.html#l00031">LEDDriver.h:31</a></div></div>
-<div class="ttc" id="aclass_p_c_a9955_b_html"><div class="ttname"><a href="class_p_c_a9955_b.html">PCA9955B</a></div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8h_source.html#l00139">LEDDriver.h:140</a></div></div>
-<div class="ttc" id="aclass_p_c_a995x_html_aa2c525b0f4be45449f2aa25c6fb14a73"><div class="ttname"><a href="class_p_c_a995x.html#aa2c525b0f4be45449f2aa25c6fb14a73">PCA995x::begin</a></div><div class="ttdeci">virtual void begin(float current=0.1, board env=NONE)</div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8cpp_source.html#l00045">LEDDriver.cpp:45</a></div></div>
+<div class="ttc" id="aclass_p_c_a9955_b_html"><div class="ttname"><a href="class_p_c_a9955_b.html">PCA9955B</a></div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8h_source.html#l00152">LEDDriver.h:153</a></div></div>
+<div class="ttc" id="aclass_p_c_a995x_html_adf379ccdda845328d21a9c29c8380ee7"><div class="ttname"><a href="class_p_c_a995x.html#adf379ccdda845328d21a9c29c8380ee7">PCA995x::begin</a></div><div class="ttdeci">virtual void begin(float current=0.1, board env=NONE, bool buffered=false)</div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8cpp_source.html#l00076">LEDDriver.cpp:76</a></div></div>
 </div><!-- fragment --><p>For <a class="el" href="class_p_c_a9957.html">PCA9957</a>, it uses an SPI as serial interface. To use the SPI, need to have <code>SPI.begin()</code> in <code>setup()</code> function. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_l_e_d_driver_8h.html">LEDDriver.h</a>&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="class_p_c_a9957.html">PCA9957</a> ledd;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> setup() {</div>
-<div class="line">  Serial.<a class="code hl_function" href="class_p_c_a995x.html#aa2c525b0f4be45449f2aa25c6fb14a73">begin</a>(9600);</div>
+<div class="line">  Serial.<a class="code hl_function" href="class_p_c_a995x.html#adf379ccdda845328d21a9c29c8380ee7">begin</a>(9600);</div>
 <div class="line">  Serial.println(<span class="stringliteral">&quot;\n***** Hello, PCA9957! *****&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  SPI.begin();</div>
-<div class="line">  ledd.<a class="code hl_function" href="class_p_c_a995x.html#aa2c525b0f4be45449f2aa25c6fb14a73">begin</a>(1.0, <a class="code hl_enumvalue" href="class_l_e_d_driver.html#aea4861b055bfd2ae40263e0c98644537aeb7378d72640aa38bb0d0bd2c044e356">PCA9957::ARDUINO_SHIELD</a>);</div>
+<div class="line">  ledd.<a class="code hl_function" href="class_p_c_a995x.html#adf379ccdda845328d21a9c29c8380ee7">begin</a>(1.0, <a class="code hl_enumvalue" href="class_l_e_d_driver.html#aea4861b055bfd2ae40263e0c98644537aeb7378d72640aa38bb0d0bd2c044e356">PCA9957::ARDUINO_SHIELD</a>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> loop() {</div>
@@ -150,8 +150,8 @@ Code sample</h1>
 <div class="line">  Serial.println(<span class="stringliteral">&quot;OFF&quot;</span>);</div>
 <div class="line">  delay(100);</div>
 <div class="line">}</div>
-<div class="ttc" id="aclass_p_c_a9957_html"><div class="ttname"><a href="class_p_c_a9957.html">PCA9957</a></div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8h_source.html#l00219">LEDDriver.h:220</a></div></div>
-<div class="ttc" id="aclass_p_c_a995x___s_p_i_html_aab1e2d7e7441368a0c1d8d0471e0684a"><div class="ttname"><a href="class_p_c_a995x___s_p_i.html#aab1e2d7e7441368a0c1d8d0471e0684a">PCA995x_SPI::pwm</a></div><div class="ttdeci">void pwm(uint8_t ch, float value)</div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8cpp_source.html#l00170">LEDDriver.cpp:170</a></div></div>
+<div class="ttc" id="aclass_p_c_a9957_html"><div class="ttname"><a href="class_p_c_a9957.html">PCA9957</a></div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8h_source.html#l00232">LEDDriver.h:233</a></div></div>
+<div class="ttc" id="aclass_p_c_a995x___s_p_i_html_aab1e2d7e7441368a0c1d8d0471e0684a"><div class="ttname"><a href="class_p_c_a995x___s_p_i.html#aab1e2d7e7441368a0c1d8d0471e0684a">PCA995x_SPI::pwm</a></div><div class="ttdeci">void pwm(uint8_t ch, float value)</div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8cpp_source.html#l00203">LEDDriver.cpp:203</a></div></div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
 Getting started</h1>
 <p>For importing library and run the sample code, please find <b>Getting started</b> page (<a class="el" href="_r_e_a_d_m_e_8md.html">README.md</a>) of <a href="https://github.com/teddokano/TempSensor_NXP_Arduino/blob/main/README.md">TempSensor_NXP_Arduino</a>.</p>
@@ -182,37 +182,45 @@ How to use?</h3>
 List of sample code</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Sketch   </th><th class="markdownTableHeadNone">Target   </th><th class="markdownTableHeadNone">Feature    </th></tr>
+<th class="markdownTableHeadNone">Folder   </th><th class="markdownTableHeadNone">Sketch   </th><th class="markdownTableHeadNone">Target   </th><th class="markdownTableHeadNone">Feature    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">PCA9955B_simple_ch0   </td><td class="markdownTableBodyNone"><b><a class="el" href="class_p_c_a9955_b.html">PCA9955B</a></b>   </td><td class="markdownTableBodyNone"><b>Simple</b> sample for just blinking channel 0    </td></tr>
+<td class="markdownTableBodyNone">PCA9955B/   </td><td class="markdownTableBodyNone">0_simple_ch0_PCA9955B   </td><td class="markdownTableBodyNone"><a class="el" href="class_p_c_a9955_b.html">PCA9955B</a>   </td><td class="markdownTableBodyNone"><b>Simple</b> sample for just blinking channel 0    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">PCA9955B_all_channels   </td><td class="markdownTableBodyNone"><b><a class="el" href="class_p_c_a9955_b.html">PCA9955B</a></b>   </td><td class="markdownTableBodyNone">Simple operation to blink <b>all channels in order</b>    </td></tr>
+<td class="markdownTableBodyNone">PCA9955B/   </td><td class="markdownTableBodyNone">1_all_channels_PCA9955B   </td><td class="markdownTableBodyNone"><a class="el" href="class_p_c_a9955_b.html">PCA9955B</a>   </td><td class="markdownTableBodyNone">Simple operation to blink <b>all channels in order</b>    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">PCA9955B_direct_register_access   </td><td class="markdownTableBodyNone"><b><a class="el" href="class_p_c_a9955_b.html">PCA9955B</a></b>   </td><td class="markdownTableBodyNone"><b>Direct register access</b> sample. Write/read a register in every 100 mili-second    </td></tr>
+<td class="markdownTableBodyNone">PCA9955B/   </td><td class="markdownTableBodyNone">2_color_phases_PCA9955B   </td><td class="markdownTableBodyNone"><a class="el" href="class_p_c_a9955_b.html">PCA9955B</a>   </td><td class="markdownTableBodyNone">Phase independent dimming on color LEDs: <b>color mixing</b>    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">PCA9955B_color_phases   </td><td class="markdownTableBodyNone"><b><a class="el" href="class_p_c_a9955_b.html">PCA9955B</a></b>   </td><td class="markdownTableBodyNone">Phase independent dimming on color LEDs: <b>color mixing</b>    </td></tr>
+<td class="markdownTableBodyNone">PCA9955B/   </td><td class="markdownTableBodyNone">3_direct_register_access_PCA9955B   </td><td class="markdownTableBodyNone"><a class="el" href="class_p_c_a9955_b.html">PCA9955B</a>   </td><td class="markdownTableBodyNone"><b>Direct register access</b> sample. Write/read a register in every 100 mili-second    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">PCA9956B_simple_ch0   </td><td class="markdownTableBodyNone"><a class="el" href="class_p_c_a9956_b.html">PCA9956B</a>   </td><td class="markdownTableBodyNone"><b>Simple</b> sample for just blinking channel 0    </td></tr>
+<td class="markdownTableBodyNone">PCA9956B/   </td><td class="markdownTableBodyNone">0_simple_ch0_PCA9956B   </td><td class="markdownTableBodyNone"><a class="el" href="class_p_c_a9956_b.html">PCA9956B</a>   </td><td class="markdownTableBodyNone"><b>Simple</b> sample for just blinking channel 0    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">PCA9956B_all_channels   </td><td class="markdownTableBodyNone"><a class="el" href="class_p_c_a9956_b.html">PCA9956B</a>   </td><td class="markdownTableBodyNone">Simple operation to blink <b>all channels in order</b>    </td></tr>
+<td class="markdownTableBodyNone">PCA9956B/   </td><td class="markdownTableBodyNone">1_all_channels_PCA9956B   </td><td class="markdownTableBodyNone"><a class="el" href="class_p_c_a9956_b.html">PCA9956B</a>   </td><td class="markdownTableBodyNone">Simple operation to blink <b>all channels in order</b>    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">PCA9956B_direct_register_access   </td><td class="markdownTableBodyNone"><a class="el" href="class_p_c_a9956_b.html">PCA9956B</a>   </td><td class="markdownTableBodyNone"><b>Direct register access</b> sample. Write/read a register in every 100 mili-second    </td></tr>
+<td class="markdownTableBodyNone">PCA9956B/   </td><td class="markdownTableBodyNone">2_color_phases_PCA9956B   </td><td class="markdownTableBodyNone"><a class="el" href="class_p_c_a9956_b.html">PCA9956B</a>   </td><td class="markdownTableBodyNone">Phase independent dimming on color LEDs: <b>color mixing</b>    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">PCA9956B_color_phases   </td><td class="markdownTableBodyNone"><a class="el" href="class_p_c_a9956_b.html">PCA9956B</a>   </td><td class="markdownTableBodyNone">Phase independent dimming on color LEDs: <b>color mixing</b>    </td></tr>
+<td class="markdownTableBodyNone">PCA9956B/   </td><td class="markdownTableBodyNone">3_direct_register_access_PCA9956B   </td><td class="markdownTableBodyNone"><a class="el" href="class_p_c_a9956_b.html">PCA9956B</a>   </td><td class="markdownTableBodyNone"><b>Direct register access</b> sample. Write/read a register in every 100 mili-second    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">PCA9957_simple_ch0   </td><td class="markdownTableBodyNone"><b><a class="el" href="class_p_c_a9957.html">PCA9957</a></b>   </td><td class="markdownTableBodyNone"><b>Simple</b> sample for just blinking channel 0    </td></tr>
+<td class="markdownTableBodyNone">PCA9957/   </td><td class="markdownTableBodyNone">0_simple_ch0_PCA9957   </td><td class="markdownTableBodyNone"><a class="el" href="class_p_c_a9957.html">PCA9957</a>   </td><td class="markdownTableBodyNone"><b>Simple</b> sample for just blinking channel 0    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">PCA9957_all_channels   </td><td class="markdownTableBodyNone"><b><a class="el" href="class_p_c_a9957.html">PCA9957</a></b>   </td><td class="markdownTableBodyNone">Simple operation to blink <b>all channels in order</b>    </td></tr>
+<td class="markdownTableBodyNone">PCA9957/   </td><td class="markdownTableBodyNone">1_all_channels_PCA9957   </td><td class="markdownTableBodyNone"><a class="el" href="class_p_c_a9957.html">PCA9957</a>   </td><td class="markdownTableBodyNone">Simple operation to blink <b>all channels in order</b>    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">PCA9957_direct_register_access   </td><td class="markdownTableBodyNone"><b><a class="el" href="class_p_c_a9957.html">PCA9957</a></b>   </td><td class="markdownTableBodyNone"><b>Direct register access</b> sample. Write/read a register in every 100 mili-second    </td></tr>
+<td class="markdownTableBodyNone">PCA9957/   </td><td class="markdownTableBodyNone">2_color_phases_PCA9957   </td><td class="markdownTableBodyNone"><a class="el" href="class_p_c_a9957.html">PCA9957</a>   </td><td class="markdownTableBodyNone">Phase independent dimming on color LEDs: <b>color mixing</b>    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">PCA9957_color_phases   </td><td class="markdownTableBodyNone"><b><a class="el" href="class_p_c_a9957.html">PCA9957</a></b>   </td><td class="markdownTableBodyNone">Phase independent dimming on color LEDs: <b>color mixing</b>    </td></tr>
+<td class="markdownTableBodyNone">PCA9957/   </td><td class="markdownTableBodyNone">3_direct_register_access_PCA9957   </td><td class="markdownTableBodyNone"><a class="el" href="class_p_c_a9957.html">PCA9957</a>   </td><td class="markdownTableBodyNone"><b>Direct register access</b> sample. Write/read a register in every 100 mili-second    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><em>zzz_no_library_operation_sample</em>   </td><td class="markdownTableBodyNone"><a class="el" href="class_p_c_a9955_b.html">PCA9955B</a>   </td><td class="markdownTableBodyNone">Showing a sample of <b>no-library using</b> operation   </td></tr>
+<td class="markdownTableBodyNone">concept_examples/   </td><td class="markdownTableBodyNone">abstracting_LEDs   </td><td class="markdownTableBodyNone"><a class="el" href="class_p_c_a9955_b.html">PCA9955B</a>   </td><td class="markdownTableBodyNone">For further easy operations for multiple LEDs    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">concept_examples/   </td><td class="markdownTableBodyNone">buffered_mode   </td><td class="markdownTableBodyNone"><a class="el" href="class_p_c_a9955_b.html">PCA9955B</a>   </td><td class="markdownTableBodyNone">Demo: how to use "buffered" mode    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">concept_examples/   </td><td class="markdownTableBodyNone">buffered_mode_with_timer   </td><td class="markdownTableBodyNone"><a class="el" href="class_p_c_a9955_b.html">PCA9955B</a>   </td><td class="markdownTableBodyNone">Demo: LED refresh rate managed by <b>timer interrupt</b>. This code is using <a href="https://playground.arduino.cc/Main/MsTimer2/">MsTimer2</a> library    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">concept_examples/   </td><td class="markdownTableBodyNone">Demo_dual_OM13321   </td><td class="markdownTableBodyNone"><a class="el" href="class_p_c_a9956_b.html">PCA9956B</a>   </td><td class="markdownTableBodyNone">Demo: <b>Two <a class="el" href="class_p_c_a9956_b.html">PCA9956B</a></b> operation demo. Using <a href="https://playground.arduino.cc/Main/MsTimer2/">MsTimer2</a> library    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">concept_examples/   </td><td class="markdownTableBodyNone">no_library_operation_sample   </td><td class="markdownTableBodyNone"><a class="el" href="class_p_c_a9955_b.html">PCA9955B</a>   </td><td class="markdownTableBodyNone">Showing a sample of <b>no-library using</b> operation   </td></tr>
 </table>
 <h1><a class="anchor" id="autotoc_md10"></a>
 Document</h1>
-<p>For details of the library, please find descriptions in <a href="https://teddokano.github.io/LEDDriver_NXP_Arduino/annotated.html">this document</a>. </p>
+<p>For details of the library, please find descriptions in <a href="https://teddokano.github.io/LEDDriver_NXP_Arduino/annotated.html">this document</a>.</p>
 <h1><a class="anchor" id="autotoc_md11"></a>
 References</h1>
 <h2><a class="anchor" id="autotoc_md12"></a>

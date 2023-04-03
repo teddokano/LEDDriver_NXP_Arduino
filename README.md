@@ -126,10 +126,12 @@ PCA9957/	|3_direct_register_access_PCA9957			|PCA9957	|**Direct register access*
 concept_examples/	|abstracting_LEDs					|PCA9955B	|For further easy operations for multiple LEDs
 concept_examples/	|buffered_mode						|PCA9955B	|Demo: how to use "buffered" mode
 concept_examples/	|buffered_mode_with_timer			|PCA9955B	|Demo: LED refresh rate managed by **timer interrupt**. This code is using [MsTimer2](https://playground.arduino.cc/Main/MsTimer2/) library
+concept_examples/	|Demo_dual_OM13321					|PCA9956B	|Demo: **Two PCA9956B** operation demo. Using [MsTimer2](https://playground.arduino.cc/Main/MsTimer2/) library
 concept_examples/	|no_library_operation_sample		|PCA9955B	|Showing a sample of **no-library using** operation
 
 # Document
 For details of the library, please find descriptions in [this document](https://teddokano.github.io/LEDDriver_NXP_Arduino/annotated.html).
+
 # References
 
 ## Related libraries
