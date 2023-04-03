@@ -6,8 +6,8 @@
  *    THIS SAMPLE CODE WORKS WITH "MsTimer2" LIBRARY.
  *    IMPORT "MsTimer2" in LibraryManager in Arduino-IDE or from https://playground.arduino.cc/Main/MsTimer2/
  *
- *  With timer library, the LED refresh rate can be managed easily. 
- *  This sample is showing how the timer library can be used with LEDDriver buffer mode. 
+ *  2 LED driver devices (PCA9956B) operated. 
+ *  RGB LED color mixing. 
  *
  *  @author  Tedd OKANO
  *
