@@ -3,30 +3,61 @@
 /* LEDDriver class ******************************************/
 
 LEDDriver::LEDDriver( uint8_t n_ch, uint8_t PWM_r, uint8_t oe ) :
-	n_channel( n_ch ), reg_PWM( PWM_r ), oe_pin( oe )
+	n_channel( n_ch ), reg_PWM( PWM_r ), oe_pin( oe ), bp( NULL )
 {
-	//  do nothing.
-	//  leave it in default state.
 }
 
 LEDDriver::~LEDDriver()
 {
+	if ( bp )
+		delete[]	bp;
 }
 
 void LEDDriver::pwm( uint8_t ch, float value )
 {
-	reg_access( reg_PWM + ch, (uint8_t)(value * 255.0) );
+	if ( bp ) {
+		bp[ ch ]	= (uint8_t)(value * 255.0);
+	}
+	else {
+		reg_access( reg_PWM + ch, (uint8_t)(value * 255.0) );		
+	}
 }
 
 void LEDDriver::pwm( float* values )
 {
-	uint8_t	v[ n_channel ];
-	for ( int i = 0; i < n_channel; i++ )
-		v[ i ]	= (uint8_t)(values[ i ] * 255.0);
+	if ( bp ) {
+		for ( int i = 0; i < n_channel; i++ )
+			bp[ i ]	= (uint8_t)(values[ i ] * 255.0);
+	}
+	else {
+		uint8_t	v[ n_channel ];
+		for ( int i = 0; i < n_channel; i++ )
+			v[ i ]	= (uint8_t)(values[ i ] * 255.0);
 
-	reg_access( 0x80 | reg_PWM, v, n_channel );
+		reg_access( 0x80 | reg_PWM, v, n_channel );
+	}
 }
 
+void LEDDriver::flush( void )
+{
+	if ( bp )
+		reg_access( 0x80 | reg_PWM, bp, n_channel );
+}
+
+void LEDDriver::buffer_enable( bool flag )
+{
+	if ( bp ) {
+		delete[]	bp;
+		bp	= NULL;		
+	}
+	
+	if ( flag ) {
+		bp	= new uint8_t[ n_channel ];
+		for ( int i = 0; i < n_channel; i++ )
+			bp[ i ]	= 0x00;
+	}
+	
+}
 
 
 /* PCA995x class ******************************************/
@@ -42,7 +73,7 @@ PCA995x::~PCA995x()
 {
 }
 
-void PCA995x::begin( float current, board env )
+void PCA995x::begin( float current, board env, bool bflag )
 {
 	init( current );
 	
@@ -50,6 +81,8 @@ void PCA995x::begin( float current, board env )
 		pinMode( oe_pin, OUTPUT );
 		digitalWrite( oe_pin , 0 );
 	}
+	
+	buffer_enable( bflag );
 }
 
 void PCA995x::irefall( uint8_t iref )

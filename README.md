@@ -113,18 +113,18 @@ For a quick access to those sketch, **refer to last step** of **"Getting started
 ### List of sample code
 Folder|Sketch|Target|Feature
 ---|---|---|---
-PCA9955B/	|PCA9955B_simple_ch0						|PCA9955B	|**Simple** sample for just blinking channel 0
-PCA9955B/	|PCA9955B_all_channels						|PCA9955B	|Simple operation to blink **all channels in order**
-PCA9955B/	|PCA9955B_direct_register_access			|PCA9955B	|**Direct register access** sample. Write/read a register in every 100 mili-second
-PCA9955B/	|PCA9955B_color_phases						|PCA9955B	|Phase independent dimming on color LEDs: **color mixing**
-PCA9956B/	|PCA9956B_simple_ch0						|PCA9956B	|**Simple** sample for just blinking channel 0
-PCA9956B/	|PCA9956B_all_channels						|PCA9956B	|Simple operation to blink **all channels in order**
-PCA9956B/	|PCA9956B_direct_register_access			|PCA9956B	|**Direct register access** sample. Write/read a register in every 100 mili-second
-PCA9956B/	|PCA9956B_color_phases						|PCA9956B	|Phase independent dimming on color LEDs: **color mixing**
-PCA9957/	|PCA9957_simple_ch0							|PCA9957	|**Simple** sample for just blinking channel 0
-PCA9957/	|PCA9957_all_channels						|PCA9957	|Simple operation to blink **all channels in order**
-PCA9957/	|PCA9957_direct_register_access				|PCA9957	|**Direct register access** sample. Write/read a register in every 100 mili-second
-PCA9957/	|PCA9957_color_phases						|PCA9957	|Phase independent dimming on color LEDs: **color mixing**
+PCA9955B/	|0_simple_ch0_PCA9955B						|PCA9955B	|**Simple** sample for just blinking channel 0
+PCA9955B/	|1_all_channels_PCA9955B						|PCA9955B	|Simple operation to blink **all channels in order**
+PCA9955B/	|2_color_phases_PCA9955B						|PCA9955B	|Phase independent dimming on color LEDs: **color mixing**
+PCA9955B/	|3_direct_register_access_PCA9955B			|PCA9955B	|**Direct register access** sample. Write/read a register in every 100 mili-second
+PCA9956B/	|0_simple_ch0_PCA9956B						|PCA9956B	|**Simple** sample for just blinking channel 0
+PCA9956B/	|1_all_channels_PCA9956B						|PCA9956B	|Simple operation to blink **all channels in order**
+PCA9956B/	|2_color_phases_PCA9956B						|PCA9956B	|Phase independent dimming on color LEDs: **color mixing**
+PCA9956B/	|3_direct_register_access_PCA9956B			|PCA9956B	|**Direct register access** sample. Write/read a register in every 100 mili-second
+PCA9957/	|0_simple_ch0_PCA9957							|PCA9957	|**Simple** sample for just blinking channel 0
+PCA9957/	|1_all_channels_PCA9957						|PCA9957	|Simple operation to blink **all channels in order**
+PCA9957/	|2_color_phases_PCA9957						|PCA9957	|Phase independent dimming on color LEDs: **color mixing**
+PCA9957/	|3_direct_register_access_PCA9957				|PCA9957	|**Direct register access** sample. Write/read a register in every 100 mili-second
 concept_examples/	|abstracting_LEDs					|PCA9955B	|For further easy operations for multiple LEDs
 concept_examples/	|no_library_operation_sample		|PCA9955B	|Showing a sample of **no-library using** operation
 

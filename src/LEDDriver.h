@@ -50,10 +50,23 @@ public:
 	 */
 	void pwm( float* values );
 
+	/** Flushing data
+	 *
+	 * Write all buffered PWM data into the LED driver
+	 */
+	void flush( void );
+
+	/** Flushing data
+	 *
+	 * Write all buffered PWM data into the LED driver
+	 */
+	void buffer_enable( bool flag );
+	
 protected:
-	const uint8_t n_channel;
-	const uint8_t reg_PWM;
-	const uint8_t oe_pin;
+	const	uint8_t n_channel;
+	const	uint8_t reg_PWM;
+	const	uint8_t oe_pin;
+	uint8_t	*bp;
 };
 
 
@@ -71,7 +84,7 @@ public:
 	PCA995x( uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r, uint8_t oe = 8 );
 	virtual ~PCA995x();
 	
-	virtual void begin( float current =  0.1, board env = NONE );
+	virtual void begin( float current =  0.1, board env = NONE, bool buffered = false );
 	virtual void init( float current )	= 0;
 
 	/** Set IREFALL value (current setting for all channels)
