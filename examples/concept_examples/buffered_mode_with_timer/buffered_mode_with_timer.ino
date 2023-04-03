@@ -1,14 +1,17 @@
-/** PCA9955B LED driver operation sample
+/** LED driver operation sample
  *  
- *  This sample code is showing PCA9955B LED driver operation with PWM value setting change.
- *  The ledd.pwm() takes channel number and PWM ratio. 
+ *  IMPORTANT!
+ *  IMPORTANT!
+ *  IMPORTANT!
+ *    THIS SAMPLE CODE WORKS WITH "MsTimer2" LIBRARY.
+ *    IMPORT "MsTimer2" in LibraryManager in Arduino-IDE or from https://playground.arduino.cc/Main/MsTimer2/
+ *
+ *  With timer library, the LED refresh rate can be managed easily. 
+ *  This sample is showing how the timer library can be used with LEDDriver buffer mode. 
  *
  *  @author  Tedd OKANO
  *
  *  Released under the MIT license License
- *
- *  About PCA9955B:
- *    https://www.nxp.jp/products/power-management/lighting-driver-and-controller-ics/led-drivers/24-channel-spi-serial-bus-32-ma-5-5-v-constant-current-led-driver:PCA9955B
  */
 
 #include <LEDDriver.h>

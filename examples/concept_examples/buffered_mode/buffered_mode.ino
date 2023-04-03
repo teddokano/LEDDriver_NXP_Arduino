@@ -1,14 +1,20 @@
-/** PCA9955B LED driver operation sample
+/** LED driver operation sample
  *  
- *  This sample code is showing PCA9955B LED driver operation with PWM value setting change.
- *  The ledd.pwm() takes channel number and PWM ratio. 
+ *  Showing "buffered mode" of LEDDriver library. 
+ *  The LEDDriver has mode of "unbuffered" (default) and "buffered". 
+ *  
+ *  The "unbuffered" mode is a simple mode, the device PWM output is changed each time of "pwm()" method call. 
+ *  It means, the MCU and LED driver device data transfer is done each time. 
+ *
+ *  The "buffered" mode is made to supress redundant data transfer between MCU and LED driver. 
+ *  The "pwm()" method call updates library internal data buffer only. The transfer happens only when "flush()" methos is called. 
+ *
+ *  This sample code is showing the operation conjunction with the "LED class" which was demonstrated in "concept_examples/abstracting_LEDs" sample code. 
+ *  In this sample, the LEDs are grouped re-indexed by using the LED class. 
  *
  *  @author  Tedd OKANO
  *
  *  Released under the MIT license License
- *
- *  About PCA9955B:
- *    https://www.nxp.jp/products/power-management/lighting-driver-and-controller-ics/led-drivers/24-channel-spi-serial-bus-32-ma-5-5-v-constant-current-led-driver:PCA9955B
  */
 
 #include <LEDDriver.h>

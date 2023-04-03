@@ -1,14 +1,12 @@
-/** PCA9955B LED driver operation sample
+/** LED driver operation sample
  *  
- *  This sample code is showing PCA9955B LED driver operation with PWM value setting change.
- *  The ledd.pwm() takes channel number and PWM ratio. 
+ *  Showing abstraction approach to manage multiple LEDs easy. 
+ *  Which this "LED class", each LEDs can be grouped and indexed arbitrary, independent from LED driver devices. 
+ *  This sample is using LED class to set PWM ratio by simple assignment. 
  *
  *  @author  Tedd OKANO
  *
  *  Released under the MIT license License
- *
- *  About PCA9955B:
- *    https://www.nxp.jp/products/power-management/lighting-driver-and-controller-ics/led-drivers/24-channel-spi-serial-bus-32-ma-5-5-v-constant-current-led-driver:PCA9955B
  */
 
 #include <LEDDriver.h>
