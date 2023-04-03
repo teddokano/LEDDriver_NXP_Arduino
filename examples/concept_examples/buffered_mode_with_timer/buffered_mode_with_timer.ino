@@ -70,7 +70,6 @@ void loop() {
 }
 
 void LED_update(void) {
-  static const int interval = 20;
   static const int cycle = 150;
   static int count = 0;
 

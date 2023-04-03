@@ -71,11 +71,11 @@ void setup() {
 void loop() {
   for (int channel = 0; channel < 16; channel++) {
     for (int brightness = 0; brightness < 256; brightness++) {
-      i2c_write_r8(TARGET_ADDRESS, PWM0 + channel, brightness);
+      i2c_write_r8(TARGET_ADDRESS, (reg_num)(PWM0 + channel), brightness);
       delay(1);
     }
     for (int brightness = 0; brightness < 256; brightness++) {
-      i2c_write_r8(TARGET_ADDRESS, PWM0 + channel, 255 - brightness);
+      i2c_write_r8(TARGET_ADDRESS, (reg_num)(PWM0 + channel), 255 - brightness);
       delay(1);
     }
   }
