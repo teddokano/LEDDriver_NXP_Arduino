@@ -17,7 +17,7 @@
 
 class LED {
 public:
-  LED(PCA9955B* leddp, int ch) {
+  LED(LEDDriver* leddp, int ch) {
     devp = leddp;
     channel = ch;
   }
@@ -26,7 +26,7 @@ public:
     return v;
   }
 private:
-  PCA9955B* devp;
+  LEDDriver* devp;
   int channel;
 };
 
