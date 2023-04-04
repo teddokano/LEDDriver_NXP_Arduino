@@ -75,21 +75,18 @@ void loop() {
 ```  
 
 # Getting started
-For importing library and run the sample code, please find **Getting started** page (README.md) of [TempSensor_NXP_Arduino](https://github.com/teddokano/TempSensor_NXP_Arduino/blob/main/README.md). 
-<!--
 Use **Library manager** in Arduino IDE for easy install
-- **Find** this library: **Open** the _**Library Manager**_ pane, **Search** this library and click **INSTALL** button.  
-![Find the lib](https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/LM_install0s.png)
+- **Find** this library: **Open** the _**Library Manager**_ pane, **Search** this library (type "**PCA99**" in the search field then this library will be shown) and click **INSTALL** button.  
+![Find the lib](https://github.com/teddokano/additional_files/blob/main/LEDDriver_NXP_Arduino/install.png)
 
 - Click **"INSTALL ALL"**  
-![Install all](https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/LM_install1s.png)
+![Install all](https://github.com/teddokano/additional_files/blob/main/LEDDriver_NXP_Arduino/install_all.png)
 
 - Install will be completed quickly  
-![Install completed](https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/LM_install2s.png)
+![Install completed](https://github.com/teddokano/additional_files/blob/main/LEDDriver_NXP_Arduino/install_completed.png)
 
 - Choose a sample code and try!  
-![Choosing a sample code](https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/LM_install3s.png)
--->
+![Choosing a sample code](https://github.com/teddokano/additional_files/blob/main/LEDDriver_NXP_Arduino/using_examples.png)
 
 # What's inside?
 ## LED driver library
@@ -106,9 +103,11 @@ Method|Role
 
 Example code is provided as scketch files.  
 ### How to use?
-For a quick access to those sketch, **refer to last step** of **"Getting started" section** of [TempSensor_NXP_Arduino](https://github.com/teddokano/TempSensor_NXP_Arduino/blob/main/README.md) page (README.md). 
+For a quick access to those sketch, **refer to last step** of **"Getting started" section** of this page. 
 
 ### List of sample code
+
+#### Basic examples
 Folder|Sketch|Target|Feature
 ---|---|---|---
 PCA9955B/	|0_simple_ch0_PCA9955B						|PCA9955B	|**Simple** sample for just blinking channel 0
@@ -123,6 +122,10 @@ PCA9957/	|0_simple_ch0_PCA9957						|PCA9957	|**Simple** sample for just blinkin
 PCA9957/	|1_all_channels_PCA9957						|PCA9957	|Simple operation to blink **all channels in order**
 PCA9957/	|2_color_phases_PCA9957						|PCA9957	|Phase independent dimming on color LEDs: **color mixing**
 PCA9957/	|3_direct_register_access_PCA9957			|PCA9957	|**Direct register access** sample. Write/read a register in every 100 mili-second
+
+#### Advanced examples (showing additional features)
+Folder|Sketch|Target|Feature
+---|---|---|---
 concept_examples/	|abstracting_LEDs					|PCA9955B	|For further easy operations for multiple LEDs
 concept_examples/	|buffered_mode						|PCA9955B	|Demo: how to use "buffered" mode
 concept_examples/	|buffered_mode_with_timer			|PCA9955B	|Demo: LED refresh rate managed by **timer interrupt**. This code is using [MsTimer2](https://playground.arduino.cc/Main/MsTimer2/) library

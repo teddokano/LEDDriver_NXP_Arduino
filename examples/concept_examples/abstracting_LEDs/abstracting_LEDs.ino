@@ -43,7 +43,7 @@ void setup() {
   Serial.println("\n***** Hello, PCA9955B! *****");
 
   Wire.begin();
-  ledd.begin(1.0, PCA9955B::ARDUINO_SHIELD);
+  ledd.begin(0.1, PCA9955B::ARDUINO_SHIELD);
 }
 
 void loop() {

@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">LEDDriver_NXP_Arduino<span id="projectnumber">&#160;0.2.0</span>
+   <div id="projectname">LEDDriver_NXP_Arduino<span id="projectnumber">&#160;0.2.1</span>
    </div>
    <div id="projectbrief">LED driver device operation sample code for Arduino</div>
   </td>
@@ -97,8 +97,8 @@ Inheritance diagram for LEDDriver:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:aea4861b055bfd2ae40263e0c98644537"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d_driver.html#aea4861b055bfd2ae40263e0c98644537">board</a> { <a class="el" href="class_l_e_d_driver.html#aea4861b055bfd2ae40263e0c98644537a77e8e574078540e691ffaa6ab158fd8b">NONE</a>
-, <a class="el" href="class_l_e_d_driver.html#aea4861b055bfd2ae40263e0c98644537aeb7378d72640aa38bb0d0bd2c044e356">ARDUINO_SHIELD</a>
+<tr class="memitem:aea4861b055bfd2ae40263e0c98644537"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>board</b> { <b>NONE</b>
+, <b>ARDUINO_SHIELD</b>
  }</td></tr>
 <tr class="separator:aea4861b055bfd2ae40263e0c98644537"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -106,11 +106,11 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0e168dda783bbe7f8d3124b7055d79aa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d_driver.html#a0e168dda783bbe7f8d3124b7055d79aa">LEDDriver</a> (uint8_t n_ch, uint8_t PWM_r, uint8_t oe)</td></tr>
 <tr class="separator:a0e168dda783bbe7f8d3124b7055d79aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a255fa85c6666c7d48064bb2c483149d7"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d_driver.html#a255fa85c6666c7d48064bb2c483149d7">~LEDDriver</a> ()</td></tr>
-<tr class="separator:a255fa85c6666c7d48064bb2c483149d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab3c888110aadbd9ace0d7727ea991fa"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d_driver.html#aab3c888110aadbd9ace0d7727ea991fa">reg_access</a> (uint8_t reg, uint8_t val)=0</td></tr>
+<tr class="memitem:aab3c888110aadbd9ace0d7727ea991fa"><td class="memItemLeft" align="right" valign="top"><a id="aab3c888110aadbd9ace0d7727ea991fa" name="aab3c888110aadbd9ace0d7727ea991fa"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>reg_access</b> (uint8_t reg, uint8_t val)=0</td></tr>
 <tr class="separator:aab3c888110aadbd9ace0d7727ea991fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47cae3d90d1577dd78db4ea46c7b0db1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d_driver.html#a47cae3d90d1577dd78db4ea46c7b0db1">reg_access</a> (uint8_t reg, uint8_t *vp, int len)=0</td></tr>
+<tr class="memitem:a47cae3d90d1577dd78db4ea46c7b0db1"><td class="memItemLeft" align="right" valign="top"><a id="a47cae3d90d1577dd78db4ea46c7b0db1" name="a47cae3d90d1577dd78db4ea46c7b0db1"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>reg_access</b> (uint8_t reg, uint8_t *vp, int len)=0</td></tr>
 <tr class="separator:a47cae3d90d1577dd78db4ea46c7b0db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a049eb6f01d731ec4c2b01c6cc2a7decd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d_driver.html#a049eb6f01d731ec4c2b01c6cc2a7decd">pwm</a> (uint8_t ch, float value)</td></tr>
 <tr class="separator:a049eb6f01d731ec4c2b01c6cc2a7decd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -129,8 +129,6 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a6d32dcec6914f6d7d3b46e182eed52c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62ae48aacacf502d1511a9cee867c8eb"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d_driver.html#a62ae48aacacf502d1511a9cee867c8eb">oe_pin</a></td></tr>
 <tr class="separator:a62ae48aacacf502d1511a9cee867c8eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed7625c7938891c8857a3765f42d2e80"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d_driver.html#aed7625c7938891c8857a3765f42d2e80">bp</a></td></tr>
-<tr class="separator:aed7625c7938891c8857a3765f42d2e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_l_e_d_driver.html">LEDDriver</a> operation library for Arduino</p>
@@ -148,14 +146,10 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="class_l_e_d_driver.html#aea4861b055bfd2ae40263e0c98644537">LEDDriver::board</a></td>
+          <td class="memname">enum LEDDriver::board</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aea4861b055bfd2ae40263e0c98644537a77e8e574078540e691ffaa6ab158fd8b" name="aea4861b055bfd2ae40263e0c98644537a77e8e574078540e691ffaa6ab158fd8b"></a>NONE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aea4861b055bfd2ae40263e0c98644537aeb7378d72640aa38bb0d0bd2c044e356" name="aea4861b055bfd2ae40263e0c98644537aeb7378d72640aa38bb0d0bd2c044e356"></a>ARDUINO_SHIELD&#160;</td><td class="fielddoc"></td></tr>
-</table>
 
 <p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8h_source.html#l00029">29</a> of file <a class="el" href="_l_e_d_driver_8h_source.html">LEDDriver.h</a>.</p>
 
@@ -245,8 +239,6 @@ Protected Attributes</h2></td></tr>
 <p>Write all buffered PWM data into the LED driver </p>
 
 <p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8cpp_source.html#l00047">47</a> of file <a class="el" href="_l_e_d_driver_8cpp_source.html">LEDDriver.cpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="_l_e_d_driver_8cpp_source.html#l00076">PCA995x::begin()</a>.</p>
 
 </div>
 </div>
@@ -338,117 +330,7 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a47cae3d90d1577dd78db4ea46c7b0db1" name="a47cae3d90d1577dd78db4ea46c7b0db1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47cae3d90d1577dd78db4ea46c7b0db1">&#9670;&#160;</a></span>reg_access() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void LEDDriver::reg_access </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>reg</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname"><em>vp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>len</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="class_p_c_a995x___i2_c.html#a195e17d128d86798b0f013cfc67717de">PCA995x_I2C</a>, and <a class="el" href="class_p_c_a995x___s_p_i.html#a685ee5e3f5efb3084f8a96cf564336bf">PCA995x_SPI</a>.</p>
-
-</div>
-</div>
-<a id="aab3c888110aadbd9ace0d7727ea991fa" name="aab3c888110aadbd9ace0d7727ea991fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab3c888110aadbd9ace0d7727ea991fa">&#9670;&#160;</a></span>reg_access() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void LEDDriver::reg_access </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>reg</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>val</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="class_p_c_a995x___i2_c.html#a7a7e65294b4ad5a2e2a088d5406ca311">PCA995x_I2C</a>, and <a class="el" href="class_p_c_a995x___s_p_i.html#a684eed176d8cff8ff274f8b5f6079a3f">PCA995x_SPI</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="_l_e_d_driver_8cpp_source.html#l00041">flush()</a>, <a class="el" href="_l_e_d_driver_8cpp_source.html#l00088">PCA995x::irefall()</a>, and <a class="el" href="_l_e_d_driver_8cpp_source.html#l00016">pwm()</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="aed7625c7938891c8857a3765f42d2e80" name="aed7625c7938891c8857a3765f42d2e80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed7625c7938891c8857a3765f42d2e80">&#9670;&#160;</a></span>bp</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t* LEDDriver::bp</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8h_source.html#l00069">69</a> of file <a class="el" href="_l_e_d_driver_8h_source.html">LEDDriver.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="_l_e_d_driver_8cpp_source.html#l00047">buffer_enable()</a>, <a class="el" href="_l_e_d_driver_8cpp_source.html#l00041">flush()</a>, <a class="el" href="_l_e_d_driver_8cpp_source.html#l00016">pwm()</a>, and <a class="el" href="_l_e_d_driver_8cpp_source.html#l00010">~LEDDriver()</a>.</p>
-
-</div>
-</div>
 <a id="a0f4fce7b9be46537b940da418af5e316" name="a0f4fce7b9be46537b940da418af5e316"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0f4fce7b9be46537b940da418af5e316">&#9670;&#160;</a></span>n_channel</h2>
 
@@ -470,8 +352,6 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8h_source.html#l00066">66</a> of file <a class="el" href="_l_e_d_driver_8h_source.html">LEDDriver.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="_l_e_d_driver_8cpp_source.html#l00047">buffer_enable()</a>, <a class="el" href="_l_e_d_driver_8cpp_source.html#l00041">flush()</a>, <a class="el" href="_l_e_d_driver_8cpp_source.html#l00026">pwm()</a>, and <a class="el" href="_l_e_d_driver_8cpp_source.html#l00208">PCA995x_SPI::pwm()</a>.</p>
 
 </div>
 </div>
@@ -497,8 +377,6 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8h_source.html#l00068">68</a> of file <a class="el" href="_l_e_d_driver_8h_source.html">LEDDriver.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_l_e_d_driver_8cpp_source.html#l00076">PCA995x::begin()</a>.</p>
-
 </div>
 </div>
 <a id="a6d32dcec6914f6d7d3b46e182eed52c2" name="a6d32dcec6914f6d7d3b46e182eed52c2"></a>
@@ -522,8 +400,6 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8h_source.html#l00067">67</a> of file <a class="el" href="_l_e_d_driver_8h_source.html">LEDDriver.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="_l_e_d_driver_8cpp_source.html#l00041">flush()</a>, <a class="el" href="_l_e_d_driver_8cpp_source.html#l00016">pwm()</a>, and <a class="el" href="_l_e_d_driver_8cpp_source.html#l00203">PCA995x_SPI::pwm()</a>.</p>
 
 </div>
 </div>

@@ -66,6 +66,7 @@ protected:
 	const	uint8_t n_channel;
 	const	uint8_t reg_PWM;
 	const	uint8_t oe_pin;
+private:
 	uint8_t	*bp;
 };
 
