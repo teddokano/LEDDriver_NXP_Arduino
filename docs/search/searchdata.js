@@ -1,11 +1,11 @@
 var indexSectionsWithContent =
 {
-  0: "bfilnpr",
+  0: "0bfilnpr",
   1: "lp",
   2: "bfip",
   3: "n",
   4: "r",
-  5: "l"
+  5: "0"
 };
 
 var indexSectionNames =
