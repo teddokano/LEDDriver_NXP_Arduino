@@ -10,27 +10,10 @@
  */
 
 #include <LEDDriver.h>
-
-/** Advanced abstraction layer for easy LED management
- *  @class  LED
- */
-
-class LED {
-public:
-  LED(LEDDriver* leddp, int ch) {
-    devp = leddp;
-    channel = ch;
-  }
-  float operator=(float v) {
-    devp->pwm(channel, v);
-    return v;
-  }
-private:
-  LEDDriver* devp;
-  int channel;
-};
+#include <LED.h>
 
 PCA9955B ledd;
+
 LED led[] = {
   LED(&ledd, 0), LED(&ledd, 1), LED(&ledd, 2), LED(&ledd, 3),
   LED(&ledd, 4), LED(&ledd, 5), LED(&ledd, 6), LED(&ledd, 7),
