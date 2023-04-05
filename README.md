@@ -167,6 +167,10 @@ Method|Role
 `begin( float current = 0.1, board env = NONE )`	|Initializing device. 1st argument `current` is ratio of output current. 0.0~1.0. 2nd argument `env` is an option: use `LEDDriver::ARDUINO_SHIELD` if the target board is Arduino-shield board
 `pwm( uint8_t ch, float value )`					|Set single channel LED brightness. `value` must be in float: 0.0~1.0
 `pwm( float* values )`								|Set LED brightness for all channels. `values` must be an array of float with length of number of device output channels. Each float values in the array should be 0.0~1.0.
+write_r8( uint8_t reg, uint8_t val )				|Direct register write
+read_r8( uint8_t reg );								|Direct register read
+reg_w( uint8_t reg, uint8_t *vp, int len )			|Direct register sequencial write
+reg_r( uint8_t reg, uint8_t *vp, int len )			|Direct register sequencial read
 
 #### `begin()`
 `begin()` mathod can take two parameters: `current` and `env`. These parameters are option. If those are not give, default values are applied (0.1 and NONE). 
@@ -202,6 +206,14 @@ float v[ ledd_0.n_chanel ] = { 0.2 }; // Prepare an array of float, initialized 
 v[ 7 ] = 0.5;    // Set 0.5 into 7 item in the array
 ledd_0.pwm( v );  // All channels are set to 20% ouptput except channel 7 (50%)
 ```
+
+#### Direct register access
+LED driver registers can be accessed by methods of `write_r8`, `read_r8`, `reg_w` and `reg_r`.  
+`write_r8` and `read_r8` are single 8bit register write/read access methods.  
+`write_r8` takes register index and 8 bit value. `read_r8` takes register index and returns 8bit value. 
+
+`reg_w` and `reg_r` provides sequencial access of registers. For PCA9955B and PCA9956B, set auto-increment bit in register index. 
+
 ### Methods for buffer mode
 
 Method|Role

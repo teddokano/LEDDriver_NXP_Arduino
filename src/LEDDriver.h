@@ -50,18 +50,18 @@ public:
 	 */
 	void pwm( float* values );
 
-	/** Flushing data
+	/** Buffer mode enable/Disble
 	 *
-	 * Write all buffered PWM data into the LED driver
-	 */
-	void flush( void );
-
-	/** Flushing data
-	 *
-	 * Write all buffered PWM data into the LED driver
+	 * @param flag 'true' for enabling
 	 */
 	void buffer_enable( bool flag );
 	
+	/** Flushing data
+	 *
+	 * Send buffered PWM data to the LED driver
+	 */
+	void flush( void );
+
 protected:
 	const	uint8_t n_channel;
 	const	uint8_t reg_PWM;
