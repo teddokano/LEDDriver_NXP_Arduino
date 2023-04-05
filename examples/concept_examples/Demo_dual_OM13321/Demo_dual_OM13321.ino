@@ -15,28 +15,11 @@
  */
 
 #include <LEDDriver.h>
+#include <LED.h>
 #include <MsTimer2.h>
 
-/** Advanced abstraction layer for easy LED management
- *  @class  LED
- */
-
-class LED {
-public:
-  LED(LEDDriver* leddp, int ch) {
-    devp = leddp;
-    channel = ch;
-  }
-  float operator=(float v) {
-    devp->pwm(channel, v);
-    return v;
-  }
-private:
-  LEDDriver* devp;
-  int channel;
-};
-
 PCA9956B ledd[] = { PCA9956B(0x02 >> 1), PCA9956B(0x04 >> 1) };
+
 LED rgb[3][16] = {
   {
     LED(ledd + 0, 0),
