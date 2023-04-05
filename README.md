@@ -1,4 +1,4 @@
-# LEDDriver_NXP_Arduino
+# 0. LEDDriver_NXP_Arduino
 LED driver device operation sample code for [Arduino](https://www.arduino.cc) 
 
 > **Note**
@@ -25,11 +25,11 @@ void setup() {
 ![Boards](https://github.com/teddokano/additional_files/blob/main/LEDDriver_NXP_Arduino/LED-ARD.jpeg)  
 _PCA9955BTW-ARD (left), PCA9957HN-ARD (right) and OM13321 LED driver evaluation boards_
 
-# What is this?
+## 0.1 What is this?
 An Arduino library for I²C LED drivers with sample code.  
 The I²C temperature sensors can measure temoperature and output comparator or interrupt signals by threshold settings. 
 
-# Supported devices
+## 0.2 Supported devices
 Type#|Features|# of channels|additional feature|Interface|Evaluation board
 ---|---|---|---|---|---
 [PCA9955B](https://www.nxp.com/products/power-management/lighting-driver-and-controller-ics/led-drivers/16-channel-fm-plus-ic-bus-57-ma-20-v-constant-current-led-driver:PCA9955BTW)	|Constant current LED driver	|16ch		|with gradation control	|I²C Fast-mode plus (1MHz)			|[PCA9955BTW-ARD LED Driver Arduino® Shield Evaluation Board](https://www.nxp.com/design/development-boards/analog-toolbox/arduino-shields-solutions/pca9955btw-ard-led-driver-arduino-shield-evaluation-board:PCA9955BTW-ARD?tid=vanPCA9955BTW-ARD)
@@ -39,7 +39,7 @@ Type#|Features|# of channels|additional feature|Interface|Evaluation board
 To put PCA9957HN-ARD Arduino-shield evaluation board, use socket-pin extenders to avoid down side connector interfare.  
 ![Boards](https://github.com/teddokano/additional_files/blob/main/LEDDriver_NXP_Arduino/PCA9957_pins.jpeg)
 
-# Code sample
+## 0.3 Code sample
 With `LEDDriver_NXP_Arduino` library, the LEDs can be managed simple API.  
 For PCA9955B and PCA9956B, those operations are quite similar. When the device is changed, just overwrite class name from `PCA9955B` to `PCA9956B`.  
 
@@ -97,7 +97,7 @@ void loop() {
 }
 ```  
 
-# Getting started
+# 1. Getting started
 Use **Library manager** in Arduino IDE for easy install
 - **Find** this library: **Open** the _**Library Manager**_ pane, **Search** this library (type "**PCA99**" in the search field then this library will be shown) and click **INSTALL** button.  
 ![Find the lib](https://github.com/teddokano/additional_files/blob/main/LEDDriver_NXP_Arduino/install.png)
@@ -111,15 +111,15 @@ Use **Library manager** in Arduino IDE for easy install
 - Choose a sample code and try!  
 ![Choosing a sample code](https://github.com/teddokano/additional_files/blob/main/LEDDriver_NXP_Arduino/using_examples.png)
 
-# What's inside?
-## Examples
+# 2. What's inside?
+## 2.1 Examples
 Examples are provided as scketch files.  
-### How to use?
+### 2.1.1 How to use?
 For a quick access to those sketch, **refer to last step** of **"Getting started" section** of this page. 
 
-### List of sample code
+### 2.1.2 List of sample code
 
-#### Basic examples
+#### 2.1.2.1 Basic examples
 Folder|Sketch|Target|Feature
 ---|---|---|---
 PCA9955B/	|0_simple_ch0_PCA9955B						|PCA9955B	|**Simple** sample for just blinking channel 0
@@ -135,7 +135,7 @@ PCA9957/	|1_all_channels_PCA9957						|PCA9957	|Simple operation to blink **all 
 PCA9957/	|2_color_phases_PCA9957						|PCA9957	|Phase independent dimming on color LEDs: **color mixing**
 PCA9957/	|3_direct_register_access_PCA9957			|PCA9957	|**Direct register access** sample. Write/read a register in every 100 mili-second
 
-#### Advanced examples (showing additional features)
+#### 2.1.2.2 Advanced examples (showing additional features)
 Folder|Sketch|Target|Feature
 ---|---|---|---
 concept_examples/	|abstracting_LEDs					|PCA9955B	|For further easy operations for multiple LEDs
@@ -145,21 +145,22 @@ concept_examples/	|Demo_dual_OM13321					|PCA9956B	|Demo: **Two PCA9956B** opera
 concept_examples/	|no_library_operation_sample		|PCA9955B	|Showing a sample of **no-library using** operation
 
 
-## LED driver library
+## 2.2 LED driver library
 `PCA9955B`, `PCA9956B` and `PCA9957` class libraries are included. Those libraries can be used by just making an instance from those class.  
 Those libraries have common methods to get/set device information.
 
-### Constructors
+### 2.2.1 Constructors
 `PCA9955B`, `PCA9956B` and `PCA9957` are classes to make instances. To make those instance, one option can be specified.   
 
 ```cpp
 // defining 3 LED driver instances ('ledd_1' is having option to set non-default I²C target address)
+#include <LEDDriver.h>
 PCA9955B ledd_0;         // making instance of  PCA9955B as 'ledd_0' with default I2C addess (0xBE)
 PCA9956B ledd_1( 0xB0 ); // making instance of  PCA9956B as 'ledd_1' with I2C addess (0xB0)
 PCA9957  ledd_2;         // making instance of  PCA9957  as 'ledd_2'. No I2C address given because its a SPI device
 ```
 
-### Basic methods
+### 2.2.2 Basic methods
 
 `begin()` and `pwm()` are basic methods of LEDDriver.  
 Method|Role
@@ -172,7 +173,7 @@ read_r8( uint8_t reg );								|Direct register read
 reg_w( uint8_t reg, uint8_t *vp, int len )			|Direct register sequencial write
 reg_r( uint8_t reg, uint8_t *vp, int len )			|Direct register sequencial read
 
-#### `begin()`
+#### 2.2.2.1 `begin()`
 `begin()` mathod can take two parameters: `current` and `env`. These parameters are option. If those are not give, default values are applied (0.1 and NONE). 
 As described in **warning** of beggining of this document, the first parameter sets current output. 
 It can be as range of 0.0 ~ 1.0 which means 0% ~ 100%. 
@@ -186,7 +187,7 @@ ledd_0.begin( 1.0 ); //	'ledd_0' is set to 100% current output. Target is non-Ar
 ledd_1.begin();      //	Use default setting. Output current is 10% and target is non-Arduino-Shield board
 ledd_2.begin( 0.5, PCA9955B::ARDUINO_SHIELD ); // Output is 50% and target is non-Arduino-Shield board
 ```
-#### `pwm()`
+#### 2.2.2.2 `pwm()`
 `pwm()` is a method for setting PWM output ratio.  
 
 If the `pwm()` is called with two parameters of `ch` and `value`, it will set the PWM ratio given as `value`. 
@@ -207,14 +208,14 @@ v[ 7 ] = 0.5;    // Set 0.5 into 7 item in the array
 ledd_0.pwm( v );  // All channels are set to 20% ouptput except channel 7 (50%)
 ```
 
-#### Direct register access
+#### 2.2.2.3 Direct register access
 LED driver registers can be accessed by methods of `write_r8`, `read_r8`, `reg_w` and `reg_r`.  
 `write_r8` and `read_r8` are single 8bit register write/read access methods.  
 `write_r8` takes register index and 8 bit value. `read_r8` takes register index and returns 8bit value. 
 
 `reg_w` and `reg_r` provides sequencial access of registers. For PCA9955B and PCA9956B, set auto-increment bit in register index. 
 
-### Methods for buffer mode
+### 2.2.3 Methods for buffer mode
 
 Method|Role
 ---|---
@@ -240,9 +241,9 @@ ledd_0.flush();  // Update LED driver with new values
 
 Example code is available for how the buffer mode can be used. Please refer to code in `examples/concept_examples/buffered_mode`
 
-### LED class
-An `LED` class is defined and used at examples in `examples/concept_examples/` folder.  
-This class provides further abstraction layer for each single LED.  
+## 2.3 LED class
+The `LED` is a tiny class but helps much to manage multiple LEDs.  
+Providing a further abstraction layer for each single LED.  
 
 An LED can be an instance, PWM setting can be done by assignment.  
 If it is defined in array, those LEDs can be indexed independent from LED drivers. 
@@ -251,22 +252,11 @@ To see basic idea for the `LED` class, see `examples/concept_examples/abstractin
 
 ```cpp
 // examples/concept_examples/abstracting_LEDs.ino
-class LED {
-public:
-  LED(LEDDriver* leddp, int ch) {
-    devp = leddp;
-    channel = ch;
-  }
-  float operator=(float v) {
-    devp->pwm(channel, v);
-    return v;
-  }
-private:
-  LEDDriver* devp;
-  int channel;
-};
+#include <LEDDriver.h>
+#include <LED.h>
 
 PCA9955B ledd;
+
 LED led[] = {
   LED(&ledd, 0), LED(&ledd, 1), LED(&ledd, 2), LED(&ledd, 3),
   LED(&ledd, 4), LED(&ledd, 5), LED(&ledd, 6), LED(&ledd, 7),
@@ -300,10 +290,10 @@ void loop() {
 }
 ```
 
-# Document
+# 3. Document
 For details of the library, please find descriptions in [this document](https://teddokano.github.io/LEDDriver_NXP_Arduino/annotated.html).
 
-# References
+# 4. References
 
 ## Related libraries
 Library|Feature|Target devices|Required library
