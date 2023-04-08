@@ -27,7 +27,7 @@ _PCA9955BTW-ARD (left), PCA9957HN-ARD (right) and OM13321 LED driver evaluation 
 
 ## 0.1 What is this?
 An Arduino library for I²C LED drivers with sample code.  
-The I²C temperature sensors can measure temoperature and output comparator or interrupt signals by threshold settings. 
+APIs to control PWM ratio on each output channel. 
 
 ## 0.2 Supported devices
 Type#|Features|# of channels|additional feature|Interface|Evaluation board
