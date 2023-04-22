@@ -14,7 +14,7 @@
  *  Released under the MIT license License
  */
 
-#include <LEDDriver.h>
+#include <PCA9955B.h>
 #include <LED.h>
 #include <MsTimer2.h>
 

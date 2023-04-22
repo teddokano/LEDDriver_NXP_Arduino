@@ -17,7 +17,7 @@
  *  Released under the MIT license License
  */
 
-#include <LEDDriver.h>
+#include <PCA9955B.h>
 #include <LED.h>
 
 PCA9955B ledd;

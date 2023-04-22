@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">LEDDriver_NXP_Arduino<span id="projectnumber">&#160;0.2.3</span>
+   <div id="projectname">LEDDriver_NXP_Arduino<span id="projectnumber">&#160;0.3.0</span>
    </div>
    <div id="projectbrief">LED driver device operation sample code for Arduino</div>
   </td>
@@ -100,7 +100,7 @@ $(function() {
 <h1><a class="anchor" id="autotoc_md1"></a>
 0.1 What is this?</h1>
 <p>An Arduino library for I²C <a class="el" href="class_l_e_d.html">LED</a> drivers with sample code. <br  />
- The I²C temperature sensors can measure temoperature and output comparator or interrupt signals by threshold settings.</p>
+ APIs to control PWM ratio on each output channel.</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
 0.2 Supported devices</h1>
 <table class="markdownTable">
@@ -385,9 +385,16 @@ $(function() {
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Library   </th><th class="markdownTableHeadNone">Feature   </th><th class="markdownTableHeadNone">Target devices   </th><th class="markdownTableHeadNone">Required library    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a href="https://github.com/teddokano/LEDDriver_NXP_Arduino">LEDDriver_NXP_Arduino</a>   </td><td class="markdownTableBodyNone"><a class="el" href="class_l_e_d.html">LED</a> driver libraries   </td><td class="markdownTableBodyNone"><a class="el" href="class_p_c_a9955_b.html">PCA9955B</a>, <a class="el" href="class_p_c_a9956_b.html">PCA9956B</a>, <a class="el" href="class_p_c_a9957.html">PCA9957</a>   </td><td class="markdownTableBodyNone"><a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a>   </td></tr>
+<td class="markdownTableBodyNone"><a href="https://github.com/teddokano/GPIO_NXP_Arduino">GPIO_NXP_Arduino</a>   </td><td class="markdownTableBodyNone"><a class="el" href="class_l_e_d.html">LED</a> driver libraries   </td><td class="markdownTableBodyNone">PCAL6408A, PCAL6416A, PCAL6524, PCAL6534   </td><td class="markdownTableBodyNone"><a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a href="https://github.com/teddokano/LEDDriver_NXP_Arduino">LEDDriver_NXP_Arduino</a>   </td><td class="markdownTableBodyNone"><a class="el" href="class_l_e_d.html">LED</a> driver libraries   </td><td class="markdownTableBodyNone"><a class="el" href="class_p_c_a9955_b.html">PCA9955B</a>, <a class="el" href="class_p_c_a9956_b.html">PCA9956B</a>, <a class="el" href="class_p_c_a9957.html">PCA9957</a>   </td><td class="markdownTableBodyNone"><a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a href="https://github.com/teddokano/RTC_NXP_Arduino">RTC_NXP_Arduino</a>   </td><td class="markdownTableBodyNone">RTC driver libraries   </td><td class="markdownTableBodyNone">PCF2131, PCF85063A   </td><td class="markdownTableBodyNone"><a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a href="https://github.com/teddokano/TempSensor_NXP_Arduino">TempSensor_NXP_Arduino</a>   </td><td class="markdownTableBodyNone">Temperature sensor libraries   </td><td class="markdownTableBodyNone">LM75B, PCT2075, P3T1085   </td><td class="markdownTableBodyNone"><a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a>   </td><td class="markdownTableBodyNone">Base library for I²C operations   </td><td class="markdownTableBodyNone">none (can be applied as base class for all I²C targets)   </td><td class="markdownTableBodyNone">&mdash;   </td></tr>
 </table>
-<p><a href="https://github.com/teddokano/RTC_NXP_Arduino">RTC_NXP_Arduino</a> |RTC driver libraries |PCF2131, PCF85063A |<a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a><a href="https://github.com/teddokano/RTC_NXP_Arduino">RTC_NXP_Arduino</a> |RTC libraries |PCA9955B, <a class="el" href="class_p_c_a9956_b.html">PCA9956B</a>, <a class="el" href="class_p_c_a9957.html">PCA9957</a> |<a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a> <a href="https://github.com/teddokano/TempSensor_NXP_Arduino">TempSensor_NXP_Arduino</a> |Temperature sensor libraries |LM75B, PCT2075, P3T1085 |<a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a> <a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a> |Base library for I²C operations |none (can be applied as base class for all I²C targets)|&mdash; </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

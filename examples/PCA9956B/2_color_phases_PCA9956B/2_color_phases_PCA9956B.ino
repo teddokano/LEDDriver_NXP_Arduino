@@ -11,7 +11,7 @@
  *    https://www.nxp.com/products/power-management/lighting-driver-and-controller-ics/led-drivers/24-channel-fm-plus-ic-bus-57-ma-20-v-constant-current-led-driver:PCA9956BTW
  */
 
-#include <LEDDriver.h>
+#include <PCA9956B.h>
 
 PCA9956B ledd;
 

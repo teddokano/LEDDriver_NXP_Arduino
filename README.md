@@ -27,14 +27,16 @@ _PCA9955BTW-ARD (left), PCA9957HN-ARD (right) and OM13321 LED driver evaluation 
 
 ## 0.1 What is this?
 An Arduino library for I²C LED drivers with sample code.  
-APIs to control PWM ratio on each output channel. 
+APIs to control PWM ratio on each output channel.  
+Include device name header file (`PCA9955B.h`, `PCA9956B.h`, and/or `PCA9957.h`) to use those class libraries. 
 
 ## 0.2 Supported devices
-Type#|Features|# of channels|additional feature|Interface|Evaluation board
----|---|---|---|---|---
-[PCA9955B](https://www.nxp.com/products/power-management/lighting-driver-and-controller-ics/led-drivers/16-channel-fm-plus-ic-bus-57-ma-20-v-constant-current-led-driver:PCA9955BTW)	|Constant current LED driver	|16ch		|with gradation control	|I²C Fast-mode plus (1MHz)			|[PCA9955BTW-ARD LED Driver Arduino® Shield Evaluation Board](https://www.nxp.com/design/development-boards/analog-toolbox/arduino-shields-solutions/pca9955btw-ard-led-driver-arduino-shield-evaluation-board:PCA9955BTW-ARD)
-[PCA9956B](https://www.nxp.com/products/power-management/lighting-driver-and-controller-ics/led-drivers/24-channel-fm-plus-ic-bus-57-ma-20-v-constant-current-led-driver:PCA9956BTW)		|Constant current LED driver	|24ch		|---					|I²C Fast-mode plus (1MHz)			|[OM13321](https://www.nxp.com/docs/en/user-guide/UM10709.pdf)
-[PCA9957](https://www.nxp.com/products/power-management/lighting-driver-and-controller-ics/led-drivers/24-channel-spi-serial-bus-32-ma-5-5-v-constant-current-led-driver:PCA9957)		|Constant current LED driver	|24ch		|with gradation control	|SPI								|[PCA9957HN-ARD LED Driver Arduino® Shield Evaluation Board](https://www.nxp.com/design/development-boards/analog-toolbox/arduino-shields-solutions/pca9957hn-ard-led-driver-arduino-shield-evaluation-board:PCA9957HN-ARD)
+
+Type#|Header file|Features|# of channels|additional feature|Interface|Evaluation board
+---|---|---|---|---|---|---
+[PCA9955B](https://www.nxp.com/products/power-management/lighting-driver-and-controller-ics/led-drivers/16-channel-fm-plus-ic-bus-57-ma-20-v-constant-current-led-driver:PCA9955BTW)	|`PCA9955B.h`	|Constant current LED driver	|16ch		|with gradation control	|I²C Fast-mode plus (1MHz)			|[PCA9955BTW-ARD LED Driver Arduino® Shield Evaluation Board](https://www.nxp.com/design/development-boards/analog-toolbox/arduino-shields-solutions/pca9955btw-ard-led-driver-arduino-shield-evaluation-board:PCA9955BTW-ARD)
+[PCA9956B](https://www.nxp.com/products/power-management/lighting-driver-and-controller-ics/led-drivers/24-channel-fm-plus-ic-bus-57-ma-20-v-constant-current-led-driver:PCA9956BTW)	|`PCA9956B.h`	|Constant current LED driver	|24ch		|---					|I²C Fast-mode plus (1MHz)			|[OM13321](https://www.nxp.com/docs/en/user-guide/UM10709.pdf)
+[PCA9957](https://www.nxp.com/products/power-management/lighting-driver-and-controller-ics/led-drivers/24-channel-spi-serial-bus-32-ma-5-5-v-constant-current-led-driver:PCA9957)		|`PCA9957.h`	|Constant current LED driver	|24ch		|with gradation control	|SPI								|[PCA9957HN-ARD LED Driver Arduino® Shield Evaluation Board](https://www.nxp.com/design/development-boards/analog-toolbox/arduino-shields-solutions/pca9957hn-ard-led-driver-arduino-shield-evaluation-board:PCA9957HN-ARD)
 
 To put PCA9957HN-ARD Arduino-shield evaluation board, use socket-pin extenders to avoid down side connector interfare.  
 ![Boards](https://github.com/teddokano/additional_files/blob/main/LEDDriver_NXP_Arduino/PCA9957_pins.jpeg)
@@ -46,7 +48,7 @@ For PCA9955B and PCA9956B, those operations are quite similar. When the device i
 ```cpp
 // Very simple sample to use the 'PCA9955BTW-ARD LED Driver Arduino® Shield Evaluation Board'
 
-#include <LEDDriver.h>
+#include <PCA9955B.h>
 
 PCA9955B ledd;
 
@@ -74,7 +76,7 @@ For PCA9957, it uses an SPI as serial interface. To use the SPI, need to have `S
 ```cpp
 // Very simple sample to use the 'PCA9957HN-ARD LED Driver Arduino® Shield Evaluation Board'
 
-#include <LEDDriver.h>
+#include <PCA9957.h>
 
 PCA9957 ledd;
 
@@ -154,7 +156,9 @@ Those libraries have common methods to get/set device information.
 
 ```cpp
 // defining 3 LED driver instances ('ledd_1' is having option to set non-default I²C target address)
-#include <LEDDriver.h>
+#include <PCA9955B.h>
+#include <PCA9956B.h>
+#include <PCA9957.h>
 PCA9955B ledd_0;         // making instance of  PCA9955B as 'ledd_0' with default I2C addess (0xBE)
 PCA9956B ledd_1( 0xB0 ); // making instance of  PCA9956B as 'ledd_1' with I2C addess (0xB0)
 PCA9957  ledd_2;         // making instance of  PCA9957  as 'ledd_2'. No I2C address given because its a SPI device
@@ -252,7 +256,7 @@ To see basic idea for the `LED` class, see `examples/concept_examples/abstractin
 
 ```cpp
 // examples/concept_examples/abstracting_LEDs.ino
-#include <LEDDriver.h>
+#include <PCA9955B.h>
 #include <LED.h>
 
 PCA9955B ledd;

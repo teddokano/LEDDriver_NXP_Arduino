@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">LEDDriver_NXP_Arduino<span id="projectnumber">&#160;0.2.3</span>
+   <div id="projectname">LEDDriver_NXP_Arduino<span id="projectnumber">&#160;0.3.0</span>
    </div>
    <div id="projectbrief">LED driver device operation sample code for Arduino</div>
   </td>
@@ -292,97 +292,10 @@ $(function() {
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    reg_w( reg_PWM, v, n_channel );</div>
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>}</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span><span class="comment">/* PCA9955B class ******************************************/</span></div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno"><a class="line" href="class_p_c_a9955_b.html#a300f7f1fd3ee6d307dbabdd47e9c5a2a">  225</a></span><a class="code hl_function" href="class_p_c_a9955_b.html#a300f7f1fd3ee6d307dbabdd47e9c5a2a">PCA9955B::PCA9955B</a>( uint8_t i2c_address ) : </div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <a class="code hl_class" href="class_p_c_a995x___i2_c.html">PCA995x_I2C</a>( i2c_address, 16, <a class="code hl_class" href="class_p_c_a9955_b.html">PCA9955B</a>::PWM0, <a class="code hl_class" href="class_p_c_a9955_b.html">PCA9955B</a>::IREF0, <a class="code hl_class" href="class_p_c_a9955_b.html">PCA9955B</a>::IREFALL )</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>{</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>}</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>PCA9955B::~PCA9955B()</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>{</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>}</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno"><a class="line" href="class_p_c_a9955_b.html#acfa3ebaf9f063a6e991ab5571b344f25">  234</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9955_b.html#acfa3ebaf9f063a6e991ab5571b344f25">PCA9955B::init</a>( <span class="keywordtype">float</span> current )</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>{</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    uint8_t <a class="code hl_function" href="class_p_c_a9955_b.html#acfa3ebaf9f063a6e991ab5571b344f25">init</a>[]  = { 0xAA, 0xAA, 0xAA, 0xAA };</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    reg_w( 0x80 | LEDOUT0, <a class="code hl_function" href="class_p_c_a9955_b.html#acfa3ebaf9f063a6e991ab5571b344f25">init</a>, <span class="keyword">sizeof</span>( <a class="code hl_function" href="class_p_c_a9955_b.html#acfa3ebaf9f063a6e991ab5571b344f25">init</a> ) );</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    write_r8( PWMALL, 0x00 );</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    </div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <a class="code hl_function" href="class_p_c_a995x.html#a0751a4816ffaae770fb50830aea51ca9">irefall</a>( (uint8_t)(current * 255.0) );</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>}</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="comment">/* PCA9956B class ******************************************/</span></div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno"><a class="line" href="class_p_c_a9956_b.html#ae86dd76865f01c9c40df33c01684ccdd">  246</a></span><a class="code hl_function" href="class_p_c_a9956_b.html#ae86dd76865f01c9c40df33c01684ccdd">PCA9956B::PCA9956B</a>( uint8_t i2c_address ) : </div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <a class="code hl_class" href="class_p_c_a995x___i2_c.html">PCA995x_I2C</a>( i2c_address, 24, <a class="code hl_class" href="class_p_c_a9956_b.html">PCA9956B</a>::PWM0, <a class="code hl_class" href="class_p_c_a9956_b.html">PCA9956B</a>::IREF0, <a class="code hl_class" href="class_p_c_a9956_b.html">PCA9956B</a>::IREFALL )</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>{</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>}</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>PCA9956B::~PCA9956B()</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>{</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>}</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno"><a class="line" href="class_p_c_a9956_b.html#a9f32fc1be3aad345a43fb1692417f8ab">  255</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9956_b.html#a9f32fc1be3aad345a43fb1692417f8ab">PCA9956B::init</a>( <span class="keywordtype">float</span> current )</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>{</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    uint8_t <a class="code hl_function" href="class_p_c_a9956_b.html#a9f32fc1be3aad345a43fb1692417f8ab">init</a>[]  = { 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA };</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    reg_w( 0x80 | LEDOUT0, <a class="code hl_function" href="class_p_c_a9956_b.html#a9f32fc1be3aad345a43fb1692417f8ab">init</a>, <span class="keyword">sizeof</span>( <a class="code hl_function" href="class_p_c_a9956_b.html#a9f32fc1be3aad345a43fb1692417f8ab">init</a> ) );</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    write_r8( PWMALL, 0x00 );</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    </div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    <a class="code hl_function" href="class_p_c_a995x.html#a0751a4816ffaae770fb50830aea51ca9">irefall</a>( (uint8_t)(current * 255.0) );</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>}</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span><span class="comment">/* PCA9957 class ******************************************/</span></div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno"><a class="line" href="class_p_c_a9957.html#af0f0312d6d9741210168b0f9bb35872c">  267</a></span><a class="code hl_function" href="class_p_c_a9957.html#af0f0312d6d9741210168b0f9bb35872c">PCA9957::PCA9957</a>() : </div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    <a class="code hl_class" href="class_p_c_a995x___s_p_i.html">PCA995x_SPI</a>( 24, <a class="code hl_class" href="class_p_c_a9957.html">PCA9957</a>::PWM0, <a class="code hl_class" href="class_p_c_a9957.html">PCA9957</a>::IREF0, <a class="code hl_class" href="class_p_c_a9957.html">PCA9957</a>::IREFALL )</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>{</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>}</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>PCA9957::~PCA9957()</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>{</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>}</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno"><a class="line" href="class_p_c_a9957.html#a604a9093050fc99359623550e74fb591">  276</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9957.html#a604a9093050fc99359623550e74fb591">PCA9957::init</a>( <span class="keywordtype">float</span> current )</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>{</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    uint8_t <a class="code hl_function" href="class_p_c_a9957.html#a604a9093050fc99359623550e74fb591">init</a>[]  = { 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA };</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span> </div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    digitalWrite( SS, HIGH );</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span> </div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    write_r8( MODE2,  0x18 );</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    write_r8( PWMALL, 0x00 );</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    reg_w( LEDOUT0, <a class="code hl_function" href="class_p_c_a9957.html#a604a9093050fc99359623550e74fb591">init</a>, <span class="keyword">sizeof</span>( <a class="code hl_function" href="class_p_c_a9957.html#a604a9093050fc99359623550e74fb591">init</a> ) );</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    </div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    <a class="code hl_function" href="class_p_c_a995x___s_p_i.html#a191575985864fb3e5cfa1c633a75bf80">irefall</a>( (uint8_t)(current * 255.0) );</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    </div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>}</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span> </div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
 <div class="ttc" id="aclass_l_e_d_driver_html"><div class="ttname"><a href="class_l_e_d_driver.html">LEDDriver</a></div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8h_source.html#l00026">LEDDriver.h:27</a></div></div>
 <div class="ttc" id="aclass_l_e_d_driver_html_a049eb6f01d731ec4c2b01c6cc2a7decd"><div class="ttname"><a href="class_l_e_d_driver.html#a049eb6f01d731ec4c2b01c6cc2a7decd">LEDDriver::pwm</a></div><div class="ttdeci">void pwm(uint8_t ch, float value)</div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8cpp_source.html#l00016">LEDDriver.cpp:16</a></div></div>
 <div class="ttc" id="aclass_l_e_d_driver_html_a6c0ac4f1112d8c07446483f03c0c0917"><div class="ttname"><a href="class_l_e_d_driver.html#a6c0ac4f1112d8c07446483f03c0c0917">LEDDriver::buffer_enable</a></div><div class="ttdeci">void buffer_enable(bool flag)</div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8cpp_source.html#l00047">LEDDriver.cpp:47</a></div></div>
 <div class="ttc" id="aclass_l_e_d_driver_html_ae23d672fae6284f1c0d730f49b5e2165"><div class="ttname"><a href="class_l_e_d_driver.html#ae23d672fae6284f1c0d730f49b5e2165">LEDDriver::flush</a></div><div class="ttdeci">void flush(void)</div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8cpp_source.html#l00041">LEDDriver.cpp:41</a></div></div>
-<div class="ttc" id="aclass_p_c_a9955_b_html"><div class="ttname"><a href="class_p_c_a9955_b.html">PCA9955B</a></div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8h_source.html#l00153">LEDDriver.h:154</a></div></div>
-<div class="ttc" id="aclass_p_c_a9955_b_html_a300f7f1fd3ee6d307dbabdd47e9c5a2a"><div class="ttname"><a href="class_p_c_a9955_b.html#a300f7f1fd3ee6d307dbabdd47e9c5a2a">PCA9955B::PCA9955B</a></div><div class="ttdeci">PCA9955B(uint8_t i2c_address=(0xBC &gt; &gt; 1))</div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8cpp_source.html#l00225">LEDDriver.cpp:225</a></div></div>
-<div class="ttc" id="aclass_p_c_a9955_b_html_acfa3ebaf9f063a6e991ab5571b344f25"><div class="ttname"><a href="class_p_c_a9955_b.html#acfa3ebaf9f063a6e991ab5571b344f25">PCA9955B::init</a></div><div class="ttdeci">void init(float current)</div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8cpp_source.html#l00234">LEDDriver.cpp:234</a></div></div>
-<div class="ttc" id="aclass_p_c_a9956_b_html"><div class="ttname"><a href="class_p_c_a9956_b.html">PCA9956B</a></div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8h_source.html#l00195">LEDDriver.h:196</a></div></div>
-<div class="ttc" id="aclass_p_c_a9956_b_html_a9f32fc1be3aad345a43fb1692417f8ab"><div class="ttname"><a href="class_p_c_a9956_b.html#a9f32fc1be3aad345a43fb1692417f8ab">PCA9956B::init</a></div><div class="ttdeci">void init(float current)</div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8cpp_source.html#l00255">LEDDriver.cpp:255</a></div></div>
-<div class="ttc" id="aclass_p_c_a9956_b_html_ae86dd76865f01c9c40df33c01684ccdd"><div class="ttname"><a href="class_p_c_a9956_b.html#ae86dd76865f01c9c40df33c01684ccdd">PCA9956B::PCA9956B</a></div><div class="ttdeci">PCA9956B(uint8_t i2c_address=(0x02 &gt; &gt; 1))</div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8cpp_source.html#l00246">LEDDriver.cpp:246</a></div></div>
-<div class="ttc" id="aclass_p_c_a9957_html"><div class="ttname"><a href="class_p_c_a9957.html">PCA9957</a></div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8h_source.html#l00233">LEDDriver.h:234</a></div></div>
-<div class="ttc" id="aclass_p_c_a9957_html_a604a9093050fc99359623550e74fb591"><div class="ttname"><a href="class_p_c_a9957.html#a604a9093050fc99359623550e74fb591">PCA9957::init</a></div><div class="ttdeci">void init(float current)</div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8cpp_source.html#l00276">LEDDriver.cpp:276</a></div></div>
-<div class="ttc" id="aclass_p_c_a9957_html_af0f0312d6d9741210168b0f9bb35872c"><div class="ttname"><a href="class_p_c_a9957.html#af0f0312d6d9741210168b0f9bb35872c">PCA9957::PCA9957</a></div><div class="ttdeci">PCA9957()</div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8cpp_source.html#l00267">LEDDriver.cpp:267</a></div></div>
-<div class="ttc" id="aclass_p_c_a995x___i2_c_html"><div class="ttname"><a href="class_p_c_a995x___i2_c.html">PCA995x_I2C</a></div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8h_source.html#l00104">LEDDriver.h:105</a></div></div>
-<div class="ttc" id="aclass_p_c_a995x___s_p_i_html"><div class="ttname"><a href="class_p_c_a995x___s_p_i.html">PCA995x_SPI</a></div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8h_source.html#l00116">LEDDriver.h:117</a></div></div>
 <div class="ttc" id="aclass_p_c_a995x___s_p_i_html_a191575985864fb3e5cfa1c633a75bf80"><div class="ttname"><a href="class_p_c_a995x___s_p_i.html#a191575985864fb3e5cfa1c633a75bf80">PCA995x_SPI::irefall</a></div><div class="ttdeci">void irefall(uint8_t iref)</div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8cpp_source.html#l00198">LEDDriver.cpp:198</a></div></div>
 <div class="ttc" id="aclass_p_c_a995x_html"><div class="ttname"><a href="class_p_c_a995x.html">PCA995x</a></div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8h_source.html#l00082">LEDDriver.h:83</a></div></div>
 <div class="ttc" id="aclass_p_c_a995x_html_a0751a4816ffaae770fb50830aea51ca9"><div class="ttname"><a href="class_p_c_a995x.html#a0751a4816ffaae770fb50830aea51ca9">PCA995x::irefall</a></div><div class="ttdeci">void irefall(uint8_t iref)</div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8cpp_source.html#l00088">LEDDriver.cpp:88</a></div></div>

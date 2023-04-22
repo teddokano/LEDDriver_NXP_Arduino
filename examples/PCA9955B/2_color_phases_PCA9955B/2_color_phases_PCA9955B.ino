@@ -11,7 +11,7 @@
  *    https://www.nxp.com/products/power-management/lighting-driver-and-controller-ics/led-drivers/16-channel-fm-plus-ic-bus-57-ma-20-v-constant-current-led-driver:PCA9955BTW
  */
 
-#include <LEDDriver.h>
+#include <PCA9955B.h>
 
 #define COLOR_LED_ONLY
 

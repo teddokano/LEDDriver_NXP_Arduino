@@ -11,7 +11,7 @@
  *    https://www.nxp.com/products/power-management/lighting-driver-and-controller-ics/led-drivers/24-channel-spi-serial-bus-32-ma-5-5-v-constant-current-led-driver:PCA9957
  */
 
-#include <LEDDriver.h>
+#include <PCA9957.h>
 
 PCA9957 ledd;
 
