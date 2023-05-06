@@ -128,6 +128,8 @@ PCA9955B/	|0_simple_ch0_PCA9955B						|PCA9955B	|**Simple** sample for just blin
 PCA9955B/	|1_all_channels_PCA9955B					|PCA9955B	|Simple operation to blink **all channels in order**
 PCA9955B/	|2_color_phases_PCA9955B					|PCA9955B	|Phase independent dimming on color LEDs: **color mixing**
 PCA9955B/	|3_direct_register_access_PCA9955B			|PCA9955B	|**Direct register access** sample. Write/read a register in every 100 mili-second
+PCA9955B/	|4_gradation_control_simple_PCA9955B		|PCA9955B	|**Gradation control** sample. Red and blue LEDs blinks alternately, softly
+PCA9955B/	|5_gradation_control_max_groups_PCA9955B	|PCA9955B	|**Gradation control** sample. All LEDs operated with 4 groups of gradation control
 PCA9956B/	|0_simple_ch0_PCA9956B						|PCA9956B	|**Simple** sample for just blinking channel 0
 PCA9956B/	|1_all_channels_PCA9956B					|PCA9956B	|Simple operation to blink **all channels in order**
 PCA9956B/	|2_color_phases_PCA9956B					|PCA9956B	|Phase independent dimming on color LEDs: **color mixing**
@@ -136,6 +138,8 @@ PCA9957/	|0_simple_ch0_PCA9957						|PCA9957	|**Simple** sample for just blinkin
 PCA9957/	|1_all_channels_PCA9957						|PCA9957	|Simple operation to blink **all channels in order**
 PCA9957/	|2_color_phases_PCA9957						|PCA9957	|Phase independent dimming on color LEDs: **color mixing**
 PCA9957/	|3_direct_register_access_PCA9957			|PCA9957	|**Direct register access** sample. Write/read a register in every 100 mili-second
+PCA9957/	|4_gradation_control_simple_PCA9957			|PCA9957	|**Gradation control** sample. Red and blue LEDs blinks alternately, softly
+PCA9957/	|5_gradation_control_max_groups_PCA9957		|PCA9957	|**Gradation control** sample. All LEDs operated with 6 groups of gradation control
 
 #### 2.1.2.2 Advanced examples (showing additional features)
 Folder|Sketch|Target|Feature
@@ -293,6 +297,37 @@ void loop() {
   delay(100);
 }
 ```
+
+## 2.4 GradationControl class
+The `GradationControl` can be used for PCA9955B and PCA9957. Those LED devices support the gradation control feature. 
+The PCA9955B can control 4 groups of gradation control and the PCA9957 can control 6 groups.  
+
+The `GradationControl` class makes a group of the gradation control.  
+Once the instance is made, assign channels and set its blink behavior. Don't forget set PWM output for the channels before start. 
+Because the gradation control operates the LED by current. So if the PWM output is 0%, LED will not truned ON.  
+
+```cpp
+#include <PCA9955B.h>
+#include <GradationControl.h>
+
+PCA9955B ledd;
+
+void setup() {
+  Wire.begin();
+  ledd.begin(1.0, PCA9955B::ARDUINO_SHIELD);
+
+  GradationControl group = GradationControl(&ledd, 0); //  Gradation group 0
+  group.add_channel(7);   //  Assign channel 7 to group 0
+  ledd.pwm(7, 1.0);       //  Set PWM output
+
+  group.set_gradation(1.0, 1.0);  //  Set peak current to 100% and ramp-time to 1.0 second
+  group.start();                  //  Start group 0
+}
+
+void loop() {
+  //  do nothing from MCU
+}
+``` 
 
 # 3. Document
 For details of the library, please find descriptions in [this document](https://teddokano.github.io/LEDDriver_NXP_Arduino/annotated.html).

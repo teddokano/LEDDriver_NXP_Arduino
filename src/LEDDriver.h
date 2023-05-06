@@ -1,6 +1,5 @@
 /** LEDDriver operation library for Arduino
  *
- *  @class  LEDDriver
  *  @author Tedd OKANO
  *
  *  Released under the MIT license License
