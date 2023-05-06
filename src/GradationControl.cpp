@@ -16,9 +16,9 @@ float GradationControl::set_gradation( float max_iref, float time, bool up, bool
 	int		iref;
 	float	step_duration;
 	float	cycle_time;
-	int		cycle_time_i;
-	int		multi_fctr;
-	int		iref_inc;
+	int		cycle_time_i	= 0;
+	int		multi_fctr		= 1;
+	int		iref_inc		= 1;
 	int		on_i;
 	int		off_i;
 	float	ramp_time;
@@ -45,8 +45,6 @@ float GradationControl::set_gradation( float max_iref, float time, bool up, bool
 		
 		if ( multi_fctr == 1 )
 			iref_inc	= (int)( iref / (time / cycle_time) );
-		else
-			iref_inc	= 1;
 	}
 	else {
 		cycle_time	= 0;
@@ -87,13 +85,15 @@ float GradationControl::set_gradation( float max_iref, float time, bool up, bool
 	
 	devp->reg_access( devp->arp[ SETTING ] + group * 4, reg, sizeof( reg ) );
 	
-	ramp_time	= ((multi_fctr * cycle_time ) * (iref / iref_inc)) / 1000;
+	ramp_time	= ((multi_fctr * cycle_time) * (iref / iref_inc)) / 1000;
 	
 	cycle_time	 = on + off;
 	cycle_time	+= up   ? ramp_time : 0;
 	cycle_time	+= down ? ramp_time : 0;
 
-	return cycle_time;
+	cycle	= cycle_time;
+	
+	return cycle;
 }
 
 void GradationControl::gradation_channel_enable( uint32_t bitmap )
@@ -134,6 +134,35 @@ void GradationControl::gradation_group_assign( uint32_t bitmap )
 	devp->reg_access( devp->arp[ GROUP ], reg, sizeof( reg ) );
 }
 
+void GradationControl::add_channel( uint8_t ch )
+{
+	const int	grp_shift	= (devp->arp[ N_GROUP ] == 4) ? 2 : 4;
+	uint8_t		bits		= (grp_shift == 2) ? 0x3 : 0x0F;
+	uint8_t		v;
+	int			r_index;
+	int			s_index;
+	
+	
+	r_index	= ch / (8 / grp_shift);
+	s_index	= (ch * grp_shift) % 8;
+
+	v	= devp->reg_access( devp->arp[ GROUP ] + r_index );
+	
+	v	 = ~(bits << s_index) & v;
+	v	|= group << s_index;
+
+	devp->reg_access( devp->arp[ GROUP ] + r_index, v );
+	
+	const int	n_reg	= ch / 8;
+	
+	v	= devp->reg_access( devp->arp[ MODE ] + n_reg );
+	
+	v	|= (uint8_t)(0x1 << (ch % 8));
+
+	devp->reg_access( devp->arp[ MODE ] + n_reg, v );
+}
+
+
 void GradationControl::control( int ctrl )
 {
 	int			r_index;
@@ -141,24 +170,14 @@ void GradationControl::control( int ctrl )
 	uint8_t		reg;
 	
 	r_index	= group / 4;
-	s_index	= (group * 2) % 8;
+	s_index	= (group * 2) % 8 + (r_index ? 4 : 0);
 	
 	
 	reg	 = devp->reg_access( devp->arp[ CNTL ] + r_index );
-	Serial.println(reg,HEX);
 	reg	&= ~(0x03 << s_index);
 	reg	|= ctrl << s_index;
 
 	devp->reg_access( devp->arp[ CNTL ] + r_index, reg );
-
-	Serial.println("GradationControl::control");
-	Serial.println(group);
-	Serial.println(r_index);
-	Serial.println(s_index);
-	Serial.println(ctrl);
-	Serial.println(devp->arp[ CNTL ] + r_index, HEX);
-	Serial.println(reg,HEX);
-
 }
 void GradationControl::start( bool continuous )
 {
