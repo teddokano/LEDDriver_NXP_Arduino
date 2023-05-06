@@ -15,6 +15,16 @@
 #include <I2C_device.h>
 #include <SPI.h>
 
+enum access_word : uint8_t
+{
+	SETTING,
+	MODE,
+	GROUP,
+	CNTL,
+	N_GROUP,
+	NUM_access_word, 
+};
+
 /** LEDDriver class
  *	
  *  @class LEDDriver
@@ -35,6 +45,8 @@ public:
 	virtual ~LEDDriver();
 	virtual void reg_access( uint8_t reg, uint8_t val  )	= 0;
 	virtual void reg_access( uint8_t reg, uint8_t *vp, int len )	= 0;
+	virtual uint8_t reg_access( uint8_t reg )	= 0;
+	virtual void reg_access_r( uint8_t reg, uint8_t *vp, int len )	= 0;
 
 	/** Set PWM value for a channel
 	 *
@@ -62,8 +74,9 @@ public:
 	 */
 	void flush( void );
 
-protected:
 	const	uint8_t n_channel;
+
+protected:
 	const	uint8_t reg_PWM;
 	const	uint8_t oe_pin;
 private:
@@ -82,7 +95,7 @@ private:
 class PCA995x : public LEDDriver
 {
 public:
-	PCA995x( uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r, uint8_t oe = 8 );
+	PCA995x( const uint8_t n_ch, const uint8_t PWM_r, const uint8_t IREF_r, const uint8_t IREFALL_r, const uint8_t* ar, const uint8_t oe = 8 );
 	virtual ~PCA995x();
 	
 	virtual void begin( float current =  0.1, board env = NONE, bool buffered = false );
@@ -97,18 +110,22 @@ public:
 protected:
 	const uint8_t reg_IREF;
 	const uint8_t reg_IREFALL;
-};
 
+public:
+	const uint8_t*	arp;
+};
 
 
 class PCA995x_I2C : public PCA995x, public I2C_device
 {
 public:
-	PCA995x_I2C( uint8_t i2c_address, uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r, uint8_t oe = 8 );
+	PCA995x_I2C( const uint8_t i2c_address, const uint8_t n_ch, const uint8_t PWM_r, const uint8_t IREF_r, const uint8_t IREFALL_r, const uint8_t* ar, const uint8_t oe = 8);
 	virtual ~PCA995x_I2C();
 
 	void reg_access( uint8_t reg, uint8_t val  );
 	void reg_access( uint8_t reg, uint8_t *vp, int len );
+	uint8_t reg_access( uint8_t reg );
+	void reg_access_r( uint8_t reg, uint8_t *vp, int len );
 };
 
 
@@ -116,13 +133,16 @@ public:
 class PCA995x_SPI : public PCA995x
 {
 public:
-	PCA995x_SPI( uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r, uint8_t oe = 9 );
+	PCA995x_SPI( const uint8_t n_ch, const uint8_t PWM_r, const uint8_t IREF_r, const uint8_t IREFALL_r, const uint8_t* ar, const uint8_t oe = 9 );
 	virtual ~PCA995x_SPI();
 
 	void txrx( uint8_t *data, int size );
 
 	void reg_access( uint8_t reg, uint8_t val );
 	void reg_access( uint8_t reg, uint8_t *vp, int len );
+	uint8_t reg_access( uint8_t reg );
+	void reg_access_r( uint8_t reg, uint8_t *vp, int len );
+
 	void reg_w( uint8_t reg, uint8_t val );
 	void reg_w( uint8_t reg, uint8_t *vp, int len );
 	uint8_t reg_r( uint8_t reg );
@@ -139,7 +159,6 @@ public:
 	void pwm( uint8_t ch, float value );
 	void pwm( float* values );
 };
-
 
 
 /** PCA9955B class
@@ -190,6 +209,17 @@ public:
 	 * @param value current value in float (0.0 ~ 1.0)
 	 */
 	void init( float current );
+
+	static constexpr uint8_t	access_ref[ NUM_access_word ]	= {
+		RAMP_RATE_GRP0,
+		GRAD_MODE_SEL0,
+		GRAD_GRP_SEL0,
+		GRAD_CNTL,
+		4,
+	};
+
+protected:
+	static const int	n_group;
 };
 
 class PCA9956B : public PCA995x_I2C
@@ -228,6 +258,14 @@ public:
 	 * @param value current value in float (0.0 ~ 1.0)
 	 */
 	void init( float current );
+
+	static constexpr uint8_t	access_ref[ NUM_access_word ]	= {
+		0,
+		0,
+		0,
+		0,
+		0,
+	};
 };
 
 class PCA9957 : public PCA995x_SPI
@@ -278,6 +316,14 @@ public:
 	 * @param value current value in float (0.0 ~ 1.0)
 	 */
 	void init( float current );
+	
+	static constexpr uint8_t	access_ref[ NUM_access_word ]	= {
+		RAMP_RATE_GRP0,
+		GRAD_MODE_SEL0,
+		GRAD_GRP_SEL0,
+		GRAD_CNTL0,
+		6,
+	};
 };
 
 #endif //	ARDUINO_LED_DRIVER_NXP_ARD_H

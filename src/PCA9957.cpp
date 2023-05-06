@@ -2,7 +2,7 @@
 
 /* PCA9957 class ******************************************/
 PCA9957::PCA9957() : 
-	PCA995x_SPI( 24, PCA9957::PWM0, PCA9957::IREF0, PCA9957::IREFALL )
+	PCA995x_SPI( 24, PCA9957::PWM0, PCA9957::IREF0, PCA9957::IREFALL, access_ref )
 {
 }
 
@@ -24,5 +24,4 @@ void PCA9957::init( float current )
 	
 }
 
-
-
+constexpr uint8_t PCA9957::access_ref[];

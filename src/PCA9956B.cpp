@@ -2,7 +2,7 @@
 
 /* PCA9956B class ******************************************/
 PCA9956B::PCA9956B( uint8_t i2c_address ) : 
-	PCA995x_I2C( i2c_address, 24, PCA9956B::PWM0, PCA9956B::IREF0, PCA9956B::IREFALL )
+	PCA995x_I2C( i2c_address, 24, PCA9956B::PWM0, PCA9956B::IREF0, PCA9956B::IREFALL, access_ref )
 {
 }
 
@@ -18,3 +18,5 @@ void PCA9956B::init( float current )
 	
 	irefall( (uint8_t)(current * 255.0) );
 }
+
+constexpr uint8_t PCA9956B::access_ref[];
