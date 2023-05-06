@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">LEDDriver_NXP_Arduino<span id="projectnumber">&#160;0.3.0</span>
+   <div id="projectname">LEDDriver_NXP_Arduino<span id="projectnumber">&#160;0.4.0</span>
    </div>
    <div id="projectbrief">LED driver device operation sample code for Arduino</div>
   </td>
@@ -73,6 +73,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_l_e_d_driver-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">LEDDriver Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
@@ -112,6 +113,12 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>reg_access</b
 <tr class="memitem:a47cae3d90d1577dd78db4ea46c7b0db1"><td class="memItemLeft" align="right" valign="top"><a id="a47cae3d90d1577dd78db4ea46c7b0db1" name="a47cae3d90d1577dd78db4ea46c7b0db1"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>reg_access</b> (uint8_t reg, uint8_t *vp, int len)=0</td></tr>
 <tr class="separator:a47cae3d90d1577dd78db4ea46c7b0db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a798fdb336e99fb1a02529a4dfb969cb3"><td class="memItemLeft" align="right" valign="top"><a id="a798fdb336e99fb1a02529a4dfb969cb3" name="a798fdb336e99fb1a02529a4dfb969cb3"></a>
+virtual uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>reg_access</b> (uint8_t reg)=0</td></tr>
+<tr class="separator:a798fdb336e99fb1a02529a4dfb969cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68693f501547672f2a7e82886ba5b0c0"><td class="memItemLeft" align="right" valign="top"><a id="a68693f501547672f2a7e82886ba5b0c0" name="a68693f501547672f2a7e82886ba5b0c0"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>reg_access_r</b> (uint8_t reg, uint8_t *vp, int len)=0</td></tr>
+<tr class="separator:a68693f501547672f2a7e82886ba5b0c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a049eb6f01d731ec4c2b01c6cc2a7decd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d_driver.html#a049eb6f01d731ec4c2b01c6cc2a7decd">pwm</a> (uint8_t ch, float value)</td></tr>
 <tr class="separator:a049eb6f01d731ec4c2b01c6cc2a7decd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4444087970fb201babf4608219f27385"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d_driver.html#a4444087970fb201babf4608219f27385">pwm</a> (float *values)</td></tr>
@@ -121,23 +128,23 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>reg_access</b
 <tr class="memitem:ae23d672fae6284f1c0d730f49b5e2165"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d_driver.html#ae23d672fae6284f1c0d730f49b5e2165">flush</a> (void)</td></tr>
 <tr class="separator:ae23d672fae6284f1c0d730f49b5e2165"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
 <tr class="memitem:a0f4fce7b9be46537b940da418af5e316"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d_driver.html#a0f4fce7b9be46537b940da418af5e316">n_channel</a></td></tr>
 <tr class="separator:a0f4fce7b9be46537b940da418af5e316"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
 <tr class="memitem:a6d32dcec6914f6d7d3b46e182eed52c2"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d_driver.html#a6d32dcec6914f6d7d3b46e182eed52c2">reg_PWM</a></td></tr>
 <tr class="separator:a6d32dcec6914f6d7d3b46e182eed52c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62ae48aacacf502d1511a9cee867c8eb"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d_driver.html#a62ae48aacacf502d1511a9cee867c8eb">oe_pin</a></td></tr>
 <tr class="separator:a62ae48aacacf502d1511a9cee867c8eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_l_e_d_driver.html">LEDDriver</a> operation library for Arduino</p>
-<dl class="section author"><dt>Author</dt><dd>Tedd OKANO</dd></dl>
-<p>Released under the MIT license License</p>
-<p><a class="el" href="class_l_e_d_driver.html">LEDDriver</a> class</p>
+<div class="textblock"><p><a class="el" href="class_l_e_d_driver.html">LEDDriver</a> class</p>
 <p><a class="el" href="class_l_e_d_driver.html">LEDDriver</a> class is a base class for all <a class="el" href="class_l_e_d.html">LED</a> drivers All actual device class will be derived from this class </p>
 
-<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8h_source.html#l00026">26</a> of file <a class="el" href="_l_e_d_driver_8h_source.html">LEDDriver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8h_source.html#l00035">35</a> of file <a class="el" href="_l_e_d_driver_8h_source.html">LEDDriver.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="aea4861b055bfd2ae40263e0c98644537" name="aea4861b055bfd2ae40263e0c98644537"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aea4861b055bfd2ae40263e0c98644537">&#9670;&#160;</a></span>board</h2>
@@ -151,7 +158,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8h_source.html#l00029">29</a> of file <a class="el" href="_l_e_d_driver_8h_source.html">LEDDriver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8h_source.html#l00038">38</a> of file <a class="el" href="_l_e_d_driver_8h_source.html">LEDDriver.h</a>.</p>
 
 </div>
 </div>
@@ -341,22 +348,14 @@ Protected Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">const uint8_t LEDDriver::n_channel</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8h_source.html#l00066">66</a> of file <a class="el" href="_l_e_d_driver_8h_source.html">LEDDriver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8h_source.html#l00076">76</a> of file <a class="el" href="_l_e_d_driver_8h_source.html">LEDDriver.h</a>.</p>
 
 </div>
 </div>
@@ -380,7 +379,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8h_source.html#l00068">68</a> of file <a class="el" href="_l_e_d_driver_8h_source.html">LEDDriver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8h_source.html#l00080">80</a> of file <a class="el" href="_l_e_d_driver_8h_source.html">LEDDriver.h</a>.</p>
 
 </div>
 </div>
@@ -404,7 +403,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8h_source.html#l00067">67</a> of file <a class="el" href="_l_e_d_driver_8h_source.html">LEDDriver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8h_source.html#l00079">79</a> of file <a class="el" href="_l_e_d_driver_8h_source.html">LEDDriver.h</a>.</p>
 
 </div>
 </div>

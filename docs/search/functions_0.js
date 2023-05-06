@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['buffer_5fenable_0',['buffer_enable',['../class_l_e_d_driver.html#a6c0ac4f1112d8c07446483f03c0c0917',1,'LEDDriver']]]
+  ['add_5fchannel_0',['add_channel',['../class_gradation_control.html#aa40d8730e0cd996c0744a47231cddbf1',1,'GradationControl']]]
 ];

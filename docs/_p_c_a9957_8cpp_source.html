@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">LEDDriver_NXP_Arduino<span id="projectnumber">&#160;0.3.0</span>
+   <div id="projectname">LEDDriver_NXP_Arduino<span id="projectnumber">&#160;0.4.0</span>
    </div>
    <div id="projectbrief">LED driver device operation sample code for Arduino</div>
   </td>
@@ -81,7 +81,7 @@ $(function() {
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/* PCA9957 class ******************************************/</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="class_p_c_a9957.html#af0f0312d6d9741210168b0f9bb35872c">    4</a></span><a class="code hl_function" href="class_p_c_a9957.html#af0f0312d6d9741210168b0f9bb35872c">PCA9957::PCA9957</a>() : </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <a class="code hl_class" href="class_p_c_a995x___s_p_i.html">PCA995x_SPI</a>( 24, <a class="code hl_class" href="class_p_c_a9957.html">PCA9957</a>::PWM0, <a class="code hl_class" href="class_p_c_a9957.html">PCA9957</a>::IREF0, <a class="code hl_class" href="class_p_c_a9957.html">PCA9957</a>::IREFALL )</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <a class="code hl_class" href="class_p_c_a995x___s_p_i.html">PCA995x_SPI</a>( 24, <a class="code hl_class" href="class_p_c_a9957.html">PCA9957</a>::PWM0, <a class="code hl_class" href="class_p_c_a9957.html">PCA9957</a>::IREF0, <a class="code hl_class" href="class_p_c_a9957.html">PCA9957</a>::IREFALL, access_ref )</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>}</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
@@ -103,13 +103,12 @@ $(function() {
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="ttc" id="aclass_p_c_a9957_html"><div class="ttname"><a href="class_p_c_a9957.html">PCA9957</a></div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8h_source.html#l00233">LEDDriver.h:234</a></div></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">constexpr</span> uint8_t PCA9957::access_ref[];</div>
+<div class="ttc" id="aclass_p_c_a9957_html"><div class="ttname"><a href="class_p_c_a9957.html">PCA9957</a></div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8h_source.html#l00270">LEDDriver.h:271</a></div></div>
 <div class="ttc" id="aclass_p_c_a9957_html_a604a9093050fc99359623550e74fb591"><div class="ttname"><a href="class_p_c_a9957.html#a604a9093050fc99359623550e74fb591">PCA9957::init</a></div><div class="ttdeci">void init(float current)</div><div class="ttdef"><b>Definition:</b> <a href="_p_c_a9957_8cpp_source.html#l00013">PCA9957.cpp:13</a></div></div>
 <div class="ttc" id="aclass_p_c_a9957_html_af0f0312d6d9741210168b0f9bb35872c"><div class="ttname"><a href="class_p_c_a9957.html#af0f0312d6d9741210168b0f9bb35872c">PCA9957::PCA9957</a></div><div class="ttdeci">PCA9957()</div><div class="ttdef"><b>Definition:</b> <a href="_p_c_a9957_8cpp_source.html#l00004">PCA9957.cpp:4</a></div></div>
-<div class="ttc" id="aclass_p_c_a995x___s_p_i_html"><div class="ttname"><a href="class_p_c_a995x___s_p_i.html">PCA995x_SPI</a></div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8h_source.html#l00116">LEDDriver.h:117</a></div></div>
-<div class="ttc" id="aclass_p_c_a995x___s_p_i_html_a191575985864fb3e5cfa1c633a75bf80"><div class="ttname"><a href="class_p_c_a995x___s_p_i.html#a191575985864fb3e5cfa1c633a75bf80">PCA995x_SPI::irefall</a></div><div class="ttdeci">void irefall(uint8_t iref)</div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8cpp_source.html#l00198">LEDDriver.cpp:198</a></div></div>
+<div class="ttc" id="aclass_p_c_a995x___s_p_i_html"><div class="ttname"><a href="class_p_c_a995x___s_p_i.html">PCA995x_SPI</a></div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8h_source.html#l00132">LEDDriver.h:133</a></div></div>
+<div class="ttc" id="aclass_p_c_a995x___s_p_i_html_a191575985864fb3e5cfa1c633a75bf80"><div class="ttname"><a href="class_p_c_a995x___s_p_i.html#a191575985864fb3e5cfa1c633a75bf80">PCA995x_SPI::irefall</a></div><div class="ttdeci">void irefall(uint8_t iref)</div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8cpp_source.html#l00219">LEDDriver.cpp:219</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

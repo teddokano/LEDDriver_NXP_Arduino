@@ -1,10 +1,10 @@
 var indexSectionsWithContent =
 {
-  0: "0bfilnpr",
-  1: "lp",
-  2: "bfip",
-  3: "n",
-  4: "r",
+  0: "0abcfgilnprs~",
+  1: "glp",
+  2: "abcfgips~",
+  3: "cn",
+  4: "cr",
   5: "0"
 };
 

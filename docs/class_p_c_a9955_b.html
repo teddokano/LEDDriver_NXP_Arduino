@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">LEDDriver_NXP_Arduino<span id="projectnumber">&#160;0.3.0</span>
+   <div id="projectname">LEDDriver_NXP_Arduino<span id="projectnumber">&#160;0.4.0</span>
    </div>
    <div id="projectbrief">LED driver device operation sample code for Arduino</div>
   </td>
@@ -74,6 +74,7 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pro-static-attribs">Static Protected Attributes</a> &#124;
 <a href="class_p_c_a9955_b-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">PCA9955B Class Reference</div></div>
 </div><!--header-->
@@ -203,15 +204,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acfa3ebaf9f063a6e991ab5571b344f25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_a9955_b.html#acfa3ebaf9f063a6e991ab5571b344f25">init</a> (float current)</td></tr>
 <tr class="separator:acfa3ebaf9f063a6e991ab5571b344f25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_p_c_a995x___i2_c"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_p_c_a995x___i2_c')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_p_c_a995x___i2_c.html">PCA995x_I2C</a></td></tr>
-<tr class="memitem:a2359701653bd33b797d772ccbf6317d3 inherit pub_methods_class_p_c_a995x___i2_c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_a995x___i2_c.html#a2359701653bd33b797d772ccbf6317d3">PCA995x_I2C</a> (uint8_t i2c_address, uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r, uint8_t oe=8)</td></tr>
-<tr class="separator:a2359701653bd33b797d772ccbf6317d3 inherit pub_methods_class_p_c_a995x___i2_c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a163ab21f21879f644f929e1643e0fd81 inherit pub_methods_class_p_c_a995x___i2_c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_a995x___i2_c.html#a163ab21f21879f644f929e1643e0fd81">PCA995x_I2C</a> (const uint8_t i2c_address, const uint8_t n_ch, const uint8_t PWM_r, const uint8_t IREF_r, const uint8_t IREFALL_r, const uint8_t *ar, const uint8_t oe=8)</td></tr>
+<tr class="separator:a163ab21f21879f644f929e1643e0fd81 inherit pub_methods_class_p_c_a995x___i2_c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a7e65294b4ad5a2e2a088d5406ca311 inherit pub_methods_class_p_c_a995x___i2_c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_a995x___i2_c.html#a7a7e65294b4ad5a2e2a088d5406ca311">reg_access</a> (uint8_t reg, uint8_t val)</td></tr>
 <tr class="separator:a7a7e65294b4ad5a2e2a088d5406ca311 inherit pub_methods_class_p_c_a995x___i2_c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a195e17d128d86798b0f013cfc67717de inherit pub_methods_class_p_c_a995x___i2_c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_a995x___i2_c.html#a195e17d128d86798b0f013cfc67717de">reg_access</a> (uint8_t reg, uint8_t *vp, int len)</td></tr>
 <tr class="separator:a195e17d128d86798b0f013cfc67717de inherit pub_methods_class_p_c_a995x___i2_c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ee3ba053ca1b31850122543b13c4d95 inherit pub_methods_class_p_c_a995x___i2_c"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_a995x___i2_c.html#a9ee3ba053ca1b31850122543b13c4d95">reg_access</a> (uint8_t reg)</td></tr>
+<tr class="separator:a9ee3ba053ca1b31850122543b13c4d95 inherit pub_methods_class_p_c_a995x___i2_c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3af317e7b2043ce27ff03c94aaffa1e4 inherit pub_methods_class_p_c_a995x___i2_c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_a995x___i2_c.html#a3af317e7b2043ce27ff03c94aaffa1e4">reg_access_r</a> (uint8_t reg, uint8_t *vp, int len)</td></tr>
+<tr class="separator:a3af317e7b2043ce27ff03c94aaffa1e4 inherit pub_methods_class_p_c_a995x___i2_c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_p_c_a995x"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_p_c_a995x')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_p_c_a995x.html">PCA995x</a></td></tr>
-<tr class="memitem:adb28b3f63abb892a5bff7501255b3a6a inherit pub_methods_class_p_c_a995x"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_a995x.html#adb28b3f63abb892a5bff7501255b3a6a">PCA995x</a> (uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r, uint8_t oe=8)</td></tr>
-<tr class="separator:adb28b3f63abb892a5bff7501255b3a6a inherit pub_methods_class_p_c_a995x"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a12708a41e0c5e9a6b3d48ca1a38e32 inherit pub_methods_class_p_c_a995x"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_a995x.html#a5a12708a41e0c5e9a6b3d48ca1a38e32">PCA995x</a> (const uint8_t n_ch, const uint8_t PWM_r, const uint8_t IREF_r, const uint8_t IREFALL_r, const uint8_t *ar, const uint8_t oe=8)</td></tr>
+<tr class="separator:a5a12708a41e0c5e9a6b3d48ca1a38e32 inherit pub_methods_class_p_c_a995x"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf379ccdda845328d21a9c29c8380ee7 inherit pub_methods_class_p_c_a995x"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_a995x.html#adf379ccdda845328d21a9c29c8380ee7">begin</a> (float current=0.1, board env=NONE, bool buffered=false)</td></tr>
 <tr class="separator:adf379ccdda845328d21a9c29c8380ee7 inherit pub_methods_class_p_c_a995x"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c4ac750b998fbd1c40bbe7f95f81d28 inherit pub_methods_class_p_c_a995x"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_a995x.html#a1c4ac750b998fbd1c40bbe7f95f81d28">init</a> (float current)=0</td></tr>
@@ -227,6 +232,12 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>reg_access</b
 <tr class="memitem:a47cae3d90d1577dd78db4ea46c7b0db1 inherit pub_methods_class_l_e_d_driver"><td class="memItemLeft" align="right" valign="top"><a id="a47cae3d90d1577dd78db4ea46c7b0db1" name="a47cae3d90d1577dd78db4ea46c7b0db1"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>reg_access</b> (uint8_t reg, uint8_t *vp, int len)=0</td></tr>
 <tr class="separator:a47cae3d90d1577dd78db4ea46c7b0db1 inherit pub_methods_class_l_e_d_driver"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a798fdb336e99fb1a02529a4dfb969cb3 inherit pub_methods_class_l_e_d_driver"><td class="memItemLeft" align="right" valign="top"><a id="a798fdb336e99fb1a02529a4dfb969cb3" name="a798fdb336e99fb1a02529a4dfb969cb3"></a>
+virtual uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>reg_access</b> (uint8_t reg)=0</td></tr>
+<tr class="separator:a798fdb336e99fb1a02529a4dfb969cb3 inherit pub_methods_class_l_e_d_driver"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68693f501547672f2a7e82886ba5b0c0 inherit pub_methods_class_l_e_d_driver"><td class="memItemLeft" align="right" valign="top"><a id="a68693f501547672f2a7e82886ba5b0c0" name="a68693f501547672f2a7e82886ba5b0c0"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>reg_access_r</b> (uint8_t reg, uint8_t *vp, int len)=0</td></tr>
+<tr class="separator:a68693f501547672f2a7e82886ba5b0c0 inherit pub_methods_class_l_e_d_driver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a049eb6f01d731ec4c2b01c6cc2a7decd inherit pub_methods_class_l_e_d_driver"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d_driver.html#a049eb6f01d731ec4c2b01c6cc2a7decd">pwm</a> (uint8_t ch, float value)</td></tr>
 <tr class="separator:a049eb6f01d731ec4c2b01c6cc2a7decd inherit pub_methods_class_l_e_d_driver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4444087970fb201babf4608219f27385 inherit pub_methods_class_l_e_d_driver"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d_driver.html#a4444087970fb201babf4608219f27385">pwm</a> (float *values)</td></tr>
@@ -240,17 +251,28 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>reg_access</b
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a2e8330bc6631fce13de5e813f4cdd332"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_a9955_b.html#a2e8330bc6631fce13de5e813f4cdd332">n_channel</a> = 16</td></tr>
 <tr class="separator:a2e8330bc6631fce13de5e813f4cdd332"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83226c61e5e052061c23fe9a804bb291"><td class="memItemLeft" align="right" valign="top">static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_a9955_b.html#a83226c61e5e052061c23fe9a804bb291">access_ref</a> [NUM_access_word]</td></tr>
+<tr class="separator:a83226c61e5e052061c23fe9a804bb291"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-attribs" name="pro-static-attribs"></a>
+Static Protected Attributes</h2></td></tr>
+<tr class="memitem:a38bce6d03c8ee0b4a196218ece4a3bef"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_a9955_b.html#a38bce6d03c8ee0b4a196218ece4a3bef">n_group</a></td></tr>
+<tr class="separator:a38bce6d03c8ee0b4a196218ece4a3bef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_attribs_class_p_c_a995x"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_p_c_a995x')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_p_c_a995x.html">PCA995x</a></td></tr>
+<tr class="memitem:a48a030032d08fe1a5eeb73d0ec199d16 inherit pub_attribs_class_p_c_a995x"><td class="memItemLeft" align="right" valign="top">const uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_a995x.html#a48a030032d08fe1a5eeb73d0ec199d16">arp</a></td></tr>
+<tr class="separator:a48a030032d08fe1a5eeb73d0ec199d16 inherit pub_attribs_class_p_c_a995x"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_class_l_e_d_driver"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_l_e_d_driver')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_l_e_d_driver.html">LEDDriver</a></td></tr>
+<tr class="memitem:a0f4fce7b9be46537b940da418af5e316 inherit pub_attribs_class_l_e_d_driver"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d_driver.html#a0f4fce7b9be46537b940da418af5e316">n_channel</a></td></tr>
+<tr class="separator:a0f4fce7b9be46537b940da418af5e316 inherit pub_attribs_class_l_e_d_driver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_p_c_a995x"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_p_c_a995x')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_p_c_a995x.html">PCA995x</a></td></tr>
 <tr class="memitem:a46c5246d562d6611cded19cd126dbcad inherit pro_attribs_class_p_c_a995x"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_a995x.html#a46c5246d562d6611cded19cd126dbcad">reg_IREF</a></td></tr>
 <tr class="separator:a46c5246d562d6611cded19cd126dbcad inherit pro_attribs_class_p_c_a995x"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57421882293e187f69c27eaa220cb14c inherit pro_attribs_class_p_c_a995x"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_a995x.html#a57421882293e187f69c27eaa220cb14c">reg_IREFALL</a></td></tr>
 <tr class="separator:a57421882293e187f69c27eaa220cb14c inherit pro_attribs_class_p_c_a995x"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_l_e_d_driver"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_l_e_d_driver')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_l_e_d_driver.html">LEDDriver</a></td></tr>
-<tr class="memitem:a0f4fce7b9be46537b940da418af5e316 inherit pro_attribs_class_l_e_d_driver"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d_driver.html#a0f4fce7b9be46537b940da418af5e316">n_channel</a></td></tr>
-<tr class="separator:a0f4fce7b9be46537b940da418af5e316 inherit pro_attribs_class_l_e_d_driver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d32dcec6914f6d7d3b46e182eed52c2 inherit pro_attribs_class_l_e_d_driver"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d_driver.html#a6d32dcec6914f6d7d3b46e182eed52c2">reg_PWM</a></td></tr>
 <tr class="separator:a6d32dcec6914f6d7d3b46e182eed52c2 inherit pro_attribs_class_l_e_d_driver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62ae48aacacf502d1511a9cee867c8eb inherit pro_attribs_class_l_e_d_driver"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d_driver.html#a62ae48aacacf502d1511a9cee867c8eb">oe_pin</a></td></tr>
@@ -260,7 +282,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p><a class="el" href="class_p_c_a9955_b.html">PCA9955B</a> class</p>
 <p>About <a class="el" href="class_p_c_a9955_b.html">PCA9955B</a>: <a href="https://www.nxp.com/products/power-management/lighting-driver-and-controller-ics/led-drivers/16-channel-fm-plus-ic-bus-57-ma-20-v-constant-current-led-driver:PCA9955BTW">https://www.nxp.com/products/power-management/lighting-driver-and-controller-ics/led-drivers/16-channel-fm-plus-ic-bus-57-ma-20-v-constant-current-led-driver:PCA9955BTW</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8h_source.html#l00153">153</a> of file <a class="el" href="_l_e_d_driver_8h_source.html">LEDDriver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8h_source.html#l00171">171</a> of file <a class="el" href="_l_e_d_driver_8h_source.html">LEDDriver.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a8d7db2740e4e03122c6e54ca6edfd4b0" name="a8d7db2740e4e03122c6e54ca6edfd4b0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8d7db2740e4e03122c6e54ca6edfd4b0">&#9670;&#160;</a></span>reg_num</h2>
@@ -275,7 +297,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Name of the <a class="el" href="class_p_c_a9955_b.html">PCA9955B</a> registers </p>
 
-<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8h_source.html#l00160">160</a> of file <a class="el" href="_l_e_d_driver_8h_source.html">LEDDriver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8h_source.html#l00178">178</a> of file <a class="el" href="_l_e_d_driver_8h_source.html">LEDDriver.h</a>.</p>
 
 </div>
 </div>
@@ -375,6 +397,37 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a83226c61e5e052061c23fe9a804bb291" name="a83226c61e5e052061c23fe9a804bb291"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83226c61e5e052061c23fe9a804bb291">&#9670;&#160;</a></span>access_ref</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr uint8_t PCA9955B::access_ref</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">        RAMP_RATE_GRP0,</div>
+<div class="line">        GRAD_MODE_SEL0,</div>
+<div class="line">        GRAD_GRP_SEL0,</div>
+<div class="line">        GRAD_CNTL,</div>
+<div class="line">        4,</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8h_source.html#l00212">212</a> of file <a class="el" href="_l_e_d_driver_8h_source.html">LEDDriver.h</a>.</p>
+
+</div>
+</div>
 <a id="a2e8330bc6631fce13de5e813f4cdd332" name="a2e8330bc6631fce13de5e813f4cdd332"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2e8330bc6631fce13de5e813f4cdd332">&#9670;&#160;</a></span>n_channel</h2>
 
@@ -396,7 +449,31 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Number of channels </p>
 
-<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8h_source.html#l00157">157</a> of file <a class="el" href="_l_e_d_driver_8h_source.html">LEDDriver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8h_source.html#l00175">175</a> of file <a class="el" href="_l_e_d_driver_8h_source.html">LEDDriver.h</a>.</p>
+
+</div>
+</div>
+<a id="a38bce6d03c8ee0b4a196218ece4a3bef" name="a38bce6d03c8ee0b4a196218ece4a3bef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38bce6d03c8ee0b4a196218ece4a3bef">&#9670;&#160;</a></span>n_group</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int PCA9955B::n_group</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8h_source.html#l00221">221</a> of file <a class="el" href="_l_e_d_driver_8h_source.html">LEDDriver.h</a>.</p>
 
 </div>
 </div>

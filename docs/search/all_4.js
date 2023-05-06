@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['led_0',['LED',['../class_l_e_d.html',1,'']]],
-  ['leddriver_1',['LEDDriver',['../class_l_e_d_driver.html',1,'']]]
+  ['flush_0',['flush',['../class_l_e_d_driver.html#ae23d672fae6284f1c0d730f49b5e2165',1,'LEDDriver']]]
 ];
