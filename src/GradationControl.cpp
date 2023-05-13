@@ -19,8 +19,8 @@ float GradationControl::set_gradation( float max_iref, float time, bool up, bool
 	int		cycle_time_i	= 0;
 	int		multi_fctr		= 1;
 	int		iref_inc		= 1;
-	int		on_i;
-	int		off_i;
+	int		on_i			= 7;
+	int		off_i			= 7;
 	float	ramp_time;
 	uint8_t	reg[ 4 ];
 	
@@ -50,33 +50,21 @@ float GradationControl::set_gradation( float max_iref, float time, bool up, bool
 		cycle_time	= 0;
 	}
 	
-	if ( HOLDTIME[ 7 ] < on ) {
-		on		= HOLDTIME[ 7 ];
-		on_i	= 7;
-	}
-	else {
-		for ( int i = 0; i < 7; i++ ) {
-			if ( on < HOLDTIME[ i + 1 ] ) {
-				on		= HOLDTIME[ i ];
-				on_i	= i;
-				break;
-			}
-		}		
-	}
-	
-	if ( HOLDTIME[ 7 ] < off ) {
-		off		= HOLDTIME[ 7 ];
-		off_i	= 7;
-	}
-	else {
-		for ( int i = 0; i < 7; i++ ) {
-			if ( off < HOLDTIME[ i + 1 ] ) {
-				off		= HOLDTIME[ i ];
-				off_i	= i;
-				break;
-			}
-		}		
-	}
+	for ( int i = 0; i < 7; i++ ) {
+		if ( on < HOLDTIME[ i + 1 ] ) {
+			on		= HOLDTIME[ i ];
+			on_i	= i;
+			break;
+		}
+	}		
+
+	for ( int i = 0; i < 7; i++ ) {
+		if ( off < HOLDTIME[ i + 1 ] ) {
+			off		= HOLDTIME[ i ];
+			off_i	= i;
+			break;
+		}
+	}		
 
 	reg[ 0 ]	= (up << 7) | (down << 6) |  (iref_inc - 1);	// for RAMP_RATE_GRPn
 	reg[ 1 ]	= ( cycle_time_i << 6 ) | (multi_fctr - 1);		// for STEP_TIME_GRPn
