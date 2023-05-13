@@ -119,6 +119,7 @@ class PCA995x_I2C : public PCA995x, public I2C_device
 {
 public:
 	PCA995x_I2C( const uint8_t i2c_address, const uint8_t n_ch, const uint8_t PWM_r, const uint8_t IREF_r, const uint8_t IREFALL_r, const uint8_t* ar, const uint8_t oe = 8);
+	PCA995x_I2C( TwoWire& wire, const uint8_t i2c_address, const uint8_t n_ch, const uint8_t PWM_r, const uint8_t IREF_r, const uint8_t IREFALL_r, const uint8_t* ar, const uint8_t oe = 8);
 	virtual ~PCA995x_I2C();
 
 	void reg_access( uint8_t reg, uint8_t val  );
@@ -196,11 +197,18 @@ public:
 		EFLAG0, EFLAG1, EFLAG2, EFLAG3, 
 	};
 	
-    /** Create a PCA9955B instance connected to specified I2C pins with specified address
-     *
-     * @param i2c_address I2C-bus address (default: (0xBC>>1))
-     */
+	/** Create a PCA9955B instance connected to specified I2C pins with specified address
+	 *
+	 * @param i2c_address I2C-bus address (default: (0xBC>>1))
+	 */
 	PCA9955B( uint8_t i2c_address = (0xBC >> 1) );
+
+	/** Create a PCA9955B instance connected to specified I2C pins with specified address
+	 *
+	 * @param wire TwoWire instance
+	 * @param i2c_address I2C-bus address (default: (0xBC>>1))
+	 */
+	PCA9955B( TwoWire& wire, uint8_t i2c_address = (0xBC >> 1) );
 	virtual ~PCA9955B();
 
 	/** Initializing device
@@ -250,6 +258,13 @@ public:
 	 * @param i2c_address I2C-bus address (default: (0x02>>1))
 	 */
 	PCA9956B( uint8_t i2c_address = (0x02 >> 1) );
+
+	/** Create a PCA9955B instance connected to specified I2C pins with specified address
+	 *
+	 * @param wire TwoWire instance
+	 * @param i2c_address I2C-bus address (default: (0xBC>>1))
+	 */
+	PCA9956B( TwoWire& wire, uint8_t i2c_address = (0x02 >> 1) );
 	virtual ~PCA9956B();
 
 	/** Initializing device

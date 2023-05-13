@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">LEDDriver_NXP_Arduino<span id="projectnumber">&#160;0.4.0</span>
+   <div id="projectname">LEDDriver_NXP_Arduino<span id="projectnumber">&#160;0.5.0</span>
    </div>
    <div id="projectbrief">LED driver device operation sample code for Arduino</div>
   </td>
@@ -93,6 +93,8 @@ Inheritance diagram for PCA995x_I2C:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a163ab21f21879f644f929e1643e0fd81"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_a995x___i2_c.html#a163ab21f21879f644f929e1643e0fd81">PCA995x_I2C</a> (const uint8_t i2c_address, const uint8_t n_ch, const uint8_t PWM_r, const uint8_t IREF_r, const uint8_t IREFALL_r, const uint8_t *ar, const uint8_t oe=8)</td></tr>
 <tr class="separator:a163ab21f21879f644f929e1643e0fd81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b85b9e8a185b00b76c7d5f73f47802f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_a995x___i2_c.html#a9b85b9e8a185b00b76c7d5f73f47802f">PCA995x_I2C</a> (TwoWire &amp;wire, const uint8_t i2c_address, const uint8_t n_ch, const uint8_t PWM_r, const uint8_t IREF_r, const uint8_t IREFALL_r, const uint8_t *ar, const uint8_t oe=8)</td></tr>
+<tr class="separator:a9b85b9e8a185b00b76c7d5f73f47802f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a7e65294b4ad5a2e2a088d5406ca311"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_a995x___i2_c.html#a7a7e65294b4ad5a2e2a088d5406ca311">reg_access</a> (uint8_t reg, uint8_t val)</td></tr>
 <tr class="separator:a7a7e65294b4ad5a2e2a088d5406ca311"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a195e17d128d86798b0f013cfc67717de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_a995x___i2_c.html#a195e17d128d86798b0f013cfc67717de">reg_access</a> (uint8_t reg, uint8_t *vp, int len)</td></tr>
@@ -163,7 +165,7 @@ Additional Inherited Members</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8h_source.html#l00118">118</a> of file <a class="el" href="_l_e_d_driver_8h_source.html">LEDDriver.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a163ab21f21879f644f929e1643e0fd81" name="a163ab21f21879f644f929e1643e0fd81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a163ab21f21879f644f929e1643e0fd81">&#9670;&#160;</a></span>PCA995x_I2C()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a163ab21f21879f644f929e1643e0fd81">&#9670;&#160;</a></span>PCA995x_I2C() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -222,6 +224,72 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a9b85b9e8a185b00b76c7d5f73f47802f" name="a9b85b9e8a185b00b76c7d5f73f47802f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b85b9e8a185b00b76c7d5f73f47802f">&#9670;&#160;</a></span>PCA995x_I2C() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PCA995x_I2C::PCA995x_I2C </td>
+          <td>(</td>
+          <td class="paramtype">TwoWire &amp;&#160;</td>
+          <td class="paramname"><em>wire</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>i2c_address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>n_ch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>PWM_r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>IREF_r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>IREFALL_r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>ar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>oe</em> = <code>8</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8cpp_source.html#l00103">103</a> of file <a class="el" href="_l_e_d_driver_8cpp_source.html">LEDDriver.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a63ee2205f08620bc347679848dc2a048" name="a63ee2205f08620bc347679848dc2a048"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a63ee2205f08620bc347679848dc2a048">&#9670;&#160;</a></span>~PCA995x_I2C()</h2>
 
@@ -245,7 +313,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8cpp_source.html#l00105">105</a> of file <a class="el" href="_l_e_d_driver_8cpp_source.html">LEDDriver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8cpp_source.html#l00109">109</a> of file <a class="el" href="_l_e_d_driver_8cpp_source.html">LEDDriver.cpp</a>.</p>
 
 </div>
 </div>
@@ -276,7 +344,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_l_e_d_driver.html">LEDDriver</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8cpp_source.html#l00119">119</a> of file <a class="el" href="_l_e_d_driver_8cpp_source.html">LEDDriver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8cpp_source.html#l00123">123</a> of file <a class="el" href="_l_e_d_driver_8cpp_source.html">LEDDriver.cpp</a>.</p>
 
 </div>
 </div>
@@ -322,7 +390,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_l_e_d_driver.html">LEDDriver</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8cpp_source.html#l00114">114</a> of file <a class="el" href="_l_e_d_driver_8cpp_source.html">LEDDriver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8cpp_source.html#l00118">118</a> of file <a class="el" href="_l_e_d_driver_8cpp_source.html">LEDDriver.cpp</a>.</p>
 
 </div>
 </div>
@@ -362,7 +430,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_l_e_d_driver.html">LEDDriver</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8cpp_source.html#l00109">109</a> of file <a class="el" href="_l_e_d_driver_8cpp_source.html">LEDDriver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8cpp_source.html#l00113">113</a> of file <a class="el" href="_l_e_d_driver_8cpp_source.html">LEDDriver.cpp</a>.</p>
 
 </div>
 </div>
@@ -408,7 +476,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_l_e_d_driver.html">LEDDriver</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8cpp_source.html#l00124">124</a> of file <a class="el" href="_l_e_d_driver_8cpp_source.html">LEDDriver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_l_e_d_driver_8cpp_source.html#l00128">128</a> of file <a class="el" href="_l_e_d_driver_8cpp_source.html">LEDDriver.cpp</a>.</p>
 
 </div>
 </div>

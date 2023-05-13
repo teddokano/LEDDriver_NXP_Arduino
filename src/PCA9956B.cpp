@@ -6,6 +6,11 @@ PCA9956B::PCA9956B( uint8_t i2c_address ) :
 {
 }
 
+PCA9956B::PCA9956B( TwoWire& wire, uint8_t i2c_address ) : 
+	PCA995x_I2C( wire, i2c_address, 24, PCA9956B::PWM0, PCA9956B::IREF0, PCA9956B::IREFALL, access_ref )
+{
+}
+
 PCA9956B::~PCA9956B()
 {
 }

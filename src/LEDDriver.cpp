@@ -98,8 +98,12 @@ PCA995x_I2C::PCA995x_I2C( uint8_t i2c_address, uint8_t n_ch, uint8_t PWM_r, uint
 	PCA995x( n_ch, PWM_r, IREF_r, IREFALL_r, ar, oe ), 
 	I2C_device( i2c_address )
 {
-	//  do nothing.
-	//  leave it in default state.
+}
+
+PCA995x_I2C::PCA995x_I2C( TwoWire& wire, uint8_t i2c_address, uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r, const uint8_t* ar, uint8_t oe ) : 
+	PCA995x( n_ch, PWM_r, IREF_r, IREFALL_r, ar, oe ), 
+	I2C_device( wire, i2c_address )
+{
 }
 
 PCA995x_I2C::~PCA995x_I2C()

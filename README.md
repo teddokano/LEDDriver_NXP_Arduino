@@ -168,6 +168,15 @@ PCA9956B ledd_1( 0xB0 ); // making instance of  PCA9956B as 'ledd_1' with I2C ad
 PCA9957  ledd_2;         // making instance of  PCA9957  as 'ledd_2'. No I2C address given because its a SPI device
 ```
 
+With those instance declaration above, for I²C devices, the `Wire` instance is used as default for I²C bus access.  
+If user need to access other TwoWire instance like `Wire1` on Arduino Due, it can be done as below.  
+When using non-`Wire` instance, don't forget to change the `Wire.begin()` call. For instance, if you are using `Wire1` it need to be `Wire1.begin()`. 
+
+```cpp
+PCA9955B ledd_0( Wire1 );       // making instance of  PCA9955B as 'ledd_0' with default I2C addess (0xBE) on Wire1
+PCA9956B ledd_1( Wire1, 0xB0 ); // making instance of  PCA9956B as 'ledd_1' with I2C addess (0xB0) on Wire1
+```
+
 ### 2.2.2 Basic methods
 
 `begin()` and `pwm()` are basic methods of LEDDriver.  

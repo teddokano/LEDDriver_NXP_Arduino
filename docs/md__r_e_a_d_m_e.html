@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">LEDDriver_NXP_Arduino<span id="projectnumber">&#160;0.4.0</span>
+   <div id="projectname">LEDDriver_NXP_Arduino<span id="projectnumber">&#160;0.5.0</span>
    </div>
    <div id="projectbrief">LED driver device operation sample code for Arduino</div>
   </td>
@@ -145,7 +145,7 @@ $(function() {
 <div class="line">  delay(100);</div>
 <div class="line">}</div>
 <div class="ttc" id="aclass_l_e_d_driver_html_a049eb6f01d731ec4c2b01c6cc2a7decd"><div class="ttname"><a href="class_l_e_d_driver.html#a049eb6f01d731ec4c2b01c6cc2a7decd">LEDDriver::pwm</a></div><div class="ttdeci">void pwm(uint8_t ch, float value)</div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8cpp_source.html#l00016">LEDDriver.cpp:16</a></div></div>
-<div class="ttc" id="aclass_p_c_a9955_b_html"><div class="ttname"><a href="class_p_c_a9955_b.html">PCA9955B</a></div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8h_source.html#l00171">LEDDriver.h:172</a></div></div>
+<div class="ttc" id="aclass_p_c_a9955_b_html"><div class="ttname"><a href="class_p_c_a9955_b.html">PCA9955B</a></div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8h_source.html#l00172">LEDDriver.h:173</a></div></div>
 </div><!-- fragment --><p>For <a class="el" href="class_p_c_a9957.html">PCA9957</a>, it uses an SPI as serial interface. To use the SPI, need to have <code>SPI.begin()</code> in <code>setup()</code> function.</p>
 <div class="fragment"><div class="line"><span class="comment">// Very simple sample to use the &#39;PCA9957HN-ARD LED Driver Arduino® Shield Evaluation Board&#39;</span></div>
 <div class="line"> </div>
@@ -170,7 +170,7 @@ $(function() {
 <div class="line">  Serial.println(<span class="stringliteral">&quot;OFF&quot;</span>);</div>
 <div class="line">  delay(100);</div>
 <div class="line">}</div>
-<div class="ttc" id="aclass_p_c_a9957_html"><div class="ttname"><a href="class_p_c_a9957.html">PCA9957</a></div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8h_source.html#l00270">LEDDriver.h:271</a></div></div>
+<div class="ttc" id="aclass_p_c_a9957_html"><div class="ttname"><a href="class_p_c_a9957.html">PCA9957</a></div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8h_source.html#l00285">LEDDriver.h:286</a></div></div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
 1. Getting started</h1>
 <p>Use <b>Library manager</b> in Arduino IDE for easy install</p><ul>
@@ -263,7 +263,7 @@ $(function() {
 <div class="line"><a class="code hl_class" href="class_p_c_a9955_b.html">PCA9955B</a> ledd_0;         <span class="comment">// making instance of  PCA9955B as &#39;ledd_0&#39; with default I2C addess (0xBE)</span></div>
 <div class="line"><a class="code hl_class" href="class_p_c_a9956_b.html">PCA9956B</a> ledd_1( 0xB0 ); <span class="comment">// making instance of  PCA9956B as &#39;ledd_1&#39; with I2C addess (0xB0)</span></div>
 <div class="line"><a class="code hl_class" href="class_p_c_a9957.html">PCA9957</a>  ledd_2;         <span class="comment">// making instance of  PCA9957  as &#39;ledd_2&#39;. No I2C address given because its a SPI device</span></div>
-<div class="ttc" id="aclass_p_c_a9956_b_html"><div class="ttname"><a href="class_p_c_a9956_b.html">PCA9956B</a></div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8h_source.html#l00224">LEDDriver.h:225</a></div></div>
+<div class="ttc" id="aclass_p_c_a9956_b_html"><div class="ttname"><a href="class_p_c_a9956_b.html">PCA9956B</a></div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8h_source.html#l00232">LEDDriver.h:233</a></div></div>
 </div><!-- fragment --><h3><a class="anchor" id="autotoc_md13"></a>
 2.2.2 Basic methods</h3>
 <p><code>begin()</code> and <code>pwm()</code> are basic methods of <a class="el" href="class_l_e_d_driver.html">LEDDriver</a>. <br  />
@@ -336,7 +336,7 @@ $(function() {
 <div class="line">ledd_0.<a class="code hl_function" href="class_l_e_d_driver.html#ae23d672fae6284f1c0d730f49b5e2165">flush</a>();  <span class="comment">// Update LED driver with new values</span></div>
 <div class="ttc" id="aclass_l_e_d_driver_html_a6c0ac4f1112d8c07446483f03c0c0917"><div class="ttname"><a href="class_l_e_d_driver.html#a6c0ac4f1112d8c07446483f03c0c0917">LEDDriver::buffer_enable</a></div><div class="ttdeci">void buffer_enable(bool flag)</div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8cpp_source.html#l00047">LEDDriver.cpp:47</a></div></div>
 <div class="ttc" id="aclass_l_e_d_driver_html_ae23d672fae6284f1c0d730f49b5e2165"><div class="ttname"><a href="class_l_e_d_driver.html#ae23d672fae6284f1c0d730f49b5e2165">LEDDriver::flush</a></div><div class="ttdeci">void flush(void)</div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8cpp_source.html#l00041">LEDDriver.cpp:41</a></div></div>
-<div class="ttc" id="aclass_p_c_a9955_b_html_a2e8330bc6631fce13de5e813f4cdd332"><div class="ttname"><a href="class_p_c_a9955_b.html#a2e8330bc6631fce13de5e813f4cdd332">PCA9955B::n_channel</a></div><div class="ttdeci">static const uint8_t n_channel</div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8h_source.html#l00175">LEDDriver.h:175</a></div></div>
+<div class="ttc" id="aclass_p_c_a9955_b_html_a2e8330bc6631fce13de5e813f4cdd332"><div class="ttname"><a href="class_p_c_a9955_b.html#a2e8330bc6631fce13de5e813f4cdd332">PCA9955B::n_channel</a></div><div class="ttdeci">static const uint8_t n_channel</div><div class="ttdef"><b>Definition:</b> <a href="_l_e_d_driver_8h_source.html#l00176">LEDDriver.h:176</a></div></div>
 </div><!-- fragment --><p>Example code is available for how the buffer mode can be used. Please refer to code in <code>examples/concept_examples/buffered_mode</code></p>
 <h2><a class="anchor" id="autotoc_md18"></a>
 2.3 LED class</h2>
