@@ -52,9 +52,11 @@ public:
 	 * @param down option: ramp-down enable. default: true
 	 * @param on option: hold-ON duration in second. default: 0.0
 	 * @param off option: hold-OFF duration in second. default: 0.0
+	 * @param hold_on option: hold-on enable. default: true
+	 * @param hold_off option: hold-off enable. default: true
 	 * @return Actual cycle period after calculation
 	 */
-	float set_gradation( float max_iref, float time, bool up = true, bool down = true, float on = 0.0, float off = 0.0 );
+	float set_gradation( float max_iref, float time, bool up = true, bool down = true, float on = 0.0, float off = 0.0, bool hold_on = true, bool hold_off = true );
 
 	/** Channel assign into group
 	 *
