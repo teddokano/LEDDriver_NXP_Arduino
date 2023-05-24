@@ -11,7 +11,7 @@ GradationControl::~GradationControl()
 {
 }
 
-float GradationControl::set_gradation( float max_iref, float time, bool up, bool down, float on, float off )
+float GradationControl::set_gradation( float max_iref, float time, bool up, bool down, float on, float off, bool hold_on, bool hold_off )
 {
 	int		iref;
 	float	step_duration;
@@ -64,12 +64,12 @@ float GradationControl::set_gradation( float max_iref, float time, bool up, bool
 			off_i	= i;
 			break;
 		}
-	}		
+	}
 
-	reg[ 0 ]	= (up << 7) | (down << 6) |  (iref_inc - 1);	// for RAMP_RATE_GRPn
-	reg[ 1 ]	= ( cycle_time_i << 6 ) | (multi_fctr - 1);		// for STEP_TIME_GRPn
-	reg[ 2 ]	= 0xC0 | ( on_i << 3) | off_i;					// for HOLD_CNTL_GRPn
-	reg[ 3 ]	= iref;											// for IREF_GRPn
+	reg[ 0 ]	= (up << 7) | (down << 6) |  (iref_inc - 1);					// for RAMP_RATE_GRPn
+	reg[ 1 ]	= ( cycle_time_i << 6 ) | (multi_fctr - 1);						// for STEP_TIME_GRPn
+	reg[ 2 ]	= (hold_on << 7) | (hold_off << 6) | ( on_i << 3) | off_i;		// for HOLD_CNTL_GRPn
+	reg[ 3 ]	= iref;															// for IREF_GRPn
 	
 	devp->reg_access( devp->arp[ SETTING ] + group * 4, reg, sizeof( reg ) );
 	
