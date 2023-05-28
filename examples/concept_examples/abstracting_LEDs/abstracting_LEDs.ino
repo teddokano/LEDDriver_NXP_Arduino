@@ -23,10 +23,13 @@ LED led[] = {
 
 void setup() {
   Serial.begin(9600);
-  Serial.println("\n***** Hello, PCA9955B! *****");
+  while (!Serial)
+    ;
 
   Wire.begin();
   ledd.begin(0.1, PCA9955B::ARDUINO_SHIELD);
+
+  Serial.println("\n***** Hello, PCA9955B! *****");
 }
 
 void loop() {

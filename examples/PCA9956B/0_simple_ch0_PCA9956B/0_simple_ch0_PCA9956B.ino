@@ -17,10 +17,13 @@ PCA9956B ledd;
 
 void setup() {
   Serial.begin(9600);
-  Serial.println("\n***** Hello, PCA9956B! *****");
+  while (!Serial)
+    ;
 
   Wire.begin();
   ledd.begin(1.0, PCA9956B::ARDUINO_SHIELD);
+
+  Serial.println("\n***** Hello, PCA9956B! *****");
 }
 
 void loop() {

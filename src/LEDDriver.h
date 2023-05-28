@@ -158,6 +158,9 @@ public:
 
 	void pwm( uint8_t ch, float value );
 	void pwm( float* values );
+
+private:
+	SPISettings	spi_setting;
 };
 
 

@@ -17,10 +17,13 @@ PCA9955B ledd;
 
 void setup() {
   Serial.begin(9600);
-  Serial.println("\n***** Hello, PCA9955B! *****");
+  while (!Serial)
+    ;
 
   Wire.begin();
   ledd.begin(1.0, PCA9955B::ARDUINO_SHIELD);
+
+  Serial.println("\n***** Hello, PCA9955B! *****");
 
   const float pwm_value = 1.0;  //  Default PWM output: 100%
 

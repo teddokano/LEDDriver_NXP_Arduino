@@ -137,8 +137,7 @@ void PCA995x_I2C::reg_access_r( uint8_t reg, uint8_t *vp, int len )
 PCA995x_SPI::PCA995x_SPI( uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r, const uint8_t* ar, uint8_t oe ) : 
 	PCA995x( n_ch, PWM_r, IREF_r, IREFALL_r, ar, oe )
 {
-	//  do nothing.
-	//  leave it in default state.
+	SPISettings	spi_settings( 4000 * 1000, MSBFIRST, SPI_MODE0 );
 }
 
 PCA995x_SPI::~PCA995x_SPI()
@@ -147,9 +146,13 @@ PCA995x_SPI::~PCA995x_SPI()
 
 void PCA995x_SPI::txrx( uint8_t *data, int size )
 {
+	SPI.beginTransaction( spi_setting );
+	
 	digitalWrite( SS, LOW );
 	SPI.transfer( data, size );
 	digitalWrite( SS, HIGH );
+	
+	SPI.endTransaction();
 }
 
 void PCA995x_SPI::reg_access( uint8_t reg, uint8_t val )

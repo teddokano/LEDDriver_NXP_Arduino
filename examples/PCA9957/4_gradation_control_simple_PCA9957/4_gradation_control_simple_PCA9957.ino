@@ -17,10 +17,13 @@ PCA9957 ledd;
 
 void setup() {
   Serial.begin(9600);
-  Serial.println("\n***** Hello, PCA9957! *****");
+  while (!Serial)
+    ;
 
   SPI.begin();
   ledd.begin(1.0, PCA9957::ARDUINO_SHIELD);
+
+  Serial.println("\n***** Hello, PCA9957! *****");
 
   GradationControl gradcR = GradationControl(&ledd, 0); //  Gradation group 0
   GradationControl gradcB = GradationControl(&ledd, 1); //  Gradation group 1

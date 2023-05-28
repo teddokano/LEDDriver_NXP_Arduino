@@ -34,11 +34,15 @@ LED white[] = {  //  re-ordered to match physical alignment
 
 void setup() {
   Serial.begin(9600);
-  Serial.println("\n***** Hello, PCA9955B! *****");
+  while (!Serial)
+    ;
 
   Wire.begin();
+
   ledd.begin(0.1, PCA9955B::ARDUINO_SHIELD);
   ledd.buffer_enable(true);
+
+  Serial.println("\n***** Hello, PCA9955B! *****");
 }
 
 const int interval = 20;

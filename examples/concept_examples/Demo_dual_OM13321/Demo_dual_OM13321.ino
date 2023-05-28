@@ -79,13 +79,17 @@ LED rgb[3][16] = {
 
 void setup() {
   Serial.begin(9600);
-  Serial.println("\n***** Hello, PCA9956B! *****");
+  while (!Serial)
+    ;
 
   Wire.begin();
+
   ledd[0].begin(0.1, PCA9955B::ARDUINO_SHIELD);
   ledd[1].begin(0.1, PCA9955B::ARDUINO_SHIELD);
   ledd[0].buffer_enable(true);
   ledd[1].buffer_enable(true);
+
+  Serial.println("\n***** Hello, PCA9956B! *****");
 
   MsTimer2::set(20, timer_callback);
   MsTimer2::start();
