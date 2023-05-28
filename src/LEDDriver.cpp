@@ -137,7 +137,7 @@ void PCA995x_I2C::reg_access_r( uint8_t reg, uint8_t *vp, int len )
 PCA995x_SPI::PCA995x_SPI( uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r, const uint8_t* ar, uint8_t oe ) : 
 	PCA995x( n_ch, PWM_r, IREF_r, IREFALL_r, ar, oe )
 {
-	SPISettings	spi_settings( 4000 * 1000, MSBFIRST, SPI_MODE0 );
+	spi_setting	= SPISettings( 1000000, MSBFIRST, SPI_MODE0 );
 }
 
 PCA995x_SPI::~PCA995x_SPI()
