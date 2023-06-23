@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">LEDDriver_NXP_Arduino<span id="projectnumber">&#160;0.5.3</span>
+   <div id="projectname">LEDDriver_NXP_Arduino<span id="projectnumber">&#160;0.5.4</span>
    </div>
    <div id="projectbrief">LED driver device operation sample code for Arduino</div>
   </td>
@@ -237,114 +237,251 @@ $(function() {
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        4,</div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    };</div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span>    n_group;</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>};</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno"><a class="line" href="class_p_c_a9956_b.html">  235</a></span><span class="keyword">class </span><a class="code hl_class" href="class_p_c_a9956_b.html">PCA9956B</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_p_c_a995x___i2_c.html">PCA995x_I2C</a></div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>{</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno"><a class="line" href="class_p_c_a9956_b.html#aa19c16d8484d6c9df87ebda262d605f7">  239</a></span>    <span class="keyword">const</span> <span class="keyword">static</span> uint8_t <a class="code hl_variable" href="class_p_c_a9956_b.html#aa19c16d8484d6c9df87ebda262d605f7">n_channel</a>  = 24;</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    </div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="class_p_c_a9956_b.html#a1c42ab3610e23210f1b16853720746c6">  242</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="class_p_c_a9956_b.html#a1c42ab3610e23210f1b16853720746c6">reg_num</a> {</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        MODE1, MODE2,</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        LEDOUT0, LEDOUT1, LEDOUT2, LEDOUT3, LEDOUT4, LEDOUT5,</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        GRPPWM, GRPFREQ,</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        PWM0,  PWM1,  PWM2,  PWM3,  PWM4,  PWM5,</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        PWM6,  PWM7,  PWM8,  PWM9,  PWM10, PWM11,</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>        PWM12, PWM13, PWM14, PWM15, PWM16, PWM17,</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        PWM18, PWM19, PWM20, PWM21, PWM22, PWM23,</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        IREF0,  IREF1,  IREF2,  IREF3,  IREF4,  IREF5,</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        IREF6,  IREF7,  IREF8,  IREF9,  IREF10, IREF11,</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        IREF12, IREF13, IREF14, IREF15, IREF16, IREF17,</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        IREF18, IREF19, IREF20, IREF21, IREF22, IREF23,</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        OFFSET,</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        SUBADR1, SUBADR2, SUBADR3, ALLCALLADR,</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        PWMALL, IREFALL,</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>        EFLAG0, EFLAG1, EFLAG2, EFLAG3, EFLAG4, EFLAG5</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    };</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <a class="code hl_class" href="class_p_c_a9956_b.html">PCA9956B</a>( uint8_t i2c_address = (0x02 &gt;&gt; 1) );</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    <a class="code hl_class" href="class_p_c_a9956_b.html">PCA9956B</a>( TwoWire&amp; wire, uint8_t i2c_address = (0x02 &gt;&gt; 1) );</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_p_c_a9956_b.html">~PCA9956B</a>();</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9956_b.html#a9f32fc1be3aad345a43fb1692417f8ab">init</a>( <span class="keywordtype">float</span> current );</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> uint8_t    access_ref[ NUM_access_word ]   = {</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        0,</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        0,</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        0,</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        0,</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        0,</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    };</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>};</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno"><a class="line" href="class_p_c_a9957.html">  288</a></span><span class="keyword">class </span><a class="code hl_class" href="class_p_c_a9957.html">PCA9957</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_p_c_a995x___s_p_i.html">PCA995x_SPI</a></div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>{</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno"><a class="line" href="class_p_c_a9957.html#a3560d787a964881358ddd38066befebe">  292</a></span>    <span class="keyword">const</span> <span class="keyword">static</span> uint8_t <a class="code hl_variable" href="class_p_c_a9957.html#a3560d787a964881358ddd38066befebe">n_channel</a>  = 24;</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    </div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno"><a class="line" href="class_p_c_a9957.html#a610d947e7f133df79eca84b296a765cf">  295</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="class_p_c_a9957.html#a610d947e7f133df79eca84b296a765cf">reg_num</a> {</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        MODE1, MODE2,</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        EFLAG0,  EFLAG1,  EFLAG2,  EFLAG3,  EFLAG4,  EFLAG5,</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>        LEDOUT0, LEDOUT1, LEDOUT2, LEDOUT3, LEDOUT4, LEDOUT5,</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        GRPPWM, GRPFREQ,</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        PWM0,  PWM1,  PWM2,  PWM3,  PWM4,  PWM5,</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        PWM6,  PWM7,  PWM8,  PWM9,  PWM10, PWM11,</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>        PWM12, PWM13, PWM14, PWM15, PWM16, PWM17,</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>        PWM18, PWM19, PWM20, PWM21, PWM22, PWM23,</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>        IREF0,  IREF1,  IREF2,  IREF3,  IREF4,  IREF5,</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>        IREF6,  IREF7,  IREF8,  IREF9,  IREF10, IREF11,</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>        IREF12, IREF13, IREF14, IREF15, IREF16, IREF17,</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        IREF18, IREF19, IREF20, IREF21, IREF22, IREF23,</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        RAMP_RATE_GRP0, STEP_TIME_GRP0, HOLD_CNTL_GRP0, IREF_GRP0,</div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        RAMP_RATE_GRP1, STEP_TIME_GRP1, HOLD_CNTL_GRP1, IREF_GRP1,</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>        RAMP_RATE_GRP2, STEP_TIME_GRP2, HOLD_CNTL_GRP2, IREF_GRP2,</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        RAMP_RATE_GRP3, STEP_TIME_GRP3, HOLD_CNTL_GRP3, IREF_GRP3,</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>        RAMP_RATE_GRP4, STEP_TIME_GRP4, HOLD_CNTL_GRP4, IREF_GRP4,</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>        RAMP_RATE_GRP5, STEP_TIME_GRP5, HOLD_CNTL_GRP5, IREF_GRP5,</div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>        GRAD_MODE_SEL0, GRAD_MODE_SEL1, GRAD_MODE_SEL2,</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>        GRAD_GRP_SEL0,  GRAD_GRP_SEL1,  GRAD_GRP_SEL2,</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>        GRAD_GRP_SEL3,  GRAD_GRP_SEL4,  GRAD_GRP_SEL5,</div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>        GRAD_GRP_SEL6,  GRAD_GRP_SEL7,  GRAD_GRP_SEL8,</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>        GRAD_GRP_SEL9,  GRAD_GRP_SEL10, GRAD_GRP_SEL11,</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>        GRAD_CNTL0, GRAD_CNTL1,</div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>        OFFSET,</div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>        PWMALL, IREFALL</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    };</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    </div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>    <a class="code hl_function" href="class_p_c_a9957.html#af0f0312d6d9741210168b0f9bb35872c">PCA9957</a>();</div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_p_c_a9957.html">~PCA9957</a>();</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span> </div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9957.html#a604a9093050fc99359623550e74fb591">init</a>( <span class="keywordtype">float</span> current );</div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>    </div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> uint8_t    access_ref[ NUM_access_word ]   = {</div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>        RAMP_RATE_GRP0,</div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>        GRAD_MODE_SEL0,</div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>        GRAD_GRP_SEL0,</div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>        GRAD_CNTL0,</div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>        6,</div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>    };</div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>};</div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span> </div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span><span class="preprocessor">#endif </span><span class="comment">//   ARDUINO_LED_DRIVER_NXP_ARD_H</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="preprocessor">#if DOXYGEN_ONLY</span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno"><a class="line" href="class_p_c_a9955_b.html#aaa99ed42356110bbbd2a93eb90929934">  233</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="class_p_c_a9955_b.html#aaa99ed42356110bbbd2a93eb90929934">board</a> {</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        NONE,</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        ARDUINO_SHIELD,</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    };</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno"><a class="line" href="class_p_c_a9955_b.html#ae944ade22082e9d3621433795a25fb2b">  246</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9955_b.html#ae944ade22082e9d3621433795a25fb2b">begin</a>( <span class="keywordtype">float</span> current =  0.1, <a class="code hl_enumeration" href="class_p_c_a9955_b.html#aaa99ed42356110bbbd2a93eb90929934">board</a> env = NONE, <span class="keywordtype">bool</span> buffered = <span class="keyword">false</span> );</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno"><a class="line" href="class_p_c_a9955_b.html#a8833e6661781d04c8f855a74de57685e">  253</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9955_b.html#a8833e6661781d04c8f855a74de57685e">pwm</a>( uint8_t ch, <span class="keywordtype">float</span> value );</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno"><a class="line" href="class_p_c_a9955_b.html#a45405e5842e1e9b1dd34775bf784e2c0">  260</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9955_b.html#a45405e5842e1e9b1dd34775bf784e2c0">pwm</a>( <span class="keywordtype">float</span>* values );</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno"><a class="line" href="class_p_c_a9955_b.html#a6ca36acdaffd55cbadf722f4cf330867">  266</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9955_b.html#a6ca36acdaffd55cbadf722f4cf330867">buffer_enable</a>( <span class="keywordtype">bool</span> flag );</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    </div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno"><a class="line" href="class_p_c_a9955_b.html#a70cdc5a207cb31de3046f859d9300552">  272</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9955_b.html#a70cdc5a207cb31de3046f859d9300552">flush</a>( <span class="keywordtype">void</span> );</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno"><a class="line" href="class_p_c_a9955_b.html#ad77f6d574d0815dee0a0687848769263">  281</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_p_c_a9955_b.html#ad77f6d574d0815dee0a0687848769263">reg_w</a>( uint8_t reg_adr, uint8_t *data, uint16_t size );</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno"><a class="line" href="class_p_c_a9955_b.html#a920213eede4821614f5d13cdf699ad96">  290</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_p_c_a9955_b.html#a920213eede4821614f5d13cdf699ad96">reg_w</a>( uint8_t reg_adr, uint8_t data );</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno"><a class="line" href="class_p_c_a9955_b.html#a5fcff88c4b63a08ced67f63c1dbebe81">  299</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_p_c_a9955_b.html#a5fcff88c4b63a08ced67f63c1dbebe81">reg_r</a>( uint8_t reg_adr, uint8_t *data, uint16_t size );</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span> </div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno"><a class="line" href="class_p_c_a9955_b.html#a8dc382828dc232eaf9ba40d1a52e0476">  306</a></span>    uint8_t <a class="code hl_function" href="class_p_c_a9955_b.html#a8dc382828dc232eaf9ba40d1a52e0476">reg_r</a>( uint8_t reg_adr );</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno"><a class="line" href="class_p_c_a9955_b.html#a0cfebd6acedce36249655fe007d5d4f1">  313</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9955_b.html#a0cfebd6acedce36249655fe007d5d4f1">write_r8</a>( uint8_t reg, uint8_t val );</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span> </div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno"><a class="line" href="class_p_c_a9955_b.html#a596c693f235e208df351caa490dcc665">  320</a></span>    uint8_t <a class="code hl_function" href="class_p_c_a9955_b.html#a596c693f235e208df351caa490dcc665">read_r8</a>( uint8_t reg );</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span> </div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno"><a class="line" href="class_p_c_a9955_b.html#a82b9609952c8ce0c4f361d5b43993f38">  330</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9955_b.html#a82b9609952c8ce0c4f361d5b43993f38">bit_op8</a>(  uint8_t reg,  uint8_t mask,  uint8_t value );</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>    <span class="keywordtype">void</span> bit_op16( uint8_t reg, uint16_t mask, uint16_t value );</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span><span class="preprocessor">#endif  </span><span class="comment">//  DOXYGEN_ONLY</span></div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span> </div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span>    n_group;</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>};</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span> </div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno"><a class="line" href="class_p_c_a9956_b.html">  338</a></span><span class="keyword">class </span><a class="code hl_class" href="class_p_c_a9956_b.html">PCA9956B</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_p_c_a995x___i2_c.html">PCA995x_I2C</a></div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>{</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno"><a class="line" href="class_p_c_a9956_b.html#aa19c16d8484d6c9df87ebda262d605f7">  342</a></span>    <span class="keyword">const</span> <span class="keyword">static</span> uint8_t <a class="code hl_variable" href="class_p_c_a9956_b.html#aa19c16d8484d6c9df87ebda262d605f7">n_channel</a>  = 24;</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>    </div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno"><a class="line" href="class_p_c_a9956_b.html#a1c42ab3610e23210f1b16853720746c6">  345</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="class_p_c_a9956_b.html#a1c42ab3610e23210f1b16853720746c6">reg_num</a> {</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>        MODE1, MODE2,</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>        LEDOUT0, LEDOUT1, LEDOUT2, LEDOUT3, LEDOUT4, LEDOUT5,</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>        GRPPWM, GRPFREQ,</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>        PWM0,  PWM1,  PWM2,  PWM3,  PWM4,  PWM5,</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>        PWM6,  PWM7,  PWM8,  PWM9,  PWM10, PWM11,</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>        PWM12, PWM13, PWM14, PWM15, PWM16, PWM17,</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>        PWM18, PWM19, PWM20, PWM21, PWM22, PWM23,</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>        IREF0,  IREF1,  IREF2,  IREF3,  IREF4,  IREF5,</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>        IREF6,  IREF7,  IREF8,  IREF9,  IREF10, IREF11,</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>        IREF12, IREF13, IREF14, IREF15, IREF16, IREF17,</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>        IREF18, IREF19, IREF20, IREF21, IREF22, IREF23,</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>        OFFSET,</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>        SUBADR1, SUBADR2, SUBADR3, ALLCALLADR,</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>        PWMALL, IREFALL,</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>        EFLAG0, EFLAG1, EFLAG2, EFLAG3, EFLAG4, EFLAG5</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>    };</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>    <a class="code hl_class" href="class_p_c_a9956_b.html">PCA9956B</a>( uint8_t i2c_address = (0x02 &gt;&gt; 1) );</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span> </div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>    <a class="code hl_class" href="class_p_c_a9956_b.html">PCA9956B</a>( TwoWire&amp; wire, uint8_t i2c_address = (0x02 &gt;&gt; 1) );</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_p_c_a9956_b.html">~PCA9956B</a>();</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span> </div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9956_b.html#a9f32fc1be3aad345a43fb1692417f8ab">init</a>( <span class="keywordtype">float</span> current );</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span> </div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> uint8_t    access_ref[ NUM_access_word ]   = {</div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>        0,</div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>        0,</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>        0,</div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>        0,</div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>        0,</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>    };</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span> </div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span><span class="preprocessor">#if DOXYGEN_ONLY</span></div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno"><a class="line" href="class_p_c_a9956_b.html#aa2ccafee3feae07300b940dce3428199">  392</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="class_p_c_a9956_b.html#aa2ccafee3feae07300b940dce3428199">board</a> {</div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>        NONE,</div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>        ARDUINO_SHIELD,</div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>    };</div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span> </div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno"><a class="line" href="class_p_c_a9956_b.html#ad99f17836f3f4cfc95de4af21c4ef0f2">  405</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9956_b.html#ad99f17836f3f4cfc95de4af21c4ef0f2">begin</a>( <span class="keywordtype">float</span> current =  0.1, <a class="code hl_enumeration" href="class_p_c_a9956_b.html#aa2ccafee3feae07300b940dce3428199">board</a> env = NONE, <span class="keywordtype">bool</span> buffered = <span class="keyword">false</span> );</div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span> </div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno"><a class="line" href="class_p_c_a9956_b.html#add5b9aa187c162b8c4a2b6f4f9403e4d">  412</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9956_b.html#add5b9aa187c162b8c4a2b6f4f9403e4d">pwm</a>( uint8_t ch, <span class="keywordtype">float</span> value );</div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span> </div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno"><a class="line" href="class_p_c_a9956_b.html#a74dd45b37b3ac7a400a04f1b31bad2f7">  419</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9956_b.html#a74dd45b37b3ac7a400a04f1b31bad2f7">pwm</a>( <span class="keywordtype">float</span>* values );</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span> </div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno"><a class="line" href="class_p_c_a9956_b.html#ab71a01f9bb00959cebe474c9c3fd892e">  425</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9956_b.html#ab71a01f9bb00959cebe474c9c3fd892e">buffer_enable</a>( <span class="keywordtype">bool</span> flag );</div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>    </div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno"><a class="line" href="class_p_c_a9956_b.html#a40a6766e1a53c4a1cbda93c88ad42db3">  431</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9956_b.html#a40a6766e1a53c4a1cbda93c88ad42db3">flush</a>( <span class="keywordtype">void</span> );</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span> </div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno"><a class="line" href="class_p_c_a9956_b.html#a9d0bfd06e3caf22f0e02bba7a73875de">  440</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_p_c_a9956_b.html#a9d0bfd06e3caf22f0e02bba7a73875de">reg_w</a>( uint8_t reg_adr, uint8_t *data, uint16_t size );</div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span> </div>
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno"><a class="line" href="class_p_c_a9956_b.html#ac373d538baff6e306edd8a381da033f7">  449</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_p_c_a9956_b.html#ac373d538baff6e306edd8a381da033f7">reg_w</a>( uint8_t reg_adr, uint8_t data );</div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span> </div>
+<div class="line"><a id="l00458" name="l00458"></a><span class="lineno"><a class="line" href="class_p_c_a9956_b.html#ab0102aa4d1d93b1f6063a796053a6d36">  458</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_p_c_a9956_b.html#ab0102aa4d1d93b1f6063a796053a6d36">reg_r</a>( uint8_t reg_adr, uint8_t *data, uint16_t size );</div>
+<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span> </div>
+<div class="line"><a id="l00465" name="l00465"></a><span class="lineno"><a class="line" href="class_p_c_a9956_b.html#aca49805d5b88327a476bea2fdc5b7837">  465</a></span>    uint8_t <a class="code hl_function" href="class_p_c_a9956_b.html#aca49805d5b88327a476bea2fdc5b7837">reg_r</a>( uint8_t reg_adr );</div>
+<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span> </div>
+<div class="line"><a id="l00472" name="l00472"></a><span class="lineno"><a class="line" href="class_p_c_a9956_b.html#a978782fc5bbbc9dea8dcde9165f62a4f">  472</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9956_b.html#a978782fc5bbbc9dea8dcde9165f62a4f">write_r8</a>( uint8_t reg, uint8_t val );</div>
+<div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span> </div>
+<div class="line"><a id="l00479" name="l00479"></a><span class="lineno"><a class="line" href="class_p_c_a9956_b.html#aae913168969f5425306d2f75868b3b87">  479</a></span>    uint8_t <a class="code hl_function" href="class_p_c_a9956_b.html#aae913168969f5425306d2f75868b3b87">read_r8</a>( uint8_t reg );</div>
+<div class="line"><a id="l00480" name="l00480"></a><span class="lineno">  480</span> </div>
+<div class="line"><a id="l00489" name="l00489"></a><span class="lineno"><a class="line" href="class_p_c_a9956_b.html#a12e023a972c9d98a603f7e5c43b2b3cb">  489</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9956_b.html#a12e023a972c9d98a603f7e5c43b2b3cb">bit_op8</a>(  uint8_t reg,  uint8_t mask,  uint8_t value );</div>
+<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>    <span class="keywordtype">void</span> bit_op16( uint8_t reg, uint16_t mask, uint16_t value );</div>
+<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span><span class="preprocessor">#endif  </span><span class="comment">//  DOXYGEN_ONLY</span></div>
+<div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span> </div>
+<div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>};</div>
+<div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span> </div>
+<div class="line"><a id="l00495" name="l00495"></a><span class="lineno"><a class="line" href="class_p_c_a9957.html">  495</a></span><span class="keyword">class </span><a class="code hl_class" href="class_p_c_a9957.html">PCA9957</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_p_c_a995x___s_p_i.html">PCA995x_SPI</a></div>
+<div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>{</div>
+<div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00499" name="l00499"></a><span class="lineno"><a class="line" href="class_p_c_a9957.html#a3560d787a964881358ddd38066befebe">  499</a></span>    <span class="keyword">const</span> <span class="keyword">static</span> uint8_t <a class="code hl_variable" href="class_p_c_a9957.html#a3560d787a964881358ddd38066befebe">n_channel</a>  = 24;</div>
+<div class="line"><a id="l00500" name="l00500"></a><span class="lineno">  500</span>    </div>
+<div class="line"><a id="l00502" name="l00502"></a><span class="lineno"><a class="line" href="class_p_c_a9957.html#a610d947e7f133df79eca84b296a765cf">  502</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="class_p_c_a9957.html#a610d947e7f133df79eca84b296a765cf">reg_num</a> {</div>
+<div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span>        MODE1, MODE2,</div>
+<div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span>        EFLAG0,  EFLAG1,  EFLAG2,  EFLAG3,  EFLAG4,  EFLAG5,</div>
+<div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span>        LEDOUT0, LEDOUT1, LEDOUT2, LEDOUT3, LEDOUT4, LEDOUT5,</div>
+<div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span>        GRPPWM, GRPFREQ,</div>
+<div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span>        PWM0,  PWM1,  PWM2,  PWM3,  PWM4,  PWM5,</div>
+<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>        PWM6,  PWM7,  PWM8,  PWM9,  PWM10, PWM11,</div>
+<div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span>        PWM12, PWM13, PWM14, PWM15, PWM16, PWM17,</div>
+<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>        PWM18, PWM19, PWM20, PWM21, PWM22, PWM23,</div>
+<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>        IREF0,  IREF1,  IREF2,  IREF3,  IREF4,  IREF5,</div>
+<div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>        IREF6,  IREF7,  IREF8,  IREF9,  IREF10, IREF11,</div>
+<div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>        IREF12, IREF13, IREF14, IREF15, IREF16, IREF17,</div>
+<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>        IREF18, IREF19, IREF20, IREF21, IREF22, IREF23,</div>
+<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span>        RAMP_RATE_GRP0, STEP_TIME_GRP0, HOLD_CNTL_GRP0, IREF_GRP0,</div>
+<div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span>        RAMP_RATE_GRP1, STEP_TIME_GRP1, HOLD_CNTL_GRP1, IREF_GRP1,</div>
+<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>        RAMP_RATE_GRP2, STEP_TIME_GRP2, HOLD_CNTL_GRP2, IREF_GRP2,</div>
+<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>        RAMP_RATE_GRP3, STEP_TIME_GRP3, HOLD_CNTL_GRP3, IREF_GRP3,</div>
+<div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span>        RAMP_RATE_GRP4, STEP_TIME_GRP4, HOLD_CNTL_GRP4, IREF_GRP4,</div>
+<div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span>        RAMP_RATE_GRP5, STEP_TIME_GRP5, HOLD_CNTL_GRP5, IREF_GRP5,</div>
+<div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span>        GRAD_MODE_SEL0, GRAD_MODE_SEL1, GRAD_MODE_SEL2,</div>
+<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span>        GRAD_GRP_SEL0,  GRAD_GRP_SEL1,  GRAD_GRP_SEL2,</div>
+<div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span>        GRAD_GRP_SEL3,  GRAD_GRP_SEL4,  GRAD_GRP_SEL5,</div>
+<div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span>        GRAD_GRP_SEL6,  GRAD_GRP_SEL7,  GRAD_GRP_SEL8,</div>
+<div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span>        GRAD_GRP_SEL9,  GRAD_GRP_SEL10, GRAD_GRP_SEL11,</div>
+<div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>        GRAD_CNTL0, GRAD_CNTL1,</div>
+<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>        OFFSET,</div>
+<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>        PWMALL, IREFALL</div>
+<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>    };</div>
+<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>    </div>
+<div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span>    <a class="code hl_function" href="class_p_c_a9957.html#af0f0312d6d9741210168b0f9bb35872c">PCA9957</a>();</div>
+<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_p_c_a9957.html">~PCA9957</a>();</div>
+<div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span> </div>
+<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9957.html#a604a9093050fc99359623550e74fb591">init</a>( <span class="keywordtype">float</span> current );</div>
+<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>    </div>
+<div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> uint8_t    access_ref[ NUM_access_word ]   = {</div>
+<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span>        RAMP_RATE_GRP0,</div>
+<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>        GRAD_MODE_SEL0,</div>
+<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span>        GRAD_GRP_SEL0,</div>
+<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span>        GRAD_CNTL0,</div>
+<div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span>        6,</div>
+<div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span>    };</div>
+<div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span>    </div>
+<div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span><span class="preprocessor">#if DOXYGEN_ONLY</span></div>
+<div class="line"><a id="l00554" name="l00554"></a><span class="lineno"><a class="line" href="class_p_c_a9957.html#a2935925a6c04ccc9ed85e4cbff866cb8">  554</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="class_p_c_a9957.html#a2935925a6c04ccc9ed85e4cbff866cb8">board</a> {</div>
+<div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>        NONE,</div>
+<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>        ARDUINO_SHIELD,</div>
+<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span>    };</div>
+<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span> </div>
+<div class="line"><a id="l00567" name="l00567"></a><span class="lineno"><a class="line" href="class_p_c_a9957.html#afef1aa1912a0fc70f81483d64e31b88b">  567</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9957.html#afef1aa1912a0fc70f81483d64e31b88b">begin</a>( <span class="keywordtype">float</span> current =  0.1, <a class="code hl_enumeration" href="class_p_c_a9957.html#a2935925a6c04ccc9ed85e4cbff866cb8">board</a> env = NONE, <span class="keywordtype">bool</span> buffered = <span class="keyword">false</span> );</div>
+<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span> </div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno"><a class="line" href="class_p_c_a9957.html#ada7def0ea160ed7995ee9266f1aa0095">  574</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9957.html#ada7def0ea160ed7995ee9266f1aa0095">pwm</a>( uint8_t ch, <span class="keywordtype">float</span> value );</div>
+<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span> </div>
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno"><a class="line" href="class_p_c_a9957.html#a42f0b0fccb8570821a60b240becf8025">  581</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9957.html#a42f0b0fccb8570821a60b240becf8025">pwm</a>( <span class="keywordtype">float</span>* values );</div>
+<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span> </div>
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno"><a class="line" href="class_p_c_a9957.html#abad628b839d28b284f02e5a59badf816">  587</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9957.html#abad628b839d28b284f02e5a59badf816">buffer_enable</a>( <span class="keywordtype">bool</span> flag );</div>
+<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>    </div>
+<div class="line"><a id="l00593" name="l00593"></a><span class="lineno"><a class="line" href="class_p_c_a9957.html#a556e6eaa6e21de6ea938e3105ebcc3c5">  593</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9957.html#a556e6eaa6e21de6ea938e3105ebcc3c5">flush</a>( <span class="keywordtype">void</span> );</div>
+<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span> </div>
+<div class="line"><a id="l00602" name="l00602"></a><span class="lineno"><a class="line" href="class_p_c_a9957.html#ac4b8479c86120919a0f12db17bd0ae94">  602</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_p_c_a9957.html#ac4b8479c86120919a0f12db17bd0ae94">reg_w</a>( uint8_t reg_adr, uint8_t *data, uint16_t size );</div>
+<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span> </div>
+<div class="line"><a id="l00611" name="l00611"></a><span class="lineno"><a class="line" href="class_p_c_a9957.html#a81b09a4615c5599aac4c492a699ef9b6">  611</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_p_c_a9957.html#a81b09a4615c5599aac4c492a699ef9b6">reg_w</a>( uint8_t reg_adr, uint8_t data );</div>
+<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span> </div>
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno"><a class="line" href="class_p_c_a9957.html#a598e40252e9da37e4f81c8219f03248a">  620</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_p_c_a9957.html#a598e40252e9da37e4f81c8219f03248a">reg_r</a>( uint8_t reg_adr, uint8_t *data, uint16_t size );</div>
+<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span> </div>
+<div class="line"><a id="l00627" name="l00627"></a><span class="lineno"><a class="line" href="class_p_c_a9957.html#a5d5ed6bdfb0b91d1e3eceed1b3f6a5d1">  627</a></span>    uint8_t <a class="code hl_function" href="class_p_c_a9957.html#a5d5ed6bdfb0b91d1e3eceed1b3f6a5d1">reg_r</a>( uint8_t reg_adr );</div>
+<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span> </div>
+<div class="line"><a id="l00634" name="l00634"></a><span class="lineno"><a class="line" href="class_p_c_a9957.html#aab236c86f3f6fc9b88ac644adc562766">  634</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9957.html#aab236c86f3f6fc9b88ac644adc562766">write_r8</a>( uint8_t reg, uint8_t val );</div>
+<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span> </div>
+<div class="line"><a id="l00641" name="l00641"></a><span class="lineno"><a class="line" href="class_p_c_a9957.html#a634736a7a26278e78d5c624d63c40d98">  641</a></span>    uint8_t <a class="code hl_function" href="class_p_c_a9957.html#a634736a7a26278e78d5c624d63c40d98">read_r8</a>( uint8_t reg );</div>
+<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span> </div>
+<div class="line"><a id="l00651" name="l00651"></a><span class="lineno"><a class="line" href="class_p_c_a9957.html#a0a006923578130959000dac982d9d3f5">  651</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9957.html#a0a006923578130959000dac982d9d3f5">bit_op8</a>(  uint8_t reg,  uint8_t mask,  uint8_t value );</div>
+<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>    <span class="keywordtype">void</span> bit_op16( uint8_t reg, uint16_t mask, uint16_t value );</div>
+<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span><span class="preprocessor">#endif  </span><span class="comment">//  DOXYGEN_ONLY</span></div>
+<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span> </div>
+<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>};</div>
+<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span> </div>
+<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span><span class="preprocessor">#endif </span><span class="comment">//   ARDUINO_LED_DRIVER_NXP_ARD_H</span></div>
 <div class="ttc" id="aclass_l_e_d_driver_html"><div class="ttname"><a href="class_l_e_d_driver.html">LEDDriver</a></div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8h_source.html#l00035">LEDDriver.h:36</a></div></div>
 <div class="ttc" id="aclass_l_e_d_driver_html_a049eb6f01d731ec4c2b01c6cc2a7decd"><div class="ttname"><a href="class_l_e_d_driver.html#a049eb6f01d731ec4c2b01c6cc2a7decd">LEDDriver::pwm</a></div><div class="ttdeci">void pwm(uint8_t ch, float value)</div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8cpp_source.html#l00016">LEDDriver.cpp:16</a></div></div>
 <div class="ttc" id="aclass_l_e_d_driver_html_a6c0ac4f1112d8c07446483f03c0c0917"><div class="ttname"><a href="class_l_e_d_driver.html#a6c0ac4f1112d8c07446483f03c0c0917">LEDDriver::buffer_enable</a></div><div class="ttdeci">void buffer_enable(bool flag)</div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8cpp_source.html#l00047">LEDDriver.cpp:47</a></div></div>
 <div class="ttc" id="aclass_l_e_d_driver_html_ae23d672fae6284f1c0d730f49b5e2165"><div class="ttname"><a href="class_l_e_d_driver.html#ae23d672fae6284f1c0d730f49b5e2165">LEDDriver::flush</a></div><div class="ttdeci">void flush(void)</div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8cpp_source.html#l00041">LEDDriver.cpp:41</a></div></div>
 <div class="ttc" id="aclass_p_c_a9955_b_html"><div class="ttname"><a href="class_p_c_a9955_b.html">PCA9955B</a></div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8h_source.html#l00175">LEDDriver.h:176</a></div></div>
+<div class="ttc" id="aclass_p_c_a9955_b_html_a0cfebd6acedce36249655fe007d5d4f1"><div class="ttname"><a href="class_p_c_a9955_b.html#a0cfebd6acedce36249655fe007d5d4f1">PCA9955B::write_r8</a></div><div class="ttdeci">void write_r8(uint8_t reg, uint8_t val)</div></div>
 <div class="ttc" id="aclass_p_c_a9955_b_html_a2e8330bc6631fce13de5e813f4cdd332"><div class="ttname"><a href="class_p_c_a9955_b.html#a2e8330bc6631fce13de5e813f4cdd332">PCA9955B::n_channel</a></div><div class="ttdeci">static const uint8_t n_channel</div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8h_source.html#l00179">LEDDriver.h:179</a></div></div>
+<div class="ttc" id="aclass_p_c_a9955_b_html_a45405e5842e1e9b1dd34775bf784e2c0"><div class="ttname"><a href="class_p_c_a9955_b.html#a45405e5842e1e9b1dd34775bf784e2c0">PCA9955B::pwm</a></div><div class="ttdeci">void pwm(float *values)</div></div>
+<div class="ttc" id="aclass_p_c_a9955_b_html_a596c693f235e208df351caa490dcc665"><div class="ttname"><a href="class_p_c_a9955_b.html#a596c693f235e208df351caa490dcc665">PCA9955B::read_r8</a></div><div class="ttdeci">uint8_t read_r8(uint8_t reg)</div></div>
+<div class="ttc" id="aclass_p_c_a9955_b_html_a5fcff88c4b63a08ced67f63c1dbebe81"><div class="ttname"><a href="class_p_c_a9955_b.html#a5fcff88c4b63a08ced67f63c1dbebe81">PCA9955B::reg_r</a></div><div class="ttdeci">int reg_r(uint8_t reg_adr, uint8_t *data, uint16_t size)</div></div>
+<div class="ttc" id="aclass_p_c_a9955_b_html_a6ca36acdaffd55cbadf722f4cf330867"><div class="ttname"><a href="class_p_c_a9955_b.html#a6ca36acdaffd55cbadf722f4cf330867">PCA9955B::buffer_enable</a></div><div class="ttdeci">void buffer_enable(bool flag)</div></div>
+<div class="ttc" id="aclass_p_c_a9955_b_html_a70cdc5a207cb31de3046f859d9300552"><div class="ttname"><a href="class_p_c_a9955_b.html#a70cdc5a207cb31de3046f859d9300552">PCA9955B::flush</a></div><div class="ttdeci">void flush(void)</div></div>
+<div class="ttc" id="aclass_p_c_a9955_b_html_a82b9609952c8ce0c4f361d5b43993f38"><div class="ttname"><a href="class_p_c_a9955_b.html#a82b9609952c8ce0c4f361d5b43993f38">PCA9955B::bit_op8</a></div><div class="ttdeci">void bit_op8(uint8_t reg, uint8_t mask, uint8_t value)</div></div>
+<div class="ttc" id="aclass_p_c_a9955_b_html_a8833e6661781d04c8f855a74de57685e"><div class="ttname"><a href="class_p_c_a9955_b.html#a8833e6661781d04c8f855a74de57685e">PCA9955B::pwm</a></div><div class="ttdeci">void pwm(uint8_t ch, float value)</div></div>
 <div class="ttc" id="aclass_p_c_a9955_b_html_a8d7db2740e4e03122c6e54ca6edfd4b0"><div class="ttname"><a href="class_p_c_a9955_b.html#a8d7db2740e4e03122c6e54ca6edfd4b0">PCA9955B::reg_num</a></div><div class="ttdeci">reg_num</div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8h_source.html#l00182">LEDDriver.h:182</a></div></div>
+<div class="ttc" id="aclass_p_c_a9955_b_html_a8dc382828dc232eaf9ba40d1a52e0476"><div class="ttname"><a href="class_p_c_a9955_b.html#a8dc382828dc232eaf9ba40d1a52e0476">PCA9955B::reg_r</a></div><div class="ttdeci">uint8_t reg_r(uint8_t reg_adr)</div></div>
+<div class="ttc" id="aclass_p_c_a9955_b_html_a920213eede4821614f5d13cdf699ad96"><div class="ttname"><a href="class_p_c_a9955_b.html#a920213eede4821614f5d13cdf699ad96">PCA9955B::reg_w</a></div><div class="ttdeci">int reg_w(uint8_t reg_adr, uint8_t data)</div></div>
+<div class="ttc" id="aclass_p_c_a9955_b_html_aaa99ed42356110bbbd2a93eb90929934"><div class="ttname"><a href="class_p_c_a9955_b.html#aaa99ed42356110bbbd2a93eb90929934">PCA9955B::board</a></div><div class="ttdeci">board</div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8h_source.html#l00233">LEDDriver.h:233</a></div></div>
 <div class="ttc" id="aclass_p_c_a9955_b_html_acfa3ebaf9f063a6e991ab5571b344f25"><div class="ttname"><a href="class_p_c_a9955_b.html#acfa3ebaf9f063a6e991ab5571b344f25">PCA9955B::init</a></div><div class="ttdeci">void init(float current)</div><div class="ttdef"><b>Definition</b> <a href="_p_c_a9955_b_8cpp_source.html#l00018">PCA9955B.cpp:18</a></div></div>
-<div class="ttc" id="aclass_p_c_a9956_b_html"><div class="ttname"><a href="class_p_c_a9956_b.html">PCA9956B</a></div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8h_source.html#l00235">LEDDriver.h:236</a></div></div>
-<div class="ttc" id="aclass_p_c_a9956_b_html_a1c42ab3610e23210f1b16853720746c6"><div class="ttname"><a href="class_p_c_a9956_b.html#a1c42ab3610e23210f1b16853720746c6">PCA9956B::reg_num</a></div><div class="ttdeci">reg_num</div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8h_source.html#l00242">LEDDriver.h:242</a></div></div>
+<div class="ttc" id="aclass_p_c_a9955_b_html_ad77f6d574d0815dee0a0687848769263"><div class="ttname"><a href="class_p_c_a9955_b.html#ad77f6d574d0815dee0a0687848769263">PCA9955B::reg_w</a></div><div class="ttdeci">int reg_w(uint8_t reg_adr, uint8_t *data, uint16_t size)</div></div>
+<div class="ttc" id="aclass_p_c_a9955_b_html_ae944ade22082e9d3621433795a25fb2b"><div class="ttname"><a href="class_p_c_a9955_b.html#ae944ade22082e9d3621433795a25fb2b">PCA9955B::begin</a></div><div class="ttdeci">void begin(float current=0.1, board env=NONE, bool buffered=false)</div></div>
+<div class="ttc" id="aclass_p_c_a9956_b_html"><div class="ttname"><a href="class_p_c_a9956_b.html">PCA9956B</a></div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8h_source.html#l00338">LEDDriver.h:339</a></div></div>
+<div class="ttc" id="aclass_p_c_a9956_b_html_a12e023a972c9d98a603f7e5c43b2b3cb"><div class="ttname"><a href="class_p_c_a9956_b.html#a12e023a972c9d98a603f7e5c43b2b3cb">PCA9956B::bit_op8</a></div><div class="ttdeci">void bit_op8(uint8_t reg, uint8_t mask, uint8_t value)</div></div>
+<div class="ttc" id="aclass_p_c_a9956_b_html_a1c42ab3610e23210f1b16853720746c6"><div class="ttname"><a href="class_p_c_a9956_b.html#a1c42ab3610e23210f1b16853720746c6">PCA9956B::reg_num</a></div><div class="ttdeci">reg_num</div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8h_source.html#l00345">LEDDriver.h:345</a></div></div>
+<div class="ttc" id="aclass_p_c_a9956_b_html_a40a6766e1a53c4a1cbda93c88ad42db3"><div class="ttname"><a href="class_p_c_a9956_b.html#a40a6766e1a53c4a1cbda93c88ad42db3">PCA9956B::flush</a></div><div class="ttdeci">void flush(void)</div></div>
+<div class="ttc" id="aclass_p_c_a9956_b_html_a74dd45b37b3ac7a400a04f1b31bad2f7"><div class="ttname"><a href="class_p_c_a9956_b.html#a74dd45b37b3ac7a400a04f1b31bad2f7">PCA9956B::pwm</a></div><div class="ttdeci">void pwm(float *values)</div></div>
+<div class="ttc" id="aclass_p_c_a9956_b_html_a978782fc5bbbc9dea8dcde9165f62a4f"><div class="ttname"><a href="class_p_c_a9956_b.html#a978782fc5bbbc9dea8dcde9165f62a4f">PCA9956B::write_r8</a></div><div class="ttdeci">void write_r8(uint8_t reg, uint8_t val)</div></div>
+<div class="ttc" id="aclass_p_c_a9956_b_html_a9d0bfd06e3caf22f0e02bba7a73875de"><div class="ttname"><a href="class_p_c_a9956_b.html#a9d0bfd06e3caf22f0e02bba7a73875de">PCA9956B::reg_w</a></div><div class="ttdeci">int reg_w(uint8_t reg_adr, uint8_t *data, uint16_t size)</div></div>
 <div class="ttc" id="aclass_p_c_a9956_b_html_a9f32fc1be3aad345a43fb1692417f8ab"><div class="ttname"><a href="class_p_c_a9956_b.html#a9f32fc1be3aad345a43fb1692417f8ab">PCA9956B::init</a></div><div class="ttdeci">void init(float current)</div><div class="ttdef"><b>Definition</b> <a href="_p_c_a9956_b_8cpp_source.html#l00018">PCA9956B.cpp:18</a></div></div>
-<div class="ttc" id="aclass_p_c_a9956_b_html_aa19c16d8484d6c9df87ebda262d605f7"><div class="ttname"><a href="class_p_c_a9956_b.html#aa19c16d8484d6c9df87ebda262d605f7">PCA9956B::n_channel</a></div><div class="ttdeci">static const uint8_t n_channel</div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8h_source.html#l00239">LEDDriver.h:239</a></div></div>
-<div class="ttc" id="aclass_p_c_a9957_html"><div class="ttname"><a href="class_p_c_a9957.html">PCA9957</a></div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8h_source.html#l00288">LEDDriver.h:289</a></div></div>
-<div class="ttc" id="aclass_p_c_a9957_html_a3560d787a964881358ddd38066befebe"><div class="ttname"><a href="class_p_c_a9957.html#a3560d787a964881358ddd38066befebe">PCA9957::n_channel</a></div><div class="ttdeci">static const uint8_t n_channel</div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8h_source.html#l00292">LEDDriver.h:292</a></div></div>
+<div class="ttc" id="aclass_p_c_a9956_b_html_aa19c16d8484d6c9df87ebda262d605f7"><div class="ttname"><a href="class_p_c_a9956_b.html#aa19c16d8484d6c9df87ebda262d605f7">PCA9956B::n_channel</a></div><div class="ttdeci">static const uint8_t n_channel</div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8h_source.html#l00342">LEDDriver.h:342</a></div></div>
+<div class="ttc" id="aclass_p_c_a9956_b_html_aa2ccafee3feae07300b940dce3428199"><div class="ttname"><a href="class_p_c_a9956_b.html#aa2ccafee3feae07300b940dce3428199">PCA9956B::board</a></div><div class="ttdeci">board</div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8h_source.html#l00392">LEDDriver.h:392</a></div></div>
+<div class="ttc" id="aclass_p_c_a9956_b_html_aae913168969f5425306d2f75868b3b87"><div class="ttname"><a href="class_p_c_a9956_b.html#aae913168969f5425306d2f75868b3b87">PCA9956B::read_r8</a></div><div class="ttdeci">uint8_t read_r8(uint8_t reg)</div></div>
+<div class="ttc" id="aclass_p_c_a9956_b_html_ab0102aa4d1d93b1f6063a796053a6d36"><div class="ttname"><a href="class_p_c_a9956_b.html#ab0102aa4d1d93b1f6063a796053a6d36">PCA9956B::reg_r</a></div><div class="ttdeci">int reg_r(uint8_t reg_adr, uint8_t *data, uint16_t size)</div></div>
+<div class="ttc" id="aclass_p_c_a9956_b_html_ab71a01f9bb00959cebe474c9c3fd892e"><div class="ttname"><a href="class_p_c_a9956_b.html#ab71a01f9bb00959cebe474c9c3fd892e">PCA9956B::buffer_enable</a></div><div class="ttdeci">void buffer_enable(bool flag)</div></div>
+<div class="ttc" id="aclass_p_c_a9956_b_html_ac373d538baff6e306edd8a381da033f7"><div class="ttname"><a href="class_p_c_a9956_b.html#ac373d538baff6e306edd8a381da033f7">PCA9956B::reg_w</a></div><div class="ttdeci">int reg_w(uint8_t reg_adr, uint8_t data)</div></div>
+<div class="ttc" id="aclass_p_c_a9956_b_html_aca49805d5b88327a476bea2fdc5b7837"><div class="ttname"><a href="class_p_c_a9956_b.html#aca49805d5b88327a476bea2fdc5b7837">PCA9956B::reg_r</a></div><div class="ttdeci">uint8_t reg_r(uint8_t reg_adr)</div></div>
+<div class="ttc" id="aclass_p_c_a9956_b_html_ad99f17836f3f4cfc95de4af21c4ef0f2"><div class="ttname"><a href="class_p_c_a9956_b.html#ad99f17836f3f4cfc95de4af21c4ef0f2">PCA9956B::begin</a></div><div class="ttdeci">void begin(float current=0.1, board env=NONE, bool buffered=false)</div></div>
+<div class="ttc" id="aclass_p_c_a9956_b_html_add5b9aa187c162b8c4a2b6f4f9403e4d"><div class="ttname"><a href="class_p_c_a9956_b.html#add5b9aa187c162b8c4a2b6f4f9403e4d">PCA9956B::pwm</a></div><div class="ttdeci">void pwm(uint8_t ch, float value)</div></div>
+<div class="ttc" id="aclass_p_c_a9957_html"><div class="ttname"><a href="class_p_c_a9957.html">PCA9957</a></div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8h_source.html#l00495">LEDDriver.h:496</a></div></div>
+<div class="ttc" id="aclass_p_c_a9957_html_a0a006923578130959000dac982d9d3f5"><div class="ttname"><a href="class_p_c_a9957.html#a0a006923578130959000dac982d9d3f5">PCA9957::bit_op8</a></div><div class="ttdeci">void bit_op8(uint8_t reg, uint8_t mask, uint8_t value)</div></div>
+<div class="ttc" id="aclass_p_c_a9957_html_a2935925a6c04ccc9ed85e4cbff866cb8"><div class="ttname"><a href="class_p_c_a9957.html#a2935925a6c04ccc9ed85e4cbff866cb8">PCA9957::board</a></div><div class="ttdeci">board</div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8h_source.html#l00554">LEDDriver.h:554</a></div></div>
+<div class="ttc" id="aclass_p_c_a9957_html_a3560d787a964881358ddd38066befebe"><div class="ttname"><a href="class_p_c_a9957.html#a3560d787a964881358ddd38066befebe">PCA9957::n_channel</a></div><div class="ttdeci">static const uint8_t n_channel</div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8h_source.html#l00499">LEDDriver.h:499</a></div></div>
+<div class="ttc" id="aclass_p_c_a9957_html_a42f0b0fccb8570821a60b240becf8025"><div class="ttname"><a href="class_p_c_a9957.html#a42f0b0fccb8570821a60b240becf8025">PCA9957::pwm</a></div><div class="ttdeci">void pwm(float *values)</div></div>
+<div class="ttc" id="aclass_p_c_a9957_html_a556e6eaa6e21de6ea938e3105ebcc3c5"><div class="ttname"><a href="class_p_c_a9957.html#a556e6eaa6e21de6ea938e3105ebcc3c5">PCA9957::flush</a></div><div class="ttdeci">void flush(void)</div></div>
+<div class="ttc" id="aclass_p_c_a9957_html_a598e40252e9da37e4f81c8219f03248a"><div class="ttname"><a href="class_p_c_a9957.html#a598e40252e9da37e4f81c8219f03248a">PCA9957::reg_r</a></div><div class="ttdeci">int reg_r(uint8_t reg_adr, uint8_t *data, uint16_t size)</div></div>
+<div class="ttc" id="aclass_p_c_a9957_html_a5d5ed6bdfb0b91d1e3eceed1b3f6a5d1"><div class="ttname"><a href="class_p_c_a9957.html#a5d5ed6bdfb0b91d1e3eceed1b3f6a5d1">PCA9957::reg_r</a></div><div class="ttdeci">uint8_t reg_r(uint8_t reg_adr)</div></div>
 <div class="ttc" id="aclass_p_c_a9957_html_a604a9093050fc99359623550e74fb591"><div class="ttname"><a href="class_p_c_a9957.html#a604a9093050fc99359623550e74fb591">PCA9957::init</a></div><div class="ttdeci">void init(float current)</div><div class="ttdef"><b>Definition</b> <a href="_p_c_a9957_8cpp_source.html#l00013">PCA9957.cpp:13</a></div></div>
-<div class="ttc" id="aclass_p_c_a9957_html_a610d947e7f133df79eca84b296a765cf"><div class="ttname"><a href="class_p_c_a9957.html#a610d947e7f133df79eca84b296a765cf">PCA9957::reg_num</a></div><div class="ttdeci">reg_num</div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8h_source.html#l00295">LEDDriver.h:295</a></div></div>
+<div class="ttc" id="aclass_p_c_a9957_html_a610d947e7f133df79eca84b296a765cf"><div class="ttname"><a href="class_p_c_a9957.html#a610d947e7f133df79eca84b296a765cf">PCA9957::reg_num</a></div><div class="ttdeci">reg_num</div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8h_source.html#l00502">LEDDriver.h:502</a></div></div>
+<div class="ttc" id="aclass_p_c_a9957_html_a634736a7a26278e78d5c624d63c40d98"><div class="ttname"><a href="class_p_c_a9957.html#a634736a7a26278e78d5c624d63c40d98">PCA9957::read_r8</a></div><div class="ttdeci">uint8_t read_r8(uint8_t reg)</div></div>
+<div class="ttc" id="aclass_p_c_a9957_html_a81b09a4615c5599aac4c492a699ef9b6"><div class="ttname"><a href="class_p_c_a9957.html#a81b09a4615c5599aac4c492a699ef9b6">PCA9957::reg_w</a></div><div class="ttdeci">int reg_w(uint8_t reg_adr, uint8_t data)</div></div>
+<div class="ttc" id="aclass_p_c_a9957_html_aab236c86f3f6fc9b88ac644adc562766"><div class="ttname"><a href="class_p_c_a9957.html#aab236c86f3f6fc9b88ac644adc562766">PCA9957::write_r8</a></div><div class="ttdeci">void write_r8(uint8_t reg, uint8_t val)</div></div>
+<div class="ttc" id="aclass_p_c_a9957_html_abad628b839d28b284f02e5a59badf816"><div class="ttname"><a href="class_p_c_a9957.html#abad628b839d28b284f02e5a59badf816">PCA9957::buffer_enable</a></div><div class="ttdeci">void buffer_enable(bool flag)</div></div>
+<div class="ttc" id="aclass_p_c_a9957_html_ac4b8479c86120919a0f12db17bd0ae94"><div class="ttname"><a href="class_p_c_a9957.html#ac4b8479c86120919a0f12db17bd0ae94">PCA9957::reg_w</a></div><div class="ttdeci">int reg_w(uint8_t reg_adr, uint8_t *data, uint16_t size)</div></div>
+<div class="ttc" id="aclass_p_c_a9957_html_ada7def0ea160ed7995ee9266f1aa0095"><div class="ttname"><a href="class_p_c_a9957.html#ada7def0ea160ed7995ee9266f1aa0095">PCA9957::pwm</a></div><div class="ttdeci">void pwm(uint8_t ch, float value)</div></div>
 <div class="ttc" id="aclass_p_c_a9957_html_af0f0312d6d9741210168b0f9bb35872c"><div class="ttname"><a href="class_p_c_a9957.html#af0f0312d6d9741210168b0f9bb35872c">PCA9957::PCA9957</a></div><div class="ttdeci">PCA9957()</div><div class="ttdef"><b>Definition</b> <a href="_p_c_a9957_8cpp_source.html#l00004">PCA9957.cpp:4</a></div></div>
+<div class="ttc" id="aclass_p_c_a9957_html_afef1aa1912a0fc70f81483d64e31b88b"><div class="ttname"><a href="class_p_c_a9957.html#afef1aa1912a0fc70f81483d64e31b88b">PCA9957::begin</a></div><div class="ttdeci">void begin(float current=0.1, board env=NONE, bool buffered=false)</div></div>
 <div class="ttc" id="aclass_p_c_a995x___i2_c_html"><div class="ttname"><a href="class_p_c_a995x___i2_c.html">PCA995x_I2C</a></div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8h_source.html#l00118">LEDDriver.h:119</a></div></div>
 <div class="ttc" id="aclass_p_c_a995x___s_p_i_html"><div class="ttname"><a href="class_p_c_a995x___s_p_i.html">PCA995x_SPI</a></div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8h_source.html#l00133">LEDDriver.h:134</a></div></div>
 <div class="ttc" id="aclass_p_c_a995x___s_p_i_html_a191575985864fb3e5cfa1c633a75bf80"><div class="ttname"><a href="class_p_c_a995x___s_p_i.html#a191575985864fb3e5cfa1c633a75bf80">PCA995x_SPI::irefall</a></div><div class="ttdeci">void irefall(uint8_t iref)</div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8cpp_source.html#l00226">LEDDriver.cpp:226</a></div></div>

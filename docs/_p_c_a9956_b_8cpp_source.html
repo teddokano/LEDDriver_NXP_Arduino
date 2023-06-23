@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">LEDDriver_NXP_Arduino<span id="projectnumber">&#160;0.5.3</span>
+   <div id="projectname">LEDDriver_NXP_Arduino<span id="projectnumber">&#160;0.5.4</span>
    </div>
    <div id="projectbrief">LED driver device operation sample code for Arduino</div>
   </td>
@@ -97,14 +97,16 @@ $(function() {
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_p_c_a9956_b.html#a9f32fc1be3aad345a43fb1692417f8ab">   18</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9956_b.html#a9f32fc1be3aad345a43fb1692417f8ab">PCA9956B::init</a>( <span class="keywordtype">float</span> current )</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    uint8_t <a class="code hl_function" href="class_p_c_a9956_b.html#a9f32fc1be3aad345a43fb1692417f8ab">init</a>[]  = { 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA };</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    reg_w( 0x80 | LEDOUT0, <a class="code hl_function" href="class_p_c_a9956_b.html#a9f32fc1be3aad345a43fb1692417f8ab">init</a>, <span class="keyword">sizeof</span>( <a class="code hl_function" href="class_p_c_a9956_b.html#a9f32fc1be3aad345a43fb1692417f8ab">init</a> ) );</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    write_r8( PWMALL, 0x00 );</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_function" href="class_p_c_a9956_b.html#a9d0bfd06e3caf22f0e02bba7a73875de">reg_w</a>( 0x80 | LEDOUT0, <a class="code hl_function" href="class_p_c_a9956_b.html#a9f32fc1be3aad345a43fb1692417f8ab">init</a>, <span class="keyword">sizeof</span>( <a class="code hl_function" href="class_p_c_a9956_b.html#a9f32fc1be3aad345a43fb1692417f8ab">init</a> ) );</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_function" href="class_p_c_a9956_b.html#a978782fc5bbbc9dea8dcde9165f62a4f">write_r8</a>( PWMALL, 0x00 );</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_function" href="class_p_c_a995x.html#a0751a4816ffaae770fb50830aea51ca9">irefall</a>( (uint8_t)(current * 255.0) );</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">constexpr</span> uint8_t PCA9956B::access_ref[];</div>
-<div class="ttc" id="aclass_p_c_a9956_b_html"><div class="ttname"><a href="class_p_c_a9956_b.html">PCA9956B</a></div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8h_source.html#l00235">LEDDriver.h:236</a></div></div>
+<div class="ttc" id="aclass_p_c_a9956_b_html"><div class="ttname"><a href="class_p_c_a9956_b.html">PCA9956B</a></div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8h_source.html#l00338">LEDDriver.h:339</a></div></div>
+<div class="ttc" id="aclass_p_c_a9956_b_html_a978782fc5bbbc9dea8dcde9165f62a4f"><div class="ttname"><a href="class_p_c_a9956_b.html#a978782fc5bbbc9dea8dcde9165f62a4f">PCA9956B::write_r8</a></div><div class="ttdeci">void write_r8(uint8_t reg, uint8_t val)</div></div>
+<div class="ttc" id="aclass_p_c_a9956_b_html_a9d0bfd06e3caf22f0e02bba7a73875de"><div class="ttname"><a href="class_p_c_a9956_b.html#a9d0bfd06e3caf22f0e02bba7a73875de">PCA9956B::reg_w</a></div><div class="ttdeci">int reg_w(uint8_t reg_adr, uint8_t *data, uint16_t size)</div></div>
 <div class="ttc" id="aclass_p_c_a9956_b_html_a9f32fc1be3aad345a43fb1692417f8ab"><div class="ttname"><a href="class_p_c_a9956_b.html#a9f32fc1be3aad345a43fb1692417f8ab">PCA9956B::init</a></div><div class="ttdeci">void init(float current)</div><div class="ttdef"><b>Definition</b> <a href="_p_c_a9956_b_8cpp_source.html#l00018">PCA9956B.cpp:18</a></div></div>
 <div class="ttc" id="aclass_p_c_a9956_b_html_ae86dd76865f01c9c40df33c01684ccdd"><div class="ttname"><a href="class_p_c_a9956_b.html#ae86dd76865f01c9c40df33c01684ccdd">PCA9956B::PCA9956B</a></div><div class="ttdeci">PCA9956B(uint8_t i2c_address=(0x02 &gt; &gt; 1))</div><div class="ttdef"><b>Definition</b> <a href="_p_c_a9956_b_8cpp_source.html#l00004">PCA9956B.cpp:4</a></div></div>
 <div class="ttc" id="aclass_p_c_a995x___i2_c_html"><div class="ttname"><a href="class_p_c_a995x___i2_c.html">PCA995x_I2C</a></div><div class="ttdef"><b>Definition</b> <a href="_l_e_d_driver_8h_source.html#l00118">LEDDriver.h:119</a></div></div>

@@ -228,6 +228,109 @@ public:
 		4,
 	};
 
+#if DOXYGEN_ONLY
+	/** Constants for begin() method */
+	enum board {
+		NONE,
+		ARDUINO_SHIELD,
+	};
+
+	/** Device/board initialization
+	 *
+	 * This method is needed to initialize the LED driver itself and evaluation board. 
+	 * 
+	 * @param current	Output current setting. Max is 1.0 for 100% output. Default is 0.1 (10%)
+	 * @param env		This method takes one argument of "PCA9955B::ARDUINO_SHIELD" to set RESET and OE pins. This is required for Arduino-shield type evaluation boards from NXP.
+	 * @param buffered	Buffered mode switch true or false. Default is false
+	 */
+	void begin( float current =  0.1, board env = NONE, bool buffered = false );
+
+	/** Set PWM value for a channel
+	 *
+	 * @param reg register number
+	 * @param value	PWM value in float (0.0 ~ 1.0)
+	 */
+	void pwm( uint8_t ch, float value );
+
+	/** Set PWM value for all channels
+	 *
+	 * @param reg register number
+	 * @param *value pointer to PWM value in float (0.0 ~ 1.0)
+	 */
+	void pwm( float* values );
+
+	/** Buffer mode enable/Disble
+	 *
+	 * @param flag 'true' for enabling
+	 */
+	void buffer_enable( bool flag );
+	
+	/** Flushing data
+	 *
+	 * Send buffered PWM data to the LED driver
+	 */
+	void flush( void );
+
+	/** Multiple register write
+	 * 
+	 * @param reg register index/address/pointer
+	 * @param data pointer to data buffer
+	 * @param size data size
+	 * @return transferred data size
+	 */
+	int reg_w( uint8_t reg_adr, uint8_t *data, uint16_t size );
+
+	/** Single register write
+	 * 
+	 * @param reg register index/address/pointer
+	 * @param data pointer to data buffer
+	 * @param size data size
+	 * @return transferred data size
+	 */
+	int reg_w( uint8_t reg_adr, uint8_t data );
+
+	/** Multiple register read
+	 * 
+	 * @param reg register index/address/pointer
+	 * @param data pointer to data buffer
+	 * @param size data size
+	 * @return transferred data size
+	 */
+	int reg_r( uint8_t reg_adr, uint8_t *data, uint16_t size );
+
+	/** Single register read
+	 * 
+	 * @param reg register index/address/pointer
+	 * @return read data
+	 */
+	uint8_t	reg_r( uint8_t reg_adr );
+
+	/** Register write, 8 bit
+	 *
+	 * @param reg register index/address/pointer
+	 * @param val data value
+	 */
+	void write_r8( uint8_t reg, uint8_t val );
+
+	/** Register read, 8 bit
+	 *
+	 * @param reg register index/address/pointer
+	 * @return data value
+	 */
+	uint8_t read_r8( uint8_t reg );
+
+	/** Register overwriting with bit-mask
+	 *	
+	 *	Register can be updated by bit level
+	 *
+	 * @param reg register index/address/pointer
+	 * @param mask bit-mask to protect overwriting
+	 * @param value value to overwrite
+	 */
+	void bit_op8(  uint8_t reg,  uint8_t mask,  uint8_t value );
+	void bit_op16( uint8_t reg, uint16_t mask, uint16_t value );
+#endif	//	DOXYGEN_ONLY
+
 protected:
 	static const int	n_group;
 };
@@ -283,6 +386,110 @@ public:
 		0,
 		0,
 	};
+
+#if DOXYGEN_ONLY
+	/** Constants for begin() method */
+	enum board {
+		NONE,
+		ARDUINO_SHIELD,
+	};
+
+	/** Device/board initialization
+	 *
+	 * This method is needed to initialize the LED driver itself and evaluation board. 
+	 * 
+	 * @param current	Output current setting. Max is 1.0 for 100% output. Default is 0.1 (10%)
+	 * @param env		This method takes one argument of "PCA9956B::ARDUINO_SHIELD" to set RESET and OE pins. This is required for Arduino-shield type evaluation boards from NXP.
+	 * @param buffered	Buffered mode switch true or false. Default is false
+	 */
+	void begin( float current =  0.1, board env = NONE, bool buffered = false );
+
+	/** Set PWM value for a channel
+	 *
+	 * @param reg register number
+	 * @param value	PWM value in float (0.0 ~ 1.0)
+	 */
+	void pwm( uint8_t ch, float value );
+
+	/** Set PWM value for all channels
+	 *
+	 * @param reg register number
+	 * @param *value pointer to PWM value in float (0.0 ~ 1.0)
+	 */
+	void pwm( float* values );
+
+	/** Buffer mode enable/Disble
+	 *
+	 * @param flag 'true' for enabling
+	 */
+	void buffer_enable( bool flag );
+	
+	/** Flushing data
+	 *
+	 * Send buffered PWM data to the LED driver
+	 */
+	void flush( void );
+
+	/** Multiple register write
+	 * 
+	 * @param reg register index/address/pointer
+	 * @param data pointer to data buffer
+	 * @param size data size
+	 * @return transferred data size
+	 */
+	int reg_w( uint8_t reg_adr, uint8_t *data, uint16_t size );
+
+	/** Single register write
+	 * 
+	 * @param reg register index/address/pointer
+	 * @param data pointer to data buffer
+	 * @param size data size
+	 * @return transferred data size
+	 */
+	int reg_w( uint8_t reg_adr, uint8_t data );
+
+	/** Multiple register read
+	 * 
+	 * @param reg register index/address/pointer
+	 * @param data pointer to data buffer
+	 * @param size data size
+	 * @return transferred data size
+	 */
+	int reg_r( uint8_t reg_adr, uint8_t *data, uint16_t size );
+
+	/** Single register read
+	 * 
+	 * @param reg register index/address/pointer
+	 * @return read data
+	 */
+	uint8_t	reg_r( uint8_t reg_adr );
+
+	/** Register write, 8 bit
+	 *
+	 * @param reg register index/address/pointer
+	 * @param val data value
+	 */
+	void write_r8( uint8_t reg, uint8_t val );
+
+	/** Register read, 8 bit
+	 *
+	 * @param reg register index/address/pointer
+	 * @return data value
+	 */
+	uint8_t read_r8( uint8_t reg );
+
+	/** Register overwriting with bit-mask
+	 *	
+	 *	Register can be updated by bit level
+	 *
+	 * @param reg register index/address/pointer
+	 * @param mask bit-mask to protect overwriting
+	 * @param value value to overwrite
+	 */
+	void bit_op8(  uint8_t reg,  uint8_t mask,  uint8_t value );
+	void bit_op16( uint8_t reg, uint16_t mask, uint16_t value );
+#endif	//	DOXYGEN_ONLY
+
 };
 
 class PCA9957 : public PCA995x_SPI
@@ -341,6 +548,110 @@ public:
 		GRAD_CNTL0,
 		6,
 	};
+	
+#if DOXYGEN_ONLY
+	/** Constants for begin() method */
+	enum board {
+		NONE,
+		ARDUINO_SHIELD,
+	};
+
+	/** Device/board initialization
+	 *
+	 * This method is needed to initialize the LED driver itself and evaluation board. 
+	 * 
+	 * @param current	Output current setting. Max is 1.0 for 100% output. Default is 0.1 (10%)
+	 * @param env		This method takes one argument of "PCA9957::ARDUINO_SHIELD" to set RESET and OE pins. This is required for Arduino-shield type evaluation boards from NXP.
+	 * @param buffered	Buffered mode switch true or false. Default is false
+	 */
+	void begin( float current =  0.1, board env = NONE, bool buffered = false );
+
+	/** Set PWM value for a channel
+	 *
+	 * @param reg register number
+	 * @param value	PWM value in float (0.0 ~ 1.0)
+	 */
+	void pwm( uint8_t ch, float value );
+
+	/** Set PWM value for all channels
+	 *
+	 * @param reg register number
+	 * @param *value pointer to PWM value in float (0.0 ~ 1.0)
+	 */
+	void pwm( float* values );
+
+	/** Buffer mode enable/Disble
+	 *
+	 * @param flag 'true' for enabling
+	 */
+	void buffer_enable( bool flag );
+	
+	/** Flushing data
+	 *
+	 * Send buffered PWM data to the LED driver
+	 */
+	void flush( void );
+
+	/** Multiple register write
+	 * 
+	 * @param reg register index/address/pointer
+	 * @param data pointer to data buffer
+	 * @param size data size
+	 * @return transferred data size
+	 */
+	int reg_w( uint8_t reg_adr, uint8_t *data, uint16_t size );
+
+	/** Single register write
+	 * 
+	 * @param reg register index/address/pointer
+	 * @param data pointer to data buffer
+	 * @param size data size
+	 * @return transferred data size
+	 */
+	int reg_w( uint8_t reg_adr, uint8_t data );
+
+	/** Multiple register read
+	 * 
+	 * @param reg register index/address/pointer
+	 * @param data pointer to data buffer
+	 * @param size data size
+	 * @return transferred data size
+	 */
+	int reg_r( uint8_t reg_adr, uint8_t *data, uint16_t size );
+
+	/** Single register read
+	 * 
+	 * @param reg register index/address/pointer
+	 * @return read data
+	 */
+	uint8_t	reg_r( uint8_t reg_adr );
+
+	/** Register write, 8 bit
+	 *
+	 * @param reg register index/address/pointer
+	 * @param val data value
+	 */
+	void write_r8( uint8_t reg, uint8_t val );
+
+	/** Register read, 8 bit
+	 *
+	 * @param reg register index/address/pointer
+	 * @return data value
+	 */
+	uint8_t read_r8( uint8_t reg );
+
+	/** Register overwriting with bit-mask
+	 *	
+	 *	Register can be updated by bit level
+	 *
+	 * @param reg register index/address/pointer
+	 * @param mask bit-mask to protect overwriting
+	 * @param value value to overwrite
+	 */
+	void bit_op8(  uint8_t reg,  uint8_t mask,  uint8_t value );
+	void bit_op16( uint8_t reg, uint16_t mask, uint16_t value );
+#endif	//	DOXYGEN_ONLY
+
 };
 
 #endif //	ARDUINO_LED_DRIVER_NXP_ARD_H
