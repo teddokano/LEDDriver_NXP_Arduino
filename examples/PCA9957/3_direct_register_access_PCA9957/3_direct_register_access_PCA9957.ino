@@ -22,6 +22,8 @@ void setup() {
     ;
 
   SPI.begin();
+  pinMode(SS, OUTPUT);  //  Required for UNO R4
+
   ledd.begin(1.0, LEDDriver::ARDUINO_SHIELD);
 
   Serial.println("\n***** Hello, PCA9957! *****");
