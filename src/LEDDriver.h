@@ -341,7 +341,7 @@ public:
 	/** Number of channels */
 	static constexpr uint8_t n_channel	= 24;
 	
-	/** Name of the PCA9955B registers */
+	/** Name of the PCA9956B registers */
 	enum reg_num {
 		MODE1, MODE2,
 		LEDOUT0, LEDOUT1, LEDOUT2, LEDOUT3, LEDOUT4, LEDOUT5,
@@ -359,13 +359,13 @@ public:
 		PWMALL, IREFALL,
 		EFLAG0, EFLAG1, EFLAG2, EFLAG3, EFLAG4, EFLAG5
 	};
-	/** Create a PCA9955B instance connected to specified I2C pins with specified address
+	/** Create a PCA9956B instance connected to specified I2C pins with specified address
 	 *
 	 * @param i2c_address I2C-bus address (default: (0x02>>1))
 	 */
 	PCA9956B( uint8_t i2c_address = (0x02 >> 1) );
 
-	/** Create a PCA9955B instance connected to specified I2C pins with specified address
+	/** Create a PCA9956B instance connected to specified I2C pins with specified address
 	 *
 	 * @param wire TwoWire instance
 	 * @param i2c_address I2C-bus address (default: (0xBC>>1))
