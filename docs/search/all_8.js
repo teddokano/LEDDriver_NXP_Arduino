@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['n_5fchannel_0',['n_channel',['../class_p_c_a9955_b.html#a2e8330bc6631fce13de5e813f4cdd332',1,'PCA9955B::n_channel'],['../class_p_c_a9956_b.html#aa19c16d8484d6c9df87ebda262d605f7',1,'PCA9956B::n_channel'],['../class_p_c_a9957.html#a3560d787a964881358ddd38066befebe',1,'PCA9957::n_channel']]]
+  ['devices_0',['0.2 Supported devices',['../md__r_e_a_d_m_e.html#autotoc_md2',1,'']]],
+  ['direct_20register_20access_1',['2.2.2.3 Direct register access',['../md__r_e_a_d_m_e.html#autotoc_md16',1,'']]],
+  ['document_2',['3. Document',['../md__r_e_a_d_m_e.html#autotoc_md20',1,'']]],
+  ['driver_20library_3',['2.2 LED driver library',['../md__r_e_a_d_m_e.html#autotoc_md11',1,'']]]
 ];

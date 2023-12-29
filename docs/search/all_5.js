@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['gradation_5fchannel_5fenable_0',['gradation_channel_enable',['../class_gradation_control.html#a3625cb2bbd9c82b331f4deaef948b7e6',1,'GradationControl']]],
-  ['gradation_5fgroup_5fassign_1',['gradation_group_assign',['../class_gradation_control.html#a7a15e266570a694e416d953aa8bd7cd5',1,'GradationControl']]],
-  ['gradationcontrol_2',['GradationControl',['../class_gradation_control.html',1,'GradationControl'],['../class_gradation_control.html#a3852269547504376e809fcd76edac965',1,'GradationControl::GradationControl()']]]
+  ['access_0',['2.2.2.3 Direct register access',['../md__r_e_a_d_m_e.html#autotoc_md16',1,'']]],
+  ['add_5fchannel_1',['add_channel',['../class_gradation_control.html#aa40d8730e0cd996c0744a47231cddbf1',1,'GradationControl']]],
+  ['additional_20features_2',['2.1.2.2 Advanced examples (showing additional features)',['../md__r_e_a_d_m_e.html#autotoc_md10',1,'']]],
+  ['advanced_20examples_20showing_20additional_20features_3',['2.1.2.2 Advanced examples (showing additional features)',['../md__r_e_a_d_m_e.html#autotoc_md10',1,'']]]
 ];
