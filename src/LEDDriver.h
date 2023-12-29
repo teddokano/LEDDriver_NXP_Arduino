@@ -94,7 +94,7 @@ private:
 class PCA995x : public LEDDriver
 {
 public:
-	PCA995x( const uint8_t n_ch, const uint8_t PWM_r, const uint8_t IREF_r, const uint8_t IREFALL_r, const uint8_t* ar, const uint8_t oe = 8 );
+	PCA995x( uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r, const uint8_t* ar, uint8_t oe = 8 );
 	virtual ~PCA995x();
 	
 	virtual void begin( float current =  0.1, board env = NONE, bool buffered = false );
@@ -118,8 +118,8 @@ public:
 class PCA995x_I2C : public PCA995x, public I2C_device
 {
 public:
-	PCA995x_I2C( const uint8_t i2c_address, const uint8_t n_ch, const uint8_t PWM_r, const uint8_t IREF_r, const uint8_t IREFALL_r, const uint8_t* ar, const uint8_t oe = 8);
-	PCA995x_I2C( TwoWire& wire, const uint8_t i2c_address, const uint8_t n_ch, const uint8_t PWM_r, const uint8_t IREF_r, const uint8_t IREFALL_r, const uint8_t* ar, const uint8_t oe = 8);
+	PCA995x_I2C( uint8_t i2c_address, uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r, const uint8_t* ar, uint8_t oe = 8);
+	PCA995x_I2C( TwoWire& wire, uint8_t i2c_address, uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r, const uint8_t* ar, uint8_t oe = 8);
 	virtual ~PCA995x_I2C();
 
 	void reg_access( uint8_t reg, uint8_t val  );
@@ -133,7 +133,7 @@ public:
 class PCA995x_SPI : public PCA995x
 {
 public:
-	PCA995x_SPI( const uint8_t n_ch, const uint8_t PWM_r, const uint8_t IREF_r, const uint8_t IREFALL_r, const uint8_t* ar, const uint8_t oe = 9 );
+	PCA995x_SPI( uint8_t n_ch, uint8_t PWM_r, uint8_t IREF_r, uint8_t IREFALL_r, const uint8_t* ar, uint8_t oe = 9 );
 	virtual ~PCA995x_SPI();
 
 	void txrx( uint8_t *data, int size );
@@ -176,7 +176,7 @@ class PCA9955B : public PCA995x_I2C
 {
 public:
 	/** Number of channels */
-	const static uint8_t n_channel	= 16;
+	static constexpr uint8_t n_channel	= 16;
 	
 	/** Name of the PCA9955B registers */
 	enum reg_num {
@@ -339,7 +339,7 @@ class PCA9956B : public PCA995x_I2C
 {
 public:
 	/** Number of channels */
-	const static uint8_t n_channel	= 24;
+	static constexpr uint8_t n_channel	= 24;
 	
 	/** Name of the PCA9955B registers */
 	enum reg_num {
@@ -496,7 +496,7 @@ class PCA9957 : public PCA995x_SPI
 {
 public:
 	/** Number of channels */
-	const static uint8_t n_channel	= 24;
+	static constexpr uint8_t n_channel	= 24;
 	
 	/** Name of the PCA9957 registers */
 	enum reg_num {
