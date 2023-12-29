@@ -529,8 +529,6 @@ public:
 	};
 	
 	/** Create a PCA9957 instance connected to specified I2C pins with specified address
-	 *
-	 * @param i2c_address I2C-bus address (default: (0x02>>1))
 	 */
 	PCA9957();
 	virtual ~PCA9957();
