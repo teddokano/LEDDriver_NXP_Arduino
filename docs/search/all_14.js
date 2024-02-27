@@ -1,12 +1,10 @@
 var searchData=
 [
-  ['s_20inside_0',['2. What&apos;s inside?',['../md__r_e_a_d_m_e.html#autotoc_md5',1,'']]],
-  ['sample_1',['0.3 Code sample',['../md__r_e_a_d_m_e.html#autotoc_md3',1,'']]],
-  ['sample_20code_2',['2.1.2 List of sample code',['../md__r_e_a_d_m_e.html#autotoc_md8',1,'']]],
-  ['set_5fgradation_3',['set_gradation',['../class_gradation_control.html#affa2227a7fc375d62c7a1a8d89fd0b1d',1,'GradationControl']]],
-  ['showing_20additional_20features_4',['2.1.2.2 Advanced examples (showing additional features)',['../md__r_e_a_d_m_e.html#autotoc_md10',1,'']]],
-  ['start_5',['start',['../class_gradation_control.html#a169450a9144949e9538011d1ca4bb835',1,'GradationControl']]],
-  ['started_6',['1. Getting started',['../md__r_e_a_d_m_e.html#autotoc_md4',1,'']]],
-  ['stop_7',['stop',['../class_gradation_control.html#a2008e0dc1462804f29602e9f7d1dd361',1,'GradationControl']]],
-  ['supported_20devices_8',['0.2 Supported devices',['../md__r_e_a_d_m_e.html#autotoc_md2',1,'']]]
+  ['read_5fr8_0',['read_r8',['../class_p_c_a9955_b.html#a596c693f235e208df351caa490dcc665',1,'PCA9955B::read_r8()'],['../class_p_c_a9956_b.html#aae913168969f5425306d2f75868b3b87',1,'PCA9956B::read_r8()'],['../class_p_c_a9957.html#a634736a7a26278e78d5c624d63c40d98',1,'PCA9957::read_r8()']]],
+  ['references_1',['4. References',['../md__r_e_a_d_m_e.html#autotoc_md21',1,'']]],
+  ['reg_5fnum_2',['reg_num',['../class_p_c_a9955_b.html#a8d7db2740e4e03122c6e54ca6edfd4b0',1,'PCA9955B::reg_num'],['../class_p_c_a9956_b.html#a1c42ab3610e23210f1b16853720746c6',1,'PCA9956B::reg_num'],['../class_p_c_a9957.html#a610d947e7f133df79eca84b296a765cf',1,'PCA9957::reg_num']]],
+  ['reg_5fr_3',['reg_r',['../class_p_c_a9955_b.html#a5fcff88c4b63a08ced67f63c1dbebe81',1,'PCA9955B::reg_r(uint8_t reg_adr, uint8_t *data, uint16_t size)'],['../class_p_c_a9955_b.html#a8dc382828dc232eaf9ba40d1a52e0476',1,'PCA9955B::reg_r(uint8_t reg_adr)'],['../class_p_c_a9956_b.html#ab0102aa4d1d93b1f6063a796053a6d36',1,'PCA9956B::reg_r(uint8_t reg_adr, uint8_t *data, uint16_t size)'],['../class_p_c_a9956_b.html#aca49805d5b88327a476bea2fdc5b7837',1,'PCA9956B::reg_r(uint8_t reg_adr)'],['../class_p_c_a9957.html#a598e40252e9da37e4f81c8219f03248a',1,'PCA9957::reg_r(uint8_t reg_adr, uint8_t *data, uint16_t size)'],['../class_p_c_a9957.html#a5d5ed6bdfb0b91d1e3eceed1b3f6a5d1',1,'PCA9957::reg_r(uint8_t reg_adr)']]],
+  ['reg_5fw_4',['reg_w',['../class_p_c_a9955_b.html#ad77f6d574d0815dee0a0687848769263',1,'PCA9955B::reg_w(uint8_t reg_adr, uint8_t *data, uint16_t size)'],['../class_p_c_a9955_b.html#a920213eede4821614f5d13cdf699ad96',1,'PCA9955B::reg_w(uint8_t reg_adr, uint8_t data)'],['../class_p_c_a9956_b.html#a9d0bfd06e3caf22f0e02bba7a73875de',1,'PCA9956B::reg_w(uint8_t reg_adr, uint8_t *data, uint16_t size)'],['../class_p_c_a9956_b.html#ac373d538baff6e306edd8a381da033f7',1,'PCA9956B::reg_w(uint8_t reg_adr, uint8_t data)'],['../class_p_c_a9957.html#ac4b8479c86120919a0f12db17bd0ae94',1,'PCA9957::reg_w(uint8_t reg_adr, uint8_t *data, uint16_t size)'],['../class_p_c_a9957.html#a81b09a4615c5599aac4c492a699ef9b6',1,'PCA9957::reg_w(uint8_t reg_adr, uint8_t data)']]],
+  ['register_20access_5',['2.2.2.3 Direct register access',['../md__r_e_a_d_m_e.html#autotoc_md16',1,'']]],
+  ['related_20libraries_6',['4.1 Related libraries',['../md__r_e_a_d_m_e.html#autotoc_md22',1,'']]]
 ];

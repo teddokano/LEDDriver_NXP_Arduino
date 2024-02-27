@@ -23,7 +23,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">LEDDriver_NXP_Arduino<span id="projectnumber">&#160;1.0.1</span>
+   <div id="projectname">LEDDriver_NXP_Arduino<span id="projectnumber">&#160;1.0.2</span>
    </div>
    <div id="projectbrief">LED driver device operation sample code for Arduino</div>
   </td>
@@ -359,8 +359,15 @@ $(function() {
  Providing a further abstraction layer for each single <a class="el" href="class_l_e_d.html">LED</a>. <br  />
 </p>
 <p>An <a class="el" href="class_l_e_d.html">LED</a> can be an instance, PWM setting can be done by assignment. <br  />
- If it is defined in array, those LEDs can be indexed independent from <a class="el" href="class_l_e_d.html">LED</a> drivers.</p>
-<p>To see basic idea for the <code><a class="el" href="class_l_e_d.html">LED</a></code> class, see <code>examples/concept_examples/abstracting_LEDs</code>.</p>
+ If it is defined in array, those LEDs can be indexed independent from <a class="el" href="class_l_e_d.html">LED</a> drivers. <br  />
+</p>
+<p>To see basic idea for the <code><a class="el" href="class_l_e_d.html">LED</a></code> class, see <code>examples/concept_examples/abstracting_LEDs</code>. <br  />
+</p>
+<blockquote class="doxtable">
+<p>&zwj;<b>Note</b> With compiling <a href="https://github.com/MCUdude/MightyCore">MightyCore</a>, the code cannot build since MightyCore is using <code><a class="el" href="class_l_e_d.html">LED</a></code> as <a href="https://github.com/MCUdude/MightyCore/blob/47af83c3eae6f393cf1cdd62cbb1347fa5a799c3/avr/variants/sanguino/pins_arduino.h#L54">a global variable</a>. <br  />
+ To avoid this conflict, <code><a class="el" href="class___l_e_d.html">_LED</a></code> class is derived from <code><a class="el" href="class_l_e_d.html">LED</a></code>. <br  />
+ For code using MightyCore, use <code><a class="el" href="class___l_e_d.html">_LED</a></code> instead of <code><a class="el" href="class_l_e_d.html">LED</a></code>. </p>
+</blockquote>
 <div class="fragment"><div class="line"><span class="comment">// examples/concept_examples/abstracting_LEDs.ino</span></div>
 <div class="line"><span class="preprocessor">#include &lt;PCA9955B.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;LED.h&gt;</span></div>

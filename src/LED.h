@@ -23,4 +23,10 @@ private:
   int channel;
 };
 
+class _LED : public LED {
+public:
+	using LED::operator=;
+	_LED(LEDDriver* leddp, int ch);
+};
+
 #endif //	ARDUINO_LED_NXP_ARD_H

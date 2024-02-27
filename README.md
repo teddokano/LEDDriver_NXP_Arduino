@@ -268,9 +268,15 @@ The `LED` is a tiny class but helps much to manage multiple LEDs.
 Providing a further abstraction layer for each single LED.  
 
 An LED can be an instance, PWM setting can be done by assignment.  
-If it is defined in array, those LEDs can be indexed independent from LED drivers. 
+If it is defined in array, those LEDs can be indexed independent from LED drivers.  
 
-To see basic idea for the `LED` class, see `examples/concept_examples/abstracting_LEDs`. 
+To see basic idea for the `LED` class, see `examples/concept_examples/abstracting_LEDs`.  
+
+> **Note**
+> With compiling [MightyCore](https://github.com/MCUdude/MightyCore), the code cannot build since MightyCore is using `LED` as [a global variable](https://github.com/MCUdude/MightyCore/blob/47af83c3eae6f393cf1cdd62cbb1347fa5a799c3/avr/variants/sanguino/pins_arduino.h#L54).  
+> To avoid this conflict, `_LED` class is derived from `LED`.  
+> For code using MightyCore, use `_LED` instead of `LED`. 
+
 
 ```cpp
 // examples/concept_examples/abstracting_LEDs.ino
